@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/window.png-be7b06f66c81a4a75d8c64b23481294c.stex"
+path="res://.import/resized shed.png-c85811106661a722b5a735cc0ee2728f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://window.png"
-dest_files=[ "res://.import/window.png-be7b06f66c81a4a75d8c64b23481294c.stex" ]
+source_file="res://world assets/resized shed.png"
+dest_files=[ "res://.import/resized shed.png-c85811106661a722b5a735cc0ee2728f.stex" ]
 
 [params]
 

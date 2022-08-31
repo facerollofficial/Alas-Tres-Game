@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flower and plate.png-3dd5bdb4b1fdbdf30f53ac4de848e72e.stex"
+path="res://.import/door.png-ae1990950a2a88fa9e476fa4cb17282a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://flower and plate.png"
-dest_files=[ "res://.import/flower and plate.png-3dd5bdb4b1fdbdf30f53ac4de848e72e.stex" ]
+source_file="res://world assets/door.png"
+dest_files=[ "res://.import/door.png-ae1990950a2a88fa9e476fa4cb17282a.stex" ]
 
 [params]
 

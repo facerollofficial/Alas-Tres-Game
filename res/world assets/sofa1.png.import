@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lamp.png-a09bb450d3eef19f1d08c9cf2f65382f.stex"
+path="res://.import/sofa1.png-d28654bc814783b08d54f5853135be84.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://lamp.png"
-dest_files=[ "res://.import/lamp.png-a09bb450d3eef19f1d08c9cf2f65382f.stex" ]
+source_file="res://world assets/sofa1.png"
+dest_files=[ "res://.import/sofa1.png-d28654bc814783b08d54f5853135be84.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fallen book.png-c819d6b91a5b5e24bec5c4c8831d4fa6.stex"
+path="res://.import/side table.png-6d7aa2449230306112126cfd8535f13c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fallen book.png"
-dest_files=[ "res://.import/fallen book.png-c819d6b91a5b5e24bec5c4c8831d4fa6.stex" ]
+source_file="res://world assets/side table.png"
+dest_files=[ "res://.import/side table.png-6d7aa2449230306112126cfd8535f13c.stex" ]
 
 [params]
 

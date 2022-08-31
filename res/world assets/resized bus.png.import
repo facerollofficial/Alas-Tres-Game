@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sofa1.png-4699f5def53bab613a2394ec62099a42.stex"
+path="res://.import/resized bus.png-9c770613552499300a744e6e70a0fe1f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sofa1.png"
-dest_files=[ "res://.import/sofa1.png-4699f5def53bab613a2394ec62099a42.stex" ]
+source_file="res://world assets/resized bus.png"
+dest_files=[ "res://.import/resized bus.png-9c770613552499300a744e6e70a0fe1f.stex" ]
 
 [params]
 
