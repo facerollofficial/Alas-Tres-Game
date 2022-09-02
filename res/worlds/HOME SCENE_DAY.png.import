@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/HOME SCENE_DAY.png-96de1649633743175a9e7ababf9c5c74.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://worlds/HOME SCENE_DAY.png"
+dest_files=[ "res://.import/HOME SCENE_DAY.png-96de1649633743175a9e7ababf9c5c74.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
