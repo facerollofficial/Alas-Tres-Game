@@ -1,26 +1,42 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=2]
+[ext_resource path="res://worlds/OUTSIDE SCENE.png" type="Texture" id=3]
 
 [node name="World" type="YSort"]
 
 [node name="Sprite" type="Sprite" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 40, 56 )
+position = Vector2( 40, 128 )
 
 [node name="Bush" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 72, 32 )
 
 [node name="Bush2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 144, 136 )
+visible = false
+position = Vector2( 128, 16 )
 
 [node name="Bush3" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 200, 32 )
 
 [node name="Bush4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 216, 112 )
+visible = false
+position = Vector2( 240, 56 )
 
 [node name="Bush5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 64, 128 )
+visible = false
+position = Vector2( 240, -8 )
+
+[node name="OutsideScene" type="Sprite" parent="."]
+position = Vector2( 256, 40 )
+z_index = -17
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="OutsideScene"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideScene/StaticBody2D"]
+polygon = PoolVector2Array( -88, 88, 128, 88, 136, 72, 136, 64, 152, 64, 152, 72, 160, 88, 256, 88, 256, -16, -24, -16 )
