@@ -12,31 +12,26 @@
 position = Vector2( 164, 164 )
 
 [node name="Bush" parent="." instance=ExtResource( 2 )]
-visible = false
 position = Vector2( 72, 32 )
 
 [node name="Bush2" parent="." instance=ExtResource( 2 )]
-visible = false
 position = Vector2( 128, 16 )
 
 [node name="Bush3" parent="." instance=ExtResource( 2 )]
-visible = false
 position = Vector2( 200, 32 )
 
 [node name="Bush4" parent="." instance=ExtResource( 2 )]
-visible = false
 position = Vector2( 240, 56 )
 
 [node name="Bush5" parent="." instance=ExtResource( 2 )]
-visible = false
 position = Vector2( 240, -8 )
 
 [node name="OutsideScene" type="Sprite" parent="."]
-position = Vector2( 144, 56 )
+position = Vector2( 178, 135 )
 z_index = -17
 texture = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="OutsideScene"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideScene/StaticBody2D"]
-polygon = PoolVector2Array( -80, 88, 128, 88, 136, 72, 136, 64, 152, 64, 152, 72, 160, 88, 256, 88, 256, -16, 29, 15, 17, 16, 14, 21, 7, 21, 6, 27, 5, 35, 1, 33, -7, 33, -8, 35, -12, 35, -11, 38, -15, 41, -13, 43, -17, 46, -16, 49, -20, 61, -24, 54, -27, 45, -28, 41, -32, 37, -32, 34, -40, 32, -48, 35, -47, 37, -52, 41, -49.3883, 41.3883, -54, 46, -52, 48, -56, 56, -59, 59, -65, 59, -73, 57, -79, 63, -86, 71, -86, 78 )
+polygon = PoolVector2Array( -80, 88, 128, 88, 136, 72, 136, 64, 152, 64, 152, 72, 160, 88, 256, 88, 256, -16, 256, -56, 32, -56, 32, -28, 32, 14, 29, 15, 17, 16, 14, 21, 7, 21, 6, 27, 5, 35, 1, 33, -7, 33, -8, 35, -12, 35, -11, 38, -15, 41, -13, 43, -17, 46, -16, 49, -20, 61, -24, 54, -27, 45, -28, 41, -32, 37, -32, 34, -40, 32, -48, 35, -47, 37, -52, 41, -49.3883, 41.3883, -54, 46, -52, 48, -56, 56, -59, 59, -65, 59, -73, 57, -79, 63, -86, 71, -86, 78 )
