@@ -9,25 +9,30 @@
 [node name="Sprite" type="Sprite" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 164, 164 )
+position = Vector2( 65, 148 )
 
 [node name="Bush" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 72, 32 )
 
 [node name="Bush2" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 128, 16 )
 
 [node name="Bush3" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 200, 32 )
 
 [node name="Bush4" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 240, 56 )
 
 [node name="Bush5" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 240, -8 )
 
 [node name="OutsideScene" type="Sprite" parent="."]
-position = Vector2( 178, 135 )
+position = Vector2( 200, 135 )
 z_index = -17
 texture = ExtResource( 3 )
 
