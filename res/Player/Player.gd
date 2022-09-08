@@ -21,6 +21,7 @@ func _ready():
 	animationTree.active = true
 
 func _physics_process(delta):
+	
 	match state:
 		MOVE:
 			move_state(delta)
@@ -50,6 +51,8 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	velocity = move_and_slide(velocity)
+	
+	# THIS ALLOWS THE PLAYER TO CHANGE STATE AND ATTACK
 	
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
