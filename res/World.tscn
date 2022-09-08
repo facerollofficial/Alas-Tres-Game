@@ -517,7 +517,7 @@ disabled = true
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 65, 148 )
+position = Vector2( 176, 98 )
 
 [node name="Bush" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 89, 68 )
