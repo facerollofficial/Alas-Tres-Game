@@ -1,13 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://worlds/FOREST_NORMAL.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/forestTrees.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/forestGrassFlowerStone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/forestGrassStone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 0, 257 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11.4996, 247.5 )
 
 [sub_resource type="SegmentShape2D" id=2]
 a = Vector2( -2.12193e-05, -486 )
@@ -34,9 +38,9 @@ position = Vector2( -1, -76 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 10, -76 )
+position = Vector2( 247.5, -74.4996 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 10, 182 )
@@ -51,11 +55,23 @@ shape = SubResource( 3 )
 position = Vector2( 506, -42 )
 shape = SubResource( 3 )
 
+[node name="Camera2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 12, 51 )
+
+[node name="topLeft" parent="Camera2D/Limits" index="0"]
+position = Vector2( 0, -76 )
+
+[node name="bottomRight" parent="Camera2D/Limits" index="1"]
+position = Vector2( 512, 179 )
+
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( 0, 1 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 12, 50 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="trees1" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 231, -43 )
@@ -68,3 +84,5 @@ position = Vector2( 359, 37 )
 
 [node name="grassstone" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 181, 61 )
+
+[editable path="Camera2D"]

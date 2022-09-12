@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://worlds/HOME SCENE.png" type="Texture" id=1]
 [ext_resource path="res://World/tableNight.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://World/flowerNight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/cabinetTvNight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/candleTableNight.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 0, 187 )
@@ -45,6 +46,12 @@ position = Vector2( 148, 176 )
 rotation = 1.5708
 shape = SubResource( 2 )
 
+[node name="Camera2D" parent="." instance=ExtResource( 11 )]
+position = Vector2( 307, 29 )
+
+[node name="topLeft" parent="Camera2D/Limits" index="0"]
+position = Vector2( 138, -107 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="table" parent="YSort" instance=ExtResource( 2 )]
@@ -52,6 +59,9 @@ position = Vector2( 226, 84 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 307, 29 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="tvcabin" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 226, 39 )
@@ -76,3 +86,5 @@ position = Vector2( 151, 160 )
 
 [node name="sofa" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 226, 63 )
+
+[editable path="Camera2D"]

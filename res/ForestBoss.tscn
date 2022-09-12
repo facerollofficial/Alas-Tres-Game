@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://worlds/FOREST_BOSS.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/forestTreesBoss.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/forestRock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/forestGrassStone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 0, -76 )
@@ -47,10 +48,22 @@ shape = SubResource( 3 )
 position = Vector2( 500, 148 )
 shape = SubResource( 3 )
 
+[node name="Camera2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 13, 52 )
+
+[node name="topLeft" parent="Camera2D/Limits" index="0"]
+position = Vector2( -2, -76 )
+
+[node name="bottomRight" parent="Camera2D/Limits" index="1"]
+position = Vector2( 510, 183 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 13, 52 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="trees1" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 177, -38 )
@@ -63,3 +76,5 @@ position = Vector2( 58, 27 )
 
 [node name="grassstone" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 197, 62 )
+
+[editable path="Camera2D"]
