@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HOME SCENE.png-eaf82df5ef37570cfb18ec22fd1cc432.stex"
+path="res://.import/HOME SCENE_DAY.png-0b2c4de86a534f4b816603bce69e802c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://worlds/HOME SCENE.png"
-dest_files=[ "res://.import/HOME SCENE.png-eaf82df5ef37570cfb18ec22fd1cc432.stex" ]
+source_file="res://Maps/HOME SCENE_DAY.png"
+dest_files=[ "res://.import/HOME SCENE_DAY.png-0b2c4de86a534f4b816603bce69e802c.stex" ]
 
 [params]
 

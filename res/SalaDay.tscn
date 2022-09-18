@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://worlds/HOME SCENE_DAY.png" type="Texture" id=1]
+[ext_resource path="res://Maps/HOME SCENE_DAY.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/tableDay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/sofaDay.tscn" type="PackedScene" id=4]

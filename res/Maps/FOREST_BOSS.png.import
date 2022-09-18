@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FOREST_BOSS.png-e8412579e059459dd75055f7285c4dc4.stex"
+path="res://.import/FOREST_BOSS.png-11c4c94ce41af747f371d274cb0d34ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://worlds/FOREST_BOSS.png"
-dest_files=[ "res://.import/FOREST_BOSS.png-e8412579e059459dd75055f7285c4dc4.stex" ]
+source_file="res://Maps/FOREST_BOSS.png"
+dest_files=[ "res://.import/FOREST_BOSS.png-11c4c94ce41af747f371d274cb0d34ba.stex" ]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://worlds/HOME SCENE.png" type="Texture" id=1]
+[ext_resource path="res://Maps/HOME SCENE.png" type="Texture" id=1]
 [ext_resource path="res://World/tableNight.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://world assets/home scene/candle_night.png" type="Texture" id=4]
@@ -11,6 +11,7 @@
 [ext_resource path="res://World/cabinetTvNight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/candleTableNight.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=11]
+
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 0, 187 )
