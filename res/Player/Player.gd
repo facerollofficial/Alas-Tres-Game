@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const ACCELERATION = 500
 const MAX_SPEED = 80
-const ROLL_SPEED = 120
+const ROLL_SPEED = 100
 const FRICTION = 500
 
 enum {
@@ -73,7 +73,6 @@ func move():
 	velocity = move_and_slide(velocity)
 
 func roll_animation_finished():
-	velocity = velocity * .8
 	state = MOVE
 
 func attack_animation_finished():
