@@ -485,10 +485,11 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="World" type="YSort"]
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.897059, 0.727273 )
 texture = ExtResource( 4 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 320, 180 )
+region_rect = Rect2( -160, -128, 544, 352 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
