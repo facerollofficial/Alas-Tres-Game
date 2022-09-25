@@ -68,6 +68,7 @@ func move_state(delta):
 		state = ROLL
 		
 func roll_state(delta):
+	hurtbox.start_invincibility(1.5) # INVINCIBILITY FRAME
 	velocity = roll_vector * ROLL_SPEED
 	animationState.travel("Roll")
 	move()
@@ -86,6 +87,6 @@ func attack_animation_finished():
 	state = MOVE
 
 func _on_Hurtbox_area_entered(area):
-	stats.health -= 1
-	hurtbox.start_invincibility(0.5)
+	stats.health -= area.damage
+	hurtbox.start_invincibility(1.5)
 	hurtbox.create_hit_effect()
