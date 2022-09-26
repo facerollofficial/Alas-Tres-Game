@@ -7,6 +7,7 @@ export var MAX_SPEED = 80
 export var ROLL_SPEED = 100
 export var FRICTION = 500
 export var I_FRAME_DURATION = 0.05
+export var HURTBOX_COOLDOWN = 1.5
 
 enum {
 	MOVE, ROLL, ATTACK
@@ -93,7 +94,7 @@ func _on_Hurtbox_area_entered(area):
 	if hurtbox.invincible == false:
 		stats.health -= area.damage
 		blinkAnimationPlayer.play("Start")
-		hurtbox.start_invincibility(2)
+		hurtbox.start_invincibility(HURTBOX_COOLDOWN)
 		hurtbox.create_hit_effect()
 		var playerHurtSound = PlayerHurtSound.instance()
 		get_tree().current_scene.add_child(playerHurtSound)
