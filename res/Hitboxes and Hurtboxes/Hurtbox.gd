@@ -2,7 +2,6 @@ extends Area2D
 
 const HitEffect = preload("res://Effects/HitEffect.tscn")
 
-
 onready var timer = $Timer
 onready var colShape = $CollisionShape2D
 
@@ -31,9 +30,8 @@ func create_hit_effect():
 func _on_Timer_timeout():
 	self.invincible = false
 
-
 func _on_Hurtbox_invincibility_started():
-	colShape.disabled = true
+	set_deferred("monitoring", false)
 
 func _on_Hurtbox_invincibility_ended():
-	colShape.disabled = false
+	monitoring = true
