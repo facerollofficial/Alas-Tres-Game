@@ -68,26 +68,20 @@ position = Vector2( 182, 56 )
 rotation = 1.5708
 shape = SubResource( 7 )
 
-[node name="Camera2D" parent="." instance=ExtResource( 11 )]
-position = Vector2( 88, 171 )
-
-[node name="topLeft" parent="Camera2D/Limits" index="0"]
-position = Vector2( 72, -106 )
-
-[node name="bottomRight" parent="Camera2D/Limits" index="1"]
-position = Vector2( 252, 180 )
-
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( -1, 2 )
+
+[node name="Lolo" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 87, 113 )
+
+[node name="CollisionShape2D" parent="YSort/Lolo/Area2D" index="0"]
+position = Vector2( 0, 2 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 89, 169 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
-remote_path = NodePath("../../../Camera2D")
-
-[node name="Lolo" parent="YSort" instance=ExtResource( 12 )]
-position = Vector2( 88, 110 )
+remote_path = NodePath("../../Camera2D")
 
 [node name="table" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 87, 87 )
@@ -115,4 +109,15 @@ texture = ExtResource( 9 )
 [node name="entranceCabin" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 167, 147 )
 
-[editable path="Camera2D"]
+[node name="Camera2D" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 89, 169 )
+zoom = Vector2( 0.7, 0.7 )
+
+[node name="topLeft" parent="YSort/Camera2D/Limits" index="0"]
+position = Vector2( 72, -106 )
+
+[node name="bottomRight" parent="YSort/Camera2D/Limits" index="1"]
+position = Vector2( 252, 180 )
+
+[editable path="YSort/Lolo"]
+[editable path="YSort/Camera2D"]

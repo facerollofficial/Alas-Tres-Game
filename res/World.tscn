@@ -1,6 +1,5 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=60 format=2]
 
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Maps/OUTSIDE SCENE.png" type="Texture" id=3]
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=4]
@@ -531,12 +530,6 @@ disabled = true
 
 [node name="Lolo" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 144, 72 )
-
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 160, 88 )
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
-remote_path = NodePath("../../../Camera2D")
 
 [node name="Bushes" type="YSort" parent="YSort"]
 
