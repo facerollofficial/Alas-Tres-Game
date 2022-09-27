@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Maps/HOME SCENE_DAY.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://world assets/home scene/candle_day.png" type="Texture" id=9]
 [ext_resource path="res://World/entranceCabinDay.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=11]
+[ext_resource path="res://NPC/Lolo/Lolo.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 6, 4.5 )
@@ -84,6 +85,9 @@ position = Vector2( 89, 169 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
+
+[node name="Lolo" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 88, 110 )
 
 [node name="table" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 87, 87 )
