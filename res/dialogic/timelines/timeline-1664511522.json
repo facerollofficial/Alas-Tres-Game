@@ -1,0 +1,123 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1664511736.cfg"
+		},
+		{
+			"audio_bus": "Master",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 0.1,
+			"file": "res://Music and Sounds/RPG_The_Maw_of_the_Witches_Den_Intro_.ogg",
+			"volume": 0
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 4
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Legends say that an invisible city exists where mythical creatures reside."
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 4
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The hidden place had a balance of good and evil within its residence."
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 4
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Not long after, the evil grew more which caused disorder and chaos."
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 4
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "As the evil forces outnumbers the good..."
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 4
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "An unnamed hero dressed in white appeared and attempted to resolve the chaos."
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 2
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Successfully, the Hero restored the balance between the forces of good and evil."
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 2
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "\"There is no certainty when a disorder might occur once more...\""
+		},
+		{
+			"block_input": true,
+			"event_id": "dialogic_050",
+			"wait_time": 2
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "\"... soon my grandchild, you will take my place.\""
+		},
+		{
+			"audio_bus": "Master",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 1.8,
+			"file": "",
+			"volume": 0
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1664511522.json",
+		"name": "StoryIntro"
+	}
+}

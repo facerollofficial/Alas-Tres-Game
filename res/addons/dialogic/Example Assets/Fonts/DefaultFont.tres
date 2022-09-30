@@ -4,5 +4,6 @@
 font_path = "res://ChiKareGo2.ttf"
 
 [resource]
-size = 13
+resource_local_to_scene = true
+size = 9
 font_data = SubResource( 1 )
