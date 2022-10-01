@@ -1,0 +1,34 @@
+{
+	"events": [
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Music and Sounds/Hit.wav",
+			"volume": 0
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.2
+		},
+		{
+			"character": "character-1664259638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What is that noise?"
+		},
+		{
+			"character": "character-1664259638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I should check it."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1664546965.json",
+		"name": "hallwayMonologue"
+	}
+}

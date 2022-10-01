@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Maps/HOME SCENE_DAY.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://RoomSceneDialogue.gd" type="Script" id=4]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 0, 79 )
@@ -12,6 +13,9 @@ a = Vector2( -1.52588e-05, -245 )
 b = Vector2( 0, 11 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9.5, 4.5 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -40,7 +44,7 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 34, 108 )
+position = Vector2( 197, 115 )
 
 [node name="topLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2( 0, 50 )
@@ -51,7 +55,7 @@ position = Vector2( 256, 180 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 34, 108 )
+position = Vector2( 197, 115 )
 
 [node name="ShadowSprite" parent="YSort/Player" index="0"]
 visible = false
@@ -61,6 +65,13 @@ parameters/playback = SubResource( 3 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
+
+[node name="Area2D" type="Area2D" parent="YSort/Player"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player/Area2D"]
+position = Vector2( 0.5, -0.5 )
+shape = SubResource( 4 )
 
 [editable path="Camera2D"]
 [editable path="YSort/Player"]
