@@ -29,7 +29,9 @@ func _ready():
 	randomize()
 	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true
-	pagiHitbox.knockback_vector = roll_vector 
+	pagiHitbox.knockback_vector = roll_vector
+	#set the initial position of the character start and maintain the current position of character after change scene
+	self.global_position = Global.player_initial_map_position 
 
 func _physics_process(delta):
 	

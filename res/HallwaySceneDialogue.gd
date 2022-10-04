@@ -9,12 +9,14 @@ func _ready():
 
 func area_entered(body):
 	if body.name == 'Player':
-		$Player/mark.visible = true
-		get_tree().paused = true
-		var dialog = Dialogic.start('hallwayMonologue')
-		dialog.pause_mode = Node.PAUSE_MODE_PROCESS
-		dialog.connect('timeline_end',self,'unpause')
-		add_child(dialog)
+		if Global.minNum <1:
+			$Player/mark.visible = true
+			get_tree().paused = true
+			var dialog = Dialogic.start('hallwayMonologue')
+			dialog.pause_mode = Node.PAUSE_MODE_PROCESS
+			dialog.connect('timeline_end',self,'unpause')
+			add_child(dialog)
+		Global.minNum +=1
 
 #unpause function
 func unpause(timeline_name):

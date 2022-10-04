@@ -9,11 +9,12 @@ func _ready():
 #function for the monologue
 func area_entered(body):
 	if body.name == 'Player':
-		get_tree().paused = true
-		var dialog = Dialogic.start('roomMonologue')
-		dialog.pause_mode = Node.PAUSE_MODE_PROCESS
-		dialog.connect('timeline_end',self,'unpause')
-		add_child(dialog)
+		if Global.dia_active != false:
+			get_tree().paused = true
+			var dialog = Dialogic.start('roomMonologue')
+			dialog.pause_mode = Node.PAUSE_MODE_PROCESS
+			dialog.connect('timeline_end',self,'unpause')
+			add_child(dialog)
 		
 #unpause function
 func unpause(timeline_name):

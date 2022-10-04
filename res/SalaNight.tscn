@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Maps/HOME SCENE.png" type="Texture" id=1]
 [ext_resource path="res://World/tableNight.tscn" type="PackedScene" id=2]
@@ -11,7 +11,8 @@
 [ext_resource path="res://World/cabinetTvNight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/candleTableNight.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=11]
-
+[ext_resource path="res://Player/PlayerPortal.gd" type="Script" id=12]
+[ext_resource path="res://HallwaytoSalaPortal.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 0, 187 )
@@ -48,7 +49,7 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 11 )]
-position = Vector2( 307, 29 )
+position = Vector2( 300, 29 )
 
 [node name="topLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2( 138, -107 )
@@ -59,7 +60,9 @@ position = Vector2( 138, -107 )
 position = Vector2( 226, 84 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 307, 29 )
+position = Vector2( 300, 29 )
+script = ExtResource( 12 )
+ROLL_SPEED = 100
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
@@ -88,4 +91,12 @@ position = Vector2( 151, 160 )
 [node name="sofa" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 226, 63 )
 
+[node name="HallwaytoSalaPortal" parent="." instance=ExtResource( 13 )]
+next_scene_path = "res://HallwayNight.tscn"
+player_spawn_location = Vector2( 14, 152 )
+
+[node name="CollisionShape2D" parent="HallwaytoSalaPortal" index="0"]
+position = Vector2( 315, 26 )
+
 [editable path="Camera2D"]
+[editable path="HallwaytoSalaPortal"]
