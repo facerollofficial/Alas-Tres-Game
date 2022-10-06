@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Maps/Sprites/HOME SCENE_DAY.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Extras/Camera/Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Maps/Hallway/RoomSceneDialogue.gd" type="Script" id=4]
+[ext_resource path="res://Maps/Hallway/RoomToHallwayPortal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/PlayerPortal.gd" type="Script" id=6]
+
+
+[sub_resource type="SegmentShape2D" id=1]
+b = Vector2( 0, 79 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -1.52588e-05, -245 )
+b = Vector2( 0, 11 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9, 6.5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 128, 115 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 255.69, 157.095, 256.455, 130.621 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 53, 256, 53, 256, 101, 242, 101, 242, 127, 240, 127, 240, 133, 208, 133, 208, 127, 206, 127, 206, 110, 73, 110, 73, 101, 0, 101 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -1, 101 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 257, 101 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 11, 181 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 197, 115 )
+
+[node name="topLeft" parent="Camera2D/Limits" index="0"]
+position = Vector2( 0, 50 )
+
+[node name="bottomRight" parent="Camera2D/Limits" index="1"]
+position = Vector2( 256, 180 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 197, 115 )
+script = ExtResource( 6 )
+ROLL_SPEED = 100
+
+[node name="Area2D" type="Area2D" parent="YSort/Player"]
+position = Vector2( -1, 6 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player/Area2D"]
+position = Vector2( 1, -5 )
+shape = SubResource( 4 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
+
+[node name="RoomToHallwayPortal" parent="." instance=ExtResource( 5 )]
+collision_layer = 64
+collision_mask = 2
+next_scene_path = "res://HallwayNight.tscn"
+player_spawn_location = Vector2( 111, 169 )
+
+[node name="CollisionShape2D" parent="RoomToHallwayPortal" index="0"]
+position = Vector2( 32, 102 )
+
+[editable path="Camera2D"]
+[editable path="RoomToHallwayPortal"]
