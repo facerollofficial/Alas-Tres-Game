@@ -9,7 +9,6 @@
 [ext_resource path="res://Player/PlayerPortal.gd" type="Script" id=7]
 [ext_resource path="res://Maps/Hallway/HallwaytoSalaPortal.tscn" type="PackedScene" id=8]
 
-
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 0, 48 )
 
@@ -78,7 +77,7 @@ shape = SubResource( 3 )
 [node name="RoomToHallwayPortal" parent="." instance=ExtResource( 6 )]
 collision_layer = 64
 collision_mask = 2
-next_scene_path = "res://MCroom.tscn"
+next_scene_path = "res://Maps/Main_Char_Room/MCroom.tscn"
 player_spawn_location = Vector2( 32, 115 )
 
 [node name="CollisionShape2D" parent="RoomToHallwayPortal" index="0"]
@@ -87,7 +86,7 @@ position = Vector2( 110, 176 )
 [node name="HallwaytoSalaPortal" parent="." instance=ExtResource( 8 )]
 collision_layer = 128
 collision_mask = 2
-next_scene_path = "res://SalaNight.tscn"
+next_scene_path = "res://Maps/Sala/SalaNight.tscn"
 player_spawn_location = Vector2( 300, 29 )
 
 [node name="CollisionShape2D" parent="HallwaytoSalaPortal" index="0"]
