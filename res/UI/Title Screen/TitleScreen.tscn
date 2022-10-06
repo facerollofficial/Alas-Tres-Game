@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Title Screen/TitleScreen2.png" type="Texture" id=1]
+[ext_resource path="res://UI/Title Screen/Buttons/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/Title Screen/TitleScreen.gd" type="Script" id=3]
+
+[node name="TitleScreen" type="Control"]
+script = ExtResource( 3 )
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 288.0
+margin_bottom = 164.0
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 256.0
+margin_bottom = 80.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 84.0
+margin_right = 256.0
+margin_bottom = 152.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 256.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
+
+[node name="Label" parent="Menu/CenterRow/Buttons/NewGame" index="0"]
+text = "New Game"
+
+[node name="Continue" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
+margin_top = 24.0
+margin_bottom = 44.0
+
+[node name="Label" parent="Menu/CenterRow/Buttons/Continue" index="0"]
+margin_left = -41.5
+margin_right = 41.5
+text = "Resume"
+
+[node name="Options" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
+margin_top = 48.0
+margin_bottom = 68.0
+
+[node name="Label" parent="Menu/CenterRow/Buttons/Options" index="0"]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_bottom = 15.0
+text = "Options"
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/NewGame" to="." method="_on_NewGame_pressed"]
+
+[editable path="Menu/CenterRow/Buttons/NewGame"]
+[editable path="Menu/CenterRow/Buttons/Continue"]
+[editable path="Menu/CenterRow/Buttons/Options"]
