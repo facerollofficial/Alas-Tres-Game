@@ -81,7 +81,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Alas Tres"
-run/main_scene="res://UI/Intro/Intro Scripts/Intro1.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
