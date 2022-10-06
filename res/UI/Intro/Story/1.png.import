@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrassEffect.png-5388ffa9dc5efca59f8fab14602285b7.stex"
+path="res://.import/1.png-981ca915e5e6837d898b59c3474a4af9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Effects/Critter/GrassEffect.png"
-dest_files=[ "res://.import/GrassEffect.png-5388ffa9dc5efca59f8fab14602285b7.stex" ]
+source_file="res://UI/Intro/Story/1.png"
+dest_files=[ "res://.import/1.png-981ca915e5e6837d898b59c3474a4af9.stex" ]
 
 [params]
 

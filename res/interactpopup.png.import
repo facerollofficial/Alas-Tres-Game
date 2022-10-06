@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/7.png-7b1a562cff2f2c608481471c0ce86019.stex"
+path="res://.import/interactpopup.png-9e8a4750850172d66d84f654559d7803.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Intro/1/Story/7.png"
-dest_files=[ "res://.import/7.png-7b1a562cff2f2c608481471c0ce86019.stex" ]
+source_file="res://interactpopup.png"
+dest_files=[ "res://.import/interactpopup.png-9e8a4750850172d66d84f654559d7803.stex" ]
 
 [params]
 

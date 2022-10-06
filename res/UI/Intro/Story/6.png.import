@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Godot Engine-export.png-e15f23da35156f50f2c28944ec57cead.stex"
+path="res://.import/6.png-37dd9a21d663772bee3fc084bb4bb860.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Intro/1/Godot Engine-export.png"
-dest_files=[ "res://.import/Godot Engine-export.png-e15f23da35156f50f2c28944ec57cead.stex" ]
+source_file="res://UI/Intro/Story/6.png"
+dest_files=[ "res://.import/6.png-37dd9a21d663772bee3fc084bb4bb860.stex" ]
 
 [params]
 

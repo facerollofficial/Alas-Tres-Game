@@ -1,7 +1,7 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
 [sub_resource type="DynamicFontData" id=1]
-font_path = "res://ChiKareGo2.ttf"
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [resource]
 size = 12

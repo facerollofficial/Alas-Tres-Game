@@ -10,9 +10,13 @@ func _ready():
 	var new_dialog = Dialogic.start('StoryIntro')
 	add_child(new_dialog)
 	yield(get_tree().create_timer(59),"timeout")
-	get_tree().change_scene("res://World.tscn")
+	next_scene()
 	
 func _process(delta):
 	if IntroIsPlayed:
 		if Input.is_action_just_pressed("ui_accept"):
-			get_tree().change_scene("res://World.tscn")
+			queue_free()
+			next_scene()
+
+func next_scene():
+	get_tree().change_scene("res://Reference/World.tscn")

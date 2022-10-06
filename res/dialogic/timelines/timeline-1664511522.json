@@ -10,7 +10,7 @@
 			"event_id": "dialogic_031",
 			"event_name": "BackgroundMusic",
 			"fade_length": 0.1,
-			"file": "res://Music and Sounds/RPG_The_Maw_of_the_Witches_Den_Intro_.ogg",
+			"file": "res://Audio/BGM/StoryIntro.ogg",
 			"volume": 0
 		},
 		{
