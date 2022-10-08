@@ -10,7 +10,7 @@ export var I_FRAME_DURATION = 0.05
 export var HURTBOX_COOLDOWN = 1.5
 
 enum {
-	MOVE, ROLL, ATTACK
+	MOVE, ROLL, ATTACK, BUSY
 }
 
 var state = MOVE
@@ -40,8 +40,12 @@ func _physics_process(delta):
 			roll_state(delta)
 		ATTACK:
 			attack_state(delta)
-	
-	
+		BUSY:
+			busy_state(delta)
+
+func busy_state(delta):
+	pass
+
 func move_state(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")

@@ -10,7 +10,6 @@
 [ext_resource path="res://Audio/SFX/Player/Evade.wav" type="AudioStream" id=8]
 [ext_resource path="res://Effects/Shaders/WhiteColor.shader" type="Shader" id=9]
 
-
 [sub_resource type="ShaderMaterial" id=55]
 shader = ExtResource( 9 )
 shader_param/active = false
@@ -929,7 +928,6 @@ material = SubResource( 55 )
 position = Vector2( 0, -9 )
 texture = ExtResource( 2 )
 hframes = 60
-frame = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -998,7 +996,6 @@ anims/Stop = SubResource( 53 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]
-[connection signal="invincibility_started" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_started"]
 
 [editable path="HitboxPivot/PagiHitbox"]
 [editable path="Hurtbox"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Maps/Sprites/FOREST_NORMAL.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://World/forestGrassFlowerStone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/forestGrassStone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Extras/Camera/Camera2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/1_Tiyanak/Tiyanak.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 0, 257 )
@@ -64,8 +66,24 @@ position = Vector2( 0, -76 )
 [node name="bottomRight" parent="Camera2D/Limits" index="1"]
 position = Vector2( 512, 179 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 90.0
+margin_bottom = 18.0
+
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( 0, 1 )
+
+[node name="Tiyanak" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 180, 15 )
+MAX_SPEED = 70
+
+[node name="Tiyanak2" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 224, 66 )
+MAX_SPEED = 70
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 12, 50 )
