@@ -14,7 +14,7 @@ func _get_configuration_warning() ->String:
 		return ""
 
 #when character enters the portal(CollisionShape2D)
-func _on_RoomToHallwayPortal_body_entered(body):
+func _on_Portal_body_entered(body):
 	Global.player_initial_map_position = player_spawn_location
 	if body.name == 'Player':
 		if get_tree().change_scene(next_scene_path) != OK:
