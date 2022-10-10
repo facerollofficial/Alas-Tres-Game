@@ -1,0 +1,239 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Maps/Sprites/OUTSIDE SCENE.png" type="Texture" id=1]
+[ext_resource path="res://World/Bus.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Extras/Camera/Camera2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Shed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/BushGrp1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/tree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/GrassGrp1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/cliffHouse.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/home.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/cliffFrontHouse.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/GrassBackground.png" type="Texture" id=12]
+[ext_resource path="res://World/DirtTileset.png" type="Texture" id=13]
+[ext_resource path="res://World/Bush.tscn" type="PackedScene" id=14]
+[ext_resource path="res://World/flowergrp1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://World/flowergrp2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://World/stone.tscn" type="PackedScene" id=17]
+[ext_resource path="res://World/grassOuttside.tscn" type="PackedScene" id=18]
+[ext_resource path="res://World/flowergrp3.tscn" type="PackedScene" id=19]
+[ext_resource path="res://World/treegrp1.tscn" type="PackedScene" id=20]
+[ext_resource path="res://World/barrel.tscn" type="PackedScene" id=21]
+[ext_resource path="res://World/treegrp2.tscn" type="PackedScene" id=22]
+[ext_resource path="res://World/flower.tscn" type="PackedScene" id=23]
+[ext_resource path="res://World/grassgrp2.tscn" type="PackedScene" id=24]
+[ext_resource path="res://World/flowergrp4.tscn" type="PackedScene" id=25]
+[ext_resource path="res://World/cliffBackHouse.tscn" type="PackedScene" id=26]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -1.52588e-05, -502 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 0, -108 )
+b = Vector2( 0, 179 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( 0, 179 )
+b = Vector2( 0, 123 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 121, 126 )
+
+[node name="topLeft" parent="Camera2D/Limits" index="0"]
+position = Vector2( -1, -108 )
+
+[node name="bottomRight" parent="Camera2D/Limits" index="1"]
+position = Vector2( 512, 180 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 256, 36 )
+texture = ExtResource( 1 )
+
+[node name="GrassBackground" type="Sprite" parent="Sprite"]
+position = Vector2( 144.5, 20 )
+scale = Vector2( 1.04688, 1 )
+texture = ExtResource( 12 )
+
+[node name="GrassBackground2" type="Sprite" parent="Sprite"]
+position = Vector2( 143, 55 )
+scale = Vector2( 1.06321, 1 )
+texture = ExtResource( 12 )
+
+[node name="DirtTileset" type="Sprite" parent="Sprite"]
+visible = false
+position = Vector2( 135, 65 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 49.3707, 2.12931, 13.3063, 43.4952 )
+
+[node name="GrassBackground3" type="Sprite" parent="Sprite"]
+position = Vector2( -34, -104 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 50.3025, 0.870115, 13.5947, 18.4815 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 10, 180 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 512, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, -108, 512, -109, 512, -59, 499, -63, 496, -71, 492, -73, 480, -71, 470, -74, 467, -81, 464, -87, 454, -90, 453, -106, 428, -106, 427, -89, 419, -85, 414, -84, 406, -85, 397, -81, 389, -84, 380, -79, 372, -81, 371, -85, 362, -86, 362, -80, 355, -79, 349, -81, 348, -77, 341, -75, 332, -75, 328, -78, 320, -75, 313, -77, 309, -94, 311, -106, 315, -107, 272, -107, 272, -77, 228, -77, 225, -107, 181, -106, 180, -97, 171, -97, 165, -93, 157, -92, 155, -86, 151, -88, 144, -88, 142, -82, 131, -84, 128, -86, 125, -86, 123, -82, 119, -84, 114, -84, 112, -89, 108, -87, 105, -87, 103, -89, 99, -89, 97, -94, 92, -94, 92, -97, 88, -97, 83, -98, 82, -106, 30, -106, 42, -96, 43, -90, 43, -84, 41, -79, 39, -73, 32, -70, 31, -66, 28, -66, 24, -67, 21, -68, 18, -68, 18, -65, 16, -65, 15, -61, 10, -62, 10, -59, 7, -59, 5, -52, 0, -53 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 52, 96, 52, 96, 13, 77, 13, 76, 23, 52, 21, 50, 27, 35, 25, 16, 21, 13, 17, 15, 10, 17, 10, 17, 8, 12, 4, 5, 4, 5, -1, 12, 2, 19, -1, 24, -5, 26, -16, 32, -19, 33, -25, 38, -27, 41, -24, 45, -27, 54, -25, 60, -27, 62, -40, 71, -40, 68, -33, 70, -30, 74, -29, 77, -27, 79, -22, 85, -20, 88, -19, 90, -23, 91, -19, 91, -10, 96, -10, 96, -44, 1, -44 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 96, 24, 213, 25, 213, 39, 225, 39, 226, 16, 221, 12, 96, 12 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 271, -76, 273, 36, 265, 37, 264, -76 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 218, -21, 218, -58, 230, -58, 230, -22, 223, -8, 219, -8 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 494, 101, 481, 100, 475, 98, 472, 92, 468, 92, 467, 87, 466, 79, 467, 76, 470, 73, 480, 73, 480, 72, 491, 72, 491, 71, 497, 71, 502, 75, 502, 84, 504, 84, 504, 86, 502, 86, 501, 91, 500, 93, 498, 94, 496, 95, 495, 99 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( 0, 1 )
+
+[node name="cliffHouse" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 399, 31 )
+
+[node name="YSort" type="YSort" parent="YSort/cliffHouse"]
+
+[node name="Player" parent="YSort/cliffHouse/YSort" instance=ExtResource( 3 )]
+position = Vector2( -278, 94 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/cliffHouse/YSort/Player"]
+remote_path = NodePath("../../../../../Camera2D")
+
+[node name="tree6" parent="YSort/cliffHouse/YSort" instance=ExtResource( 7 )]
+position = Vector2( -91, -61 )
+
+[node name="stone1" parent="YSort/cliffHouse/YSort" instance=ExtResource( 17 )]
+position = Vector2( -71, -52 )
+
+[node name="Bus" parent="YSort/cliffHouse/YSort" instance=ExtResource( 2 )]
+position = Vector2( -335, 98 )
+
+[node name="Shed" parent="YSort/cliffHouse/YSort" instance=ExtResource( 5 )]
+position = Vector2( -279, 67 )
+
+[node name="tree1" parent="YSort/cliffHouse/YSort" instance=ExtResource( 7 )]
+position = Vector2( -183, 60 )
+
+[node name="tree2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 7 )]
+position = Vector2( -146, 61 )
+
+[node name="tree3" parent="YSort/cliffHouse/YSort" instance=ExtResource( 7 )]
+position = Vector2( -369, 61 )
+
+[node name="tree4" parent="YSort/cliffHouse/YSort" instance=ExtResource( 7 )]
+position = Vector2( -328, 61 )
+
+[node name="tree5" parent="YSort/cliffHouse/YSort" instance=ExtResource( 7 )]
+position = Vector2( 95, 12 )
+
+[node name="bushgrp1" parent="YSort/cliffHouse/YSort" instance=ExtResource( 6 )]
+position = Vector2( -173, 75 )
+
+[node name="bushgrp2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 6 )]
+position = Vector2( -390, 78 )
+
+[node name="grassgrp1" parent="YSort/cliffHouse/YSort" instance=ExtResource( 8 )]
+position = Vector2( -125, 44 )
+
+[node name="frontcliff" parent="YSort/cliffHouse/YSort" instance=ExtResource( 11 )]
+position = Vector2( 1, 82 )
+
+[node name="house" parent="YSort/cliffHouse/YSort" instance=ExtResource( 10 )]
+position = Vector2( 1, 19 )
+
+[node name="Stone" parent="YSort/cliffHouse/YSort" instance=ExtResource( 17 )]
+position = Vector2( -100, 59 )
+
+[node name="Bush" parent="YSort/cliffHouse/YSort" instance=ExtResource( 14 )]
+position = Vector2( -92, 48 )
+
+[node name="flowergrp1" parent="YSort/cliffHouse/YSort" instance=ExtResource( 15 )]
+position = Vector2( -94, -17 )
+
+[node name="grass1" parent="YSort/cliffHouse/YSort" instance=ExtResource( 18 )]
+position = Vector2( -83, 9 )
+
+[node name="grass2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 18 )]
+position = Vector2( 67, 11 )
+
+[node name="flowergrp2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 16 )]
+position = Vector2( -45, -45 )
+
+[node name="Bush2" parent="YSort/cliffHouse/YSort/flowergrp2" instance=ExtResource( 14 )]
+position = Vector2( 14, -9 )
+
+[node name="grass3" parent="YSort/cliffHouse/YSort" instance=ExtResource( 18 )]
+position = Vector2( -87, 61 )
+
+[node name="grassgrp2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 19 )]
+position = Vector2( 39, -48 )
+
+[node name="tree7" parent="YSort/cliffHouse/YSort" instance=ExtResource( 20 )]
+position = Vector2( 80, -56 )
+
+[node name="barrel" parent="YSort/cliffHouse/YSort" instance=ExtResource( 21 )]
+position = Vector2( 3, -50 )
+
+[node name="grassgrp3" parent="YSort/cliffHouse/YSort" instance=ExtResource( 24 )]
+position = Vector2( -68, -29 )
+
+[node name="tree8" parent="YSort/cliffHouse/YSort" instance=ExtResource( 22 )]
+position = Vector2( -260, -74 )
+
+[node name="grass4" parent="YSort/cliffHouse/YSort" instance=ExtResource( 18 )]
+position = Vector2( -214, -83 )
+
+[node name="grass5" parent="YSort/cliffHouse/YSort" instance=ExtResource( 18 )]
+position = Vector2( -206, -74 )
+
+[node name="flower" parent="YSort/cliffHouse/YSort" instance=ExtResource( 23 )]
+position = Vector2( -216, -75 )
+
+[node name="stone" parent="YSort/cliffHouse/YSort" instance=ExtResource( 17 )]
+position = Vector2( -360, -41 )
+
+[node name="stone2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 17 )]
+position = Vector2( -349, -37 )
+
+[node name="stone3" parent="YSort/cliffHouse/YSort" instance=ExtResource( 17 )]
+position = Vector2( -354, -31 )
+
+[node name="stone4" parent="YSort/cliffHouse/YSort" instance=ExtResource( 17 )]
+position = Vector2( -345, -31 )
+
+[node name="flower2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 23 )]
+position = Vector2( -362, -28 )
+
+[node name="Node2D" parent="YSort/cliffHouse/YSort" instance=ExtResource( 25 )]
+position = Vector2( -242, -47 )
+
+[node name="Node2D2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 26 )]
+position = Vector2( 1, -67 )
+
+[node name="Bush2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 14 )]
+position = Vector2( 37, -54 )
+
+[editable path="Camera2D"]
