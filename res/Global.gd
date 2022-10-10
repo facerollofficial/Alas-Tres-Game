@@ -8,7 +8,8 @@ enum ItemRarity{
 	LEGENDARY
 }
 
-var player_initial_map_position = Vector2(197,115) #sets the initial position of character
+var player_initial_map_position = Vector2(197,115) #sets the initial position of character for night scene
+var player_initial_map_position2 = Vector2(120,115) #sets the initial position of character for morning scene
 var player_facing_direction = 1
 #if true means dialogue will appear else dialogue will not appear
 var dia_active = true

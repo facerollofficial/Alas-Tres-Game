@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Maps/Sprites/OUTSIDE SCENE.png" type="Texture" id=1]
 [ext_resource path="res://World/Bus.tscn" type="PackedScene" id=2]
@@ -26,6 +26,9 @@
 [ext_resource path="res://World/grassgrp2.tscn" type="PackedScene" id=24]
 [ext_resource path="res://World/flowergrp4.tscn" type="PackedScene" id=25]
 [ext_resource path="res://World/cliffBackHouse.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Maps/Portal.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Player/PlayerPortalMorning.gd" type="Script" id=28]
+[ext_resource path="res://Maps/Portal2.gd" type="Script" id=29]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -1.52588e-05, -502 )
@@ -37,6 +40,9 @@ b = Vector2( 0, 179 )
 [sub_resource type="SegmentShape2D" id=3]
 a = Vector2( 0, 179 )
 b = Vector2( 0, 123 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 2 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -64,11 +70,28 @@ scale = Vector2( 1.06321, 1 )
 texture = ExtResource( 12 )
 
 [node name="DirtTileset" type="Sprite" parent="Sprite"]
-visible = false
-position = Vector2( 135, 65 )
+position = Vector2( -131, -34 )
+rotation = 1.5708
+scale = Vector2( 1, 0.958563 )
 texture = ExtResource( 13 )
 region_enabled = true
-region_rect = Rect2( 49.3707, 2.12931, 13.3063, 43.4952 )
+region_rect = Rect2( 127.922, 0.71335, 21.0432, 61.2538 )
+
+[node name="DirtTileset2" type="Sprite" parent="Sprite"]
+position = Vector2( -85, -34 )
+rotation = 1.5708
+scale = Vector2( 1, 0.958563 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 127.922, 0.71335, 21.0432, 61.2538 )
+
+[node name="DirtTileset3" type="Sprite" parent="Sprite"]
+position = Vector2( -53, -35 )
+rotation = 1.5708
+scale = Vector2( 1, 0.958563 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 127.922, 0.71335, 21.0432, 52.3799 )
 
 [node name="GrassBackground3" type="Sprite" parent="Sprite"]
 position = Vector2( -34, -104 )
@@ -118,6 +141,8 @@ position = Vector2( 399, 31 )
 
 [node name="Player" parent="YSort/cliffHouse/YSort" instance=ExtResource( 3 )]
 position = Vector2( -278, 94 )
+script = ExtResource( 28 )
+ROLL_SPEED = 100
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/cliffHouse/YSort/Player"]
 remote_path = NodePath("../../../../../Camera2D")
@@ -236,4 +261,16 @@ position = Vector2( 1, -67 )
 [node name="Bush2" parent="YSort/cliffHouse/YSort" instance=ExtResource( 14 )]
 position = Vector2( 37, -54 )
 
+[node name="Portal" parent="." instance=ExtResource( 27 )]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource( 29 )
+next_scene_path = "res://Maps/Sala/SalaDay.tscn"
+player_spawn_location = Vector2( 160, 169 )
+
+[node name="CollisionShape2D" parent="Portal" index="0"]
+position = Vector2( 400, 90 )
+shape = SubResource( 4 )
+
 [editable path="Camera2D"]
+[editable path="Portal"]

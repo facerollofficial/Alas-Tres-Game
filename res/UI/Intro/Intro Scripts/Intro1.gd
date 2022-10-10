@@ -19,4 +19,4 @@ func _process(delta):
 			next_scene()
 
 func next_scene():
-	get_tree().change_scene("res://Reference/World.tscn")
+	get_tree().change_scene("res://UI/Title Screen/TitleScreen.tscn")

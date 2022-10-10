@@ -31,7 +31,7 @@ func _ready():
 	animationTree.active = true
 	pagiHitbox.knockback_vector = roll_vector
 	#set the initial position of the character start and maintain the current position of character after change scene
-	self.global_position = Global.player_initial_map_position
+	self.global_position = Global.player_initial_map_position2
 
 func _physics_process(delta):
 	
