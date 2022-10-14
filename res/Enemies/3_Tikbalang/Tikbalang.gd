@@ -29,3 +29,19 @@ onready var animationPlayer = $AnimationPlayer
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+
+func _physics_process(delta):
+	
+	match state:
+		IDLE:
+			pass
+		WANDER:
+			pass
+		CHASE:
+			pass
+		ATTACK:
+			pass
+
+func seek_player():
+	if playerDetectionZone.can_see_player():
+		state = CHASE

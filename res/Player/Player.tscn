@@ -928,6 +928,7 @@ material = SubResource( 55 )
 position = Vector2( 0, -9 )
 texture = ExtResource( 2 )
 hframes = 60
+frame = 36
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -968,7 +969,6 @@ __meta__ = {
 }
 
 [node name="PagiHitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
-visible = false
 position = Vector2( 15, 0 )
 collision_mask = 8
 script = ExtResource( 4 )
