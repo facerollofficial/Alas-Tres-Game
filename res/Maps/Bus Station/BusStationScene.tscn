@@ -80,7 +80,7 @@ tracks/0/keys = {
 script = ExtResource( 30 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 121, 126 )
+position = Vector2( 402, 101 )
 
 [node name="topLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2( -1, -108 )
@@ -173,7 +173,7 @@ position = Vector2( 399, 31 )
 [node name="YSort" type="YSort" parent="YSort/cliffHouse"]
 
 [node name="Player" parent="YSort/cliffHouse/YSort" instance=ExtResource( 3 )]
-position = Vector2( -278, 94 )
+position = Vector2( 3, 69 )
 script = ExtResource( 28 )
 ROLL_SPEED = 100
 
