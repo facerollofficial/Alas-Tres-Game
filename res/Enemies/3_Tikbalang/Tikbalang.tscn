@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.png" type="Texture" id=1]
 [ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/SoftCollision.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Enemy Scripts/WanderController.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemies/Enemy Scripts/PlayerDetectionZone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/Enemy Scripts/AttackZone.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape2D" id=19]
 radius = 8.0
@@ -692,9 +693,7 @@ shape = SubResource( 49 )
 [node name="Stats" parent="." instance=ExtResource( 5 )]
 max_health = 4
 
-[node name="AttackZone" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+[node name="AttackZone" parent="." instance=ExtResource( 9 )]
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 8 )]
 
@@ -702,3 +701,4 @@ max_health = 4
 
 [editable path="Hitbox"]
 [editable path="SoftCollision"]
+[editable path="AttackZone"]
