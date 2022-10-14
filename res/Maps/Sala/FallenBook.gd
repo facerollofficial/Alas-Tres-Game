@@ -30,4 +30,4 @@ func flash():
 	
 func _process(delta):
 	if dissolvePlayed == true:
-		$YSort/TransitionScene.transition()
+		$TransitionScene.transition()

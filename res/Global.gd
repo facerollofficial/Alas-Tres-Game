@@ -15,6 +15,7 @@ var player_facing_direction = 1
 var dia_active = true
 #incremented when hallway dialogue is done, this is used so that hallway dialogue will not repeat
 var minNum: int = 0 
+var IsPlayed = false
 
 var screen_width: int=ProjectSettings.get_setting("display/window/size/width")
 var screen_height: int=ProjectSettings.get_setting("display/window/size/height")

@@ -16,7 +16,7 @@
 [ext_resource path="res://world assets/home scene/fallen book.png" type="Texture" id=14]
 [ext_resource path="res://Maps/Sala/FallenBook.gd" type="Script" id=15]
 [ext_resource path="res://Maps/Sala/Teleport.gdshader" type="Shader" id=16]
-[ext_resource path="res://Maps/Sala/TransitionScene.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Extras/Transitions/TransitionScene.tscn" type="PackedScene" id=17]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 0, 187 )
@@ -90,6 +90,9 @@ polygon = PoolVector2Array( 227, -3, 227, -6, 233, -12, 234, -12, 239, -7, 239, 
 position = Vector2( 233, -5 )
 shape = SubResource( 3 )
 
+[node name="TransitionScene" parent="FallenBook" instance=ExtResource( 17 )]
+next_scene = "res://Maps/Forest/ForestNormal.tscn"
+
 [node name="YSort" type="YSort" parent="FallenBook"]
 
 [node name="Player" parent="FallenBook/YSort" instance=ExtResource( 3 )]
@@ -132,8 +135,6 @@ position = Vector2( 151, 160 )
 
 [node name="sofa" parent="FallenBook/YSort" instance=ExtResource( 7 )]
 position = Vector2( 226, 63 )
-
-[node name="TransitionScene" parent="FallenBook/YSort" instance=ExtResource( 17 )]
 
 [node name="Portal" parent="." instance=ExtResource( 13 )]
 next_scene_path = "res://Maps/HallwayNight.tscn"

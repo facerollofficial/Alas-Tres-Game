@@ -60,6 +60,7 @@ script = ExtResource( 3 )
 position = Vector2( 160, 90 )
 frames = SubResource( 11 )
 animation = "Animation"
+frame = 1
 playing = true
 
 [node name="Menu" type="VBoxContainer" parent="."]

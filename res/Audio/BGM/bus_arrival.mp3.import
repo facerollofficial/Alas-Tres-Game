@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bus_arrival.mp3-557ef8094e71fdae071885a6ba53c4fb.mp3str"
+
+[deps]
+
+source_file="res://Audio/BGM/bus_arrival.mp3"
+dest_files=[ "res://.import/bus_arrival.mp3-557ef8094e71fdae071885a6ba53c4fb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
