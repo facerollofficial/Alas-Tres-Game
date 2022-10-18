@@ -8,6 +8,5 @@ func target_within_attack_zone():
 func _on_AttackZone_body_entered(body):
 	player = body
 
-
 func _on_AttackZone_body_exited(body):
 	player = null

@@ -7,7 +7,7 @@
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=5]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=6]
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Enemies/Bat/Bat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://NPC/Lolo/Lolo.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Enemies/1_Tiyanak/Tiyanak.tscn" type="PackedScene" id=11]
@@ -529,6 +529,14 @@ disabled = true
 
 [node name="YSort" type="YSort" parent="."]
 
+[node name="Tikbalang" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 381, 92 )
+MAX_SPEED = 70
+
+[node name="Tikbalang2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 443, 116 )
+MAX_SPEED = 70
+
 [node name="Tiyanak" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 10, 151 )
 
@@ -549,9 +557,6 @@ position = Vector2( 144, 72 )
 
 [node name="Bush" parent="YSort/Bushes" instance=ExtResource( 2 )]
 position = Vector2( 113, 68 )
-
-[node name="Bush7" parent="YSort/Bushes" instance=ExtResource( 2 )]
-position = Vector2( 16, 130 )
 
 [node name="Bush8" parent="YSort/Bushes" instance=ExtResource( 2 )]
 position = Vector2( 16, 114 )
@@ -594,9 +599,6 @@ position = Vector2( 304, 80 )
 
 [node name="Bush17" parent="YSort/Bushes" instance=ExtResource( 2 )]
 position = Vector2( 304, 98 )
-
-[node name="Bush18" parent="YSort/Bushes" instance=ExtResource( 2 )]
-position = Vector2( 304, 114 )
 
 [node name="Bush20" parent="YSort/Bushes" instance=ExtResource( 2 )]
 position = Vector2( 304, 148 )
@@ -656,9 +658,6 @@ position = Vector2( 224, 32 )
 
 [node name="Grass17" parent="YSort/Grass" instance=ExtResource( 7 )]
 position = Vector2( 240, 32 )
-
-[node name="Bat3" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 248, 64 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
