@@ -404,6 +404,8 @@ tracks/0/keys = {
 position = Vector2( 0, 1 )
 collision_layer = 16
 script = ExtResource( 1 )
+ACCELERATION = 250
+MAX_SPEED = 40
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 position = Vector2( 0, 4 )

@@ -869,6 +869,7 @@ tracks/0/keys = {
 [node name="Tikbalang" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 3 )
+MAX_SPEED = 60
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 position = Vector2( 0, 4 )
@@ -935,7 +936,7 @@ position = Vector2( 0, -8 )
 shape = SubResource( 49 )
 
 [node name="Stats" parent="." instance=ExtResource( 5 )]
-max_health = 4
+max_health = 5
 
 [node name="AttackZone" parent="." instance=ExtResource( 9 )]
 collision_layer = 0
