@@ -72,10 +72,10 @@ func _physics_process(delta):
 		ATTACK:
 			velocity = Vector2.ZERO
 			animationState.travel("Attack")
-			yield(get_tree().create_timer(0.7),"timeout")
+			yield(get_tree().create_timer(0.8),"timeout")
 
 	if softCollision.is_colliding():
-			velocity += softCollision.get_push_vector() * delta * 400
+			velocity += softCollision.get_push_vector() * delta * 250
 	velocity = move_and_slide(velocity)
 
 func attack_animation_finished():

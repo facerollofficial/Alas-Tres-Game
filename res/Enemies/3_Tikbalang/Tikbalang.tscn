@@ -10,12 +10,10 @@
 [ext_resource path="res://Enemies/Enemy Scripts/PlayerDetectionZone.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/Enemy Scripts/AttackZone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Effects/Shaders/WhiteColor.shader" type="Shader" id=11]
+[ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.tres" type="Material" id=11]
 
-[sub_resource type="ShaderMaterial" id=59]
-resource_local_to_scene = true
-shader = ExtResource( 11 )
-shader_param/active = false
+[sub_resource type="CanvasItemMaterial" id=59]
+light_mode = 2
 
 [sub_resource type="CapsuleShape2D" id=19]
 radius = 8.0
@@ -867,6 +865,7 @@ tracks/0/keys = {
 }
 
 [node name="Tikbalang" type="KinematicBody2D"]
+material = SubResource( 59 )
 collision_layer = 16
 script = ExtResource( 3 )
 MAX_SPEED = 60
@@ -876,12 +875,12 @@ position = Vector2( 0, 4 )
 texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 59 )
+material = ExtResource( 11 )
 position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
-frame = 7
+frame = 29
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -916,7 +915,6 @@ parameters/Run/blend_position = Vector2( -0.00259739, 0.673276 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
-rotation = 3.14159
 __meta__ = {
 "_gizmo_extents_": 8.0
 }
@@ -925,11 +923,12 @@ __meta__ = {
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="HitboxPivot/TikbalangHitbox" index="0"]
-position = Vector2( 3.8147e-06, 21 )
+position = Vector2( 2, 11 )
 rotation = 1.5708
 shape = SubResource( 48 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 0, -8 )
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
@@ -939,6 +938,7 @@ shape = SubResource( 49 )
 max_health = 5
 
 [node name="AttackZone" parent="." instance=ExtResource( 9 )]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -946,6 +946,7 @@ collision_mask = 2
 shape = SubResource( 51 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 shape = SubResource( 50 )
@@ -954,6 +955,7 @@ shape = SubResource( 50 )
 visible = false
 
 [node name="Hurtbox" parent="." instance=ExtResource( 10 )]
+visible = false
 position = Vector2( 0, -8 )
 collision_layer = 8
 
