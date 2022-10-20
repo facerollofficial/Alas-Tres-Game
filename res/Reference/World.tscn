@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://NPC/Lolo/Lolo.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Enemies/1_Tiyanak/Tiyanak.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Effects/Lights/light.png" type="Texture" id=12]
+[ext_resource path="res://Enemies/2_Manananggal/Manananggal.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -684,3 +685,9 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 96.0
 margin_bottom = 24.0
+
+[node name="Manananggal" parent="." instance=ExtResource( 13 )]
+position = Vector2( 280, 120 )
+
+[node name="Manananggal2" parent="." instance=ExtResource( 13 )]
+position = Vector2( -33, 154 )
