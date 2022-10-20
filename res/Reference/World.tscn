@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=2]
@@ -9,10 +9,13 @@
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=9]
-[ext_resource path="res://NPC/Lolo/Lolo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Extras/Tilemaps/Tree.png" type="Texture" id=10]
 [ext_resource path="res://Enemies/1_Tiyanak/Tiyanak.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Effects/Lights/light.png" type="Texture" id=12]
+[ext_resource path="res://Extras/Tilemaps/DirtTileset1.png" type="Texture" id=12]
 [ext_resource path="res://Enemies/2_Manananggal/Manananggal.tscn" type="PackedScene" id=13]
+
+[sub_resource type="ConvexPolygonShape2D" id=52]
+points = PoolVector2Array( 0, 0, 16, 0, 3.73082, 4.40062, 0, 16 )
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -34,10 +37,40 @@
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 52 )
 0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 52 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 0/z_index = 0
+1/name = "DirtTileset1.png 1"
+1/texture = ExtResource( 12 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 176, 80 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 54, Vector2( 0, 3 ), 48, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 63, Vector2( 1, 3 ), 56, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 219, Vector2( 2, 2 ), 27, Vector2( 2, 3 ), 24, Vector2( 3, 0 ), 144, Vector2( 3, 1 ), 146, Vector2( 3, 2 ), 18, Vector2( 3, 3 ), 16, Vector2( 4, 0 ), 176, Vector2( 4, 1 ), 182, Vector2( 4, 2 ), 434, Vector2( 4, 3 ), 50, Vector2( 4, 4 ), 178, Vector2( 5, 0 ), 248, Vector2( 5, 1 ), 255, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 59, Vector2( 5, 4 ), 251, Vector2( 6, 0 ), 440, Vector2( 6, 1 ), 447, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 62, Vector2( 6, 4 ), 446, Vector2( 7, 0 ), 152, Vector2( 7, 1 ), 155, Vector2( 7, 2 ), 218, Vector2( 7, 3 ), 26, Vector2( 7, 4 ), 154, Vector2( 8, 0 ), 184, Vector2( 8, 1 ), 191, Vector2( 8, 2 ), 506, Vector2( 8, 3 ), 58, Vector2( 8, 4 ), 186, Vector2( 9, 0 ), 443, Vector2( 9, 1 ), 254, Vector2( 9, 2 ), 442, Vector2( 9, 3 ), 190, Vector2( 10, 2 ), 250, Vector2( 10, 3 ), 187 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -491,8 +524,31 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="CanvasItemMaterial" id=51]
 light_mode = 2
 
-[sub_resource type="CanvasItemMaterial" id=50]
-light_mode = 2
+[sub_resource type="ConvexPolygonShape2D" id=54]
+points = PoolVector2Array( 3.72151, 9.76828, 17.2104, 13.4894, 28.1411, 10.0008, 32, 23.7224, 32, 37.909, 29.304, 43.0255, 25.5829, 46.7466, 18.3733, 47.9094, 10.0009, 47.2117, 3.25638, 42.7929, 0.232986, 38.1416, 0, 25.1178 )
+
+[sub_resource type="TileSet" id=53]
+0/name = "Tree.png 0"
+0/texture = ExtResource( 10 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 48 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 54 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 54 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
 
 [node name="World" type="Node2D"]
 
@@ -501,13 +557,13 @@ position = Vector2( 160, 88 )
 scale = Vector2( 0.897059, 0.727273 )
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 864, 656 )
+region_rect = Rect2( -347.456, -121.829, 1468.9, 906.655 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -65528, 0, 0, -65527, 0, 2, -65519, 0, 0, -65518, 0, 2, 8, 0, 65536, 9, 0, 65538, 17, 0, 65536, 18, 0, 65538, 65544, 0, 65536, 65545, 0, 65538, 65553, 0, 65536, 65554, 0, 65538, 131080, 0, 65536, 131081, 0, 65538, 131087, 0, 0, 131088, 0, 1, 131089, 0, 131078, 131090, 0, 131077, 131091, 0, 2, 262143, 0, 0, 196608, 0, 1, 196609, 0, 1, 196610, 0, 1, 196611, 0, 1, 196612, 0, 1, 196613, 0, 1, 196614, 0, 1, 196615, 0, 1, 196616, 0, 131078, 196617, 0, 131077, 196618, 0, 1, 196619, 0, 1, 196620, 0, 2, 196623, 0, 65536, 196624, 0, 65537, 196625, 0, 65537, 196626, 0, 65537, 196627, 0, 65538, 327679, 0, 131072, 262144, 0, 131073, 262145, 0, 131073, 262146, 0, 131073, 262147, 0, 131073, 262148, 0, 131073, 262149, 0, 131073, 262150, 0, 65542, 262151, 0, 65541, 262152, 0, 131073, 262153, 0, 131073, 262154, 0, 131073, 262155, 0, 65542, 262156, 0, 65538, 262159, 0, 65536, 262160, 0, 65537, 262161, 0, 65537, 262162, 0, 65537, 262163, 0, 65538, 327686, 0, 65536, 327687, 0, 65538, 327691, 0, 65536, 327692, 0, 65538, 327695, 0, 65536, 327696, 0, 65537, 327697, 0, 65537, 327698, 0, 65537, 327699, 0, 65538, 393220, 0, 0, 393221, 0, 1, 393222, 0, 131078, 393223, 0, 65538, 393227, 0, 65536, 393228, 0, 131077, 393229, 0, 1, 393230, 0, 1, 393231, 0, 131078, 393232, 0, 65537, 393233, 0, 65537, 393234, 0, 65537, 393235, 0, 65538, 458756, 0, 65536, 458757, 0, 65541, 458758, 0, 131073, 458759, 0, 131074, 458763, 0, 131072, 458764, 0, 65542, 458765, 0, 65537, 458766, 0, 65537, 458767, 0, 65537, 458768, 0, 65537, 458769, 0, 65537, 458770, 0, 65537, 458771, 0, 65538, 524288, 0, 0, 524289, 0, 1, 524290, 0, 1, 524291, 0, 1, 524292, 0, 131078, 524293, 0, 65538, 524300, 0, 65536, 524301, 0, 65537, 524302, 0, 65537, 524303, 0, 65541, 524304, 0, 131073, 524305, 0, 131073, 524306, 0, 131073, 524307, 0, 131074, 589824, 0, 131072, 589825, 0, 131073, 589826, 0, 131073, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589836, 0, 65536, 589837, 0, 65537, 589838, 0, 65537, 589839, 0, 65538, 655372, 0, 65540, 655373, 0, 131073, 655374, 0, 131073, 655375, 0, 196613, 655376, 0, 196609, 655377, 0, 196610, 720903, 0, 196611, 720908, 0, 131075 )
+tile_data = PoolIntArray( -196590, 0, 0, -196589, 0, 1, -196588, 0, 1, -196587, 0, 2, -131054, 0, 65540, -131053, 0, 131073, -131052, 0, 65542, -131051, 0, 131077, -131050, 0, 2, -65528, 0, 0, -65527, 0, 2, -65519, 0, 0, -65518, 0, 131079, -65516, 0, 65536, -65515, 0, 65537, -65514, 0, 65538, 8, 0, 65536, 9, 0, 65538, 17, 0, 65536, 18, 0, 65538, 20, 0, 131072, 21, 0, 65542, 22, 0, 65538, 65544, 0, 65536, 65545, 0, 65538, 65553, 0, 65536, 65554, 0, 65538, 65557, 0, 65536, 65558, 0, 65538, 131080, 0, 65536, 131081, 0, 65538, 131087, 0, 0, 131088, 0, 1, 131089, 0, 131078, 131090, 0, 131077, 131091, 0, 2, 131093, 0, 131072, 131094, 0, 65543, 262143, 0, 0, 196608, 0, 1, 196609, 0, 1, 196610, 0, 1, 196611, 0, 1, 196612, 0, 1, 196613, 0, 1, 196614, 0, 1, 196615, 0, 1, 196616, 0, 131078, 196617, 0, 131077, 196618, 0, 1, 196619, 0, 1, 196620, 0, 2, 196623, 0, 65536, 196624, 0, 65537, 196625, 0, 65537, 196626, 0, 65537, 196627, 0, 65538, 196630, 0, 131075, 327679, 0, 131072, 262144, 0, 131073, 262145, 0, 131073, 262146, 0, 131073, 262147, 0, 131073, 262148, 0, 131073, 262149, 0, 131073, 262150, 0, 65542, 262151, 0, 65541, 262152, 0, 131073, 262153, 0, 131073, 262154, 0, 131073, 262155, 0, 65542, 262156, 0, 65538, 262159, 0, 65536, 262160, 0, 65537, 262161, 0, 65537, 262162, 0, 65537, 262163, 0, 65538, 327686, 0, 65536, 327687, 0, 65538, 327691, 0, 65536, 327692, 0, 65538, 327695, 0, 65536, 327696, 0, 65537, 327697, 0, 65537, 327698, 0, 65537, 327699, 0, 65538, 393220, 0, 0, 393221, 0, 1, 393222, 0, 131078, 393223, 0, 65538, 393227, 0, 65536, 393228, 0, 131077, 393229, 0, 1, 393230, 0, 1, 393231, 0, 131078, 393232, 0, 65537, 393233, 0, 65537, 393234, 0, 65537, 393235, 0, 65538, 458756, 0, 65536, 458757, 0, 65541, 458758, 0, 131073, 458759, 0, 131074, 458763, 0, 131072, 458764, 0, 65542, 458765, 0, 65537, 458766, 0, 65537, 458767, 0, 65537, 458768, 0, 65537, 458769, 0, 65537, 458770, 0, 65537, 458771, 0, 65538, 524288, 0, 0, 524289, 0, 1, 524290, 0, 1, 524291, 0, 1, 524292, 0, 131078, 524293, 0, 65538, 524300, 0, 65536, 524301, 0, 65537, 524302, 0, 65537, 524303, 0, 65541, 524304, 0, 131073, 524305, 0, 131073, 524306, 0, 131073, 524307, 0, 131074, 589824, 0, 131072, 589825, 0, 131073, 589826, 0, 131073, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589836, 0, 65536, 589837, 0, 65537, 589838, 0, 65537, 589839, 0, 65538, 655372, 0, 65540, 655373, 0, 131073, 655374, 0, 131073, 655375, 0, 196613, 655376, 0, 196609, 655377, 0, 196610, 720903, 0, 196611, 720908, 0, 131075 )
 
 [node name="DirtCliffTileMap" type="TileMap" parent="."]
 scale = Vector2( 1.00254, 1 )
@@ -515,7 +571,7 @@ tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -65530, 0, 3, 1, 0, 0, 2, 0, 1, 3, 0, 2, 5, 0, 0, 6, 0, 131082, 7, 0, 196610, 65536, 0, 196608, 65537, 0, 196614, 65538, 0, 131073, 65539, 0, 131074, 65541, 0, 131072, 65542, 0, 131074, 262147, 0, 0, 262148, 0, 2, 262150, 0, 0, 262151, 0, 2, 327680, 0, 196608, 327681, 0, 196609, 327682, 0, 196609, 327683, 0, 196614, 327684, 0, 131074, 327686, 0, 131072, 327687, 0, 196613, 327688, 0, 196610 )
+tile_data = PoolIntArray( -196612, 0, 0, -196611, 0, 1, -196610, 0, 1, -196609, 0, 1, -262144, 0, 1, -262143, 0, 1, -262142, 0, 1, -262141, 0, 2, -131076, 0, 131072, -131075, 0, 131073, -131074, 0, 131073, -131073, 0, 65544, -196608, 0, 131073, -196607, 0, 131073, -196606, 0, 65542, -196605, 0, 65538, -65537, 0, 131075, -131070, 0, 131072, -131069, 0, 65543, -65533, 0, 65539, -65530, 0, 3, 65531, 0, 4, 65532, 0, 196609, 65533, 0, 7, 1, 0, 0, 2, 0, 1, 3, 0, 131079, 6, 0, 262148, 7, 0, 196610, 131067, 0, 65539, 131069, 0, 262148, 131070, 0, 196610, 65537, 0, 131072, 65538, 0, 131073, 65539, 0, 131074, 65542, 0, 131075, 196603, 0, 262148, 196604, 0, 196609, 196605, 0, 196615, 262139, 0, 131075, 393212, 0, 0, 393213, 0, 2, 458748, 0, 65536, 458749, 0, 65538, 393218, 0, 0, 393219, 0, 1, 393220, 0, 5, 393221, 0, 196609, 393222, 0, 196609, 393223, 0, 6, 393224, 0, 2, 524283, 0, 196608, 524284, 0, 196614, 524285, 0, 131074, 458753, 0, 196608, 458754, 0, 262150, 458755, 0, 65541, 458756, 0, 131074, 458759, 0, 65540, 458760, 0, 131074, 524290, 0, 131072, 524291, 0, 131074, 524295, 0, 131075, 1114131, 0, 196611 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 pause_mode = 2
@@ -538,17 +594,20 @@ disabled = true
 
 [node name="YSort" type="YSort" parent="."]
 
+[node name="Manananggal" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 280, 120 )
+MAX_SPEED = 70
+
+[node name="Manananggal2" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -33, 154 )
+MAX_SPEED = 70
+
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 pause_mode = 2
 position = Vector2( 168, 98 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
-
-[node name="Light2D" type="Light2D" parent="YSort/Player"]
-texture = ExtResource( 12 )
-texture_scale = 0.5
-energy = 0.6
 
 [node name="Tikbalang" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 381, 92 )
@@ -564,10 +623,6 @@ position = Vector2( 10, 151 )
 [node name="Tiyanak2" parent="YSort" instance=ExtResource( 11 )]
 material = SubResource( 51 )
 position = Vector2( -11, 170 )
-
-[node name="Lolo" parent="YSort" instance=ExtResource( 10 )]
-material = SubResource( 50 )
-position = Vector2( 144, 72 )
 
 [node name="Bushes" type="YSort" parent="YSort"]
 
@@ -675,8 +730,11 @@ position = Vector2( 224, 32 )
 [node name="Grass17" parent="YSort/Grass" instance=ExtResource( 7 )]
 position = Vector2( 240, 32 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0784314, 0.117647, 0.0980392, 1 )
+[node name="TreeTileMap" type="TileMap" parent="YSort"]
+tile_set = SubResource( 53 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65538, 0, 0, 65539, 0, 0, 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 131074, 0, 0, 131075, 0, 0, 262136, 0, 0, 262137, 0, 0, 262138, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 393208, 0, 0, 393210, 0, 0, 393214, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 786424, 0, 0, 786425, 0, 0, 786426, 0, 0, 786427, 0, 0, 851960, 0, 0, 851961, 0, 0, 851962, 0, 0, 917496, 0, 0, 917497, 0, 0, 917498, 0, 0, 917499, 0, 0, 917500, 0, 0, 917501, 0, 0, 983032, 0, 0, 983033, 0, 0, 983034, 0, 0, 983035, 0, 0, 983036, 0, 0, 983037, 0, 0, 983038, 0, 0, 1048569, 0, 0, 1048573, 0, 0, 1048574, 0, 0, 1048575, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 1114110, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -685,9 +743,3 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 96.0
 margin_bottom = 24.0
-
-[node name="Manananggal" parent="." instance=ExtResource( 13 )]
-position = Vector2( 280, 120 )
-
-[node name="Manananggal2" parent="." instance=ExtResource( 13 )]
-position = Vector2( -33, 154 )

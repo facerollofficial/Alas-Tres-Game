@@ -837,10 +837,10 @@ radius = 7.0
 height = 0.0
 
 [sub_resource type="CircleShape2D" id=51]
-radius = 18.1108
+radius = 13.3449
 
 [sub_resource type="CircleShape2D" id=50]
-radius = 115.93
+radius = 94.1253
 
 [sub_resource type="CapsuleShape2D" id=52]
 radius = 8.0
@@ -883,7 +883,7 @@ tracks/0/keys = {
 material = SubResource( 59 )
 collision_layer = 16
 script = ExtResource( 3 )
-MAX_SPEED = 60
+MAX_SPEED = 65
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -954,7 +954,6 @@ shape = SubResource( 49 )
 max_health = 5
 
 [node name="AttackZone" parent="." instance=ExtResource( 9 )]
-visible = false
 collision_layer = 0
 collision_mask = 2
 

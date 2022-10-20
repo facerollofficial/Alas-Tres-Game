@@ -37,6 +37,8 @@ func _ready():
 	animationTree.active = true
 
 func _physics_process(delta):
+	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
+	knockback = move_and_slide(knockback)
 	
 	match state:
 		IDLE:
@@ -131,6 +133,6 @@ func _on_Stats_no_health():
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	knockback = area.knockback_vector * 120
+	knockback = area.knockback_vector * 40
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(0.4)
