@@ -1,0 +1,24 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"character": "character-1664259621.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Here's your drink. So tell me how's your life in Manila apo."
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1666197072.json",
+		"name": "timeline-2"
+	}
+}

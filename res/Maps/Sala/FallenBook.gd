@@ -4,6 +4,7 @@ var dissolvePlayed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$StaticBody2D/AnimationPlayer.play("float")
 	connect("body_entered",self, '_on_Book_body_entered')
 		
 #trigger dialogue when reached the book area

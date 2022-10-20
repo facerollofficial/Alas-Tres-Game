@@ -4,10 +4,12 @@ var active = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimationPlayer.play("fade_in")
 	connect("body_entered",self,'area_entered')
 
 #function for the monologue
 func area_entered(body):
+	yield(get_tree().create_timer(1), "timeout")
 	if body.name == 'Player':
 		if Global.dia_active != false:
 			get_tree().paused = true
