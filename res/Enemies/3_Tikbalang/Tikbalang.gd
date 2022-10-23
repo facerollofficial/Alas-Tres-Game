@@ -60,7 +60,7 @@ func _physics_process(delta):
 		CHASE:
 			change_to_attack()
 			var player = playerDetectionZone.player
-			var target = attackZone.player
+			var _target = attackZone.player
 			if player != null:
 					accelerate_towards_point(player.global_position, delta) 
 			else:
@@ -68,8 +68,6 @@ func _physics_process(delta):
 		CHARGE:
 			velocity = Vector2.ZERO
 			animationState.travel("Charging")
-			yield(get_tree().create_timer(0.4),"timeout")
-			state = ATTACK
 			
 		ATTACK:
 			velocity = Vector2.ZERO
@@ -133,6 +131,10 @@ func _on_Stats_no_health():
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	knockback = area.knockback_vector * 40
+	knockback = area.knockback_vector * 50
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(0.4)
+
+func doneCharging():
+	state = ATTACK
+	print("Hello World")

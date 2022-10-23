@@ -43,7 +43,7 @@ func _physics_process(delta):
 		BUSY:
 			busy_state(delta)
 
-func busy_state(delta):
+func busy_state(_delta):
 	pass
 
 func move_state(delta):
@@ -75,13 +75,13 @@ func move_state(delta):
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
 		
-func roll_state(delta):
+func roll_state(_delta):
 	hurtbox.start_invincibility(I_FRAME_DURATION) # INVINCIBILITY FRAME
 	velocity = roll_vector * ROLL_SPEED
 	animationState.travel("Roll")
 	move()
 	
-func attack_state(delta):
+func attack_state(_delta):
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
 	

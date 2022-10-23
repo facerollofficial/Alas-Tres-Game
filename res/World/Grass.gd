@@ -4,7 +4,7 @@ const GrassEffect = preload("res://Effects/Critters/GrassEffect.tscn")
 
 func _create_grass_effect():
 		var grassEffect = GrassEffect.instance()
-		var world = get_tree().current_scene
+		var _world = get_tree().current_scene
 		
 		get_parent().add_child(grassEffect)
 		grassEffect.global_position = global_position
