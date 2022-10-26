@@ -1,5 +1,10 @@
 extends Node
 
+#config:
+var music_bus = AudioServer.get_bus_index("Music")
+var music_volume = -18
+var sfx_volume = -18
+
 export(int) var max_health = 1 setget set_max_health
 var health = max_health setget set_health
 
@@ -20,3 +25,4 @@ func set_health(value):
 		
 func _ready():
 	self.health = max_health
+	AudioServer.set_bus_volume_db(music_bus, music_volume)

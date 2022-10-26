@@ -1,8 +1,6 @@
 extends Control
 var music_bus = AudioServer.get_bus_index("Music")
 
-
-
 func _on_Music_value_changed(value):
 	AudioServer.set_bus_volume_db(music_bus, value)
 	
