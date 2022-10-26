@@ -1,0 +1,167 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://UI/Themes/TitleScreenTheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/Themes/Sliders.tres" type="Theme" id=2]
+[ext_resource path="res://UI/Options/Options.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://UI/Fonts/pixelplay.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+hinting = 0
+font_path = "res://UI/Fonts/pixelplay.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 11
+font_data = SubResource( 4 )
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 20.0
+margin_right = 320.0
+margin_bottom = 59.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource( 3 )
+text = "Options"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_top = -1.0
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 181.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="H_Divider" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 181.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/H_Divider"]
+margin_right = 104.0
+margin_bottom = 181.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/VBoxContainer/H_Divider/Spacer"]
+margin_right = 104.0
+margin_bottom = 181.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Interactables" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/H_Divider"]
+margin_left = 108.0
+margin_right = 212.0
+margin_bottom = 181.0
+rect_pivot_offset = Vector2( -233, 20 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Sliders" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/H_Divider/Interactables"]
+margin_top = 63.0
+margin_right = 104.0
+margin_bottom = 99.0
+
+[node name="Music" type="HSlider" parent="VBoxContainer/VBoxContainer/H_Divider/Interactables/Sliders"]
+margin_right = 104.0
+margin_bottom = 16.0
+theme = ExtResource( 2 )
+min_value = -30.0
+max_value = 0.0
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer/VBoxContainer/H_Divider/Interactables/Sliders/Music"]
+margin_left = -82.0
+margin_top = 1.0
+margin_right = 22.0
+margin_bottom = 13.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "Music :"
+align = 1
+valign = 1
+
+[node name="SoundFX" type="HSlider" parent="VBoxContainer/VBoxContainer/H_Divider/Interactables/Sliders"]
+margin_top = 20.0
+margin_right = 104.0
+margin_bottom = 36.0
+theme = ExtResource( 2 )
+
+[node name="SoundFXLabel" type="Label" parent="VBoxContainer/VBoxContainer/H_Divider/Interactables/Sliders/SoundFX"]
+margin_left = -90.0
+margin_top = 1.0
+margin_right = 14.0
+margin_bottom = 13.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "Sound FX :"
+align = 1
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/H_Divider/Interactables"]
+margin_top = 103.0
+margin_right = 104.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer/VBoxContainer/H_Divider/Interactables/Buttons"]
+margin_left = 42.0
+margin_right = 62.0
+margin_bottom = 15.0
+size_flags_horizontal = 4
+theme = ExtResource( 1 )
+text = "Back"
+
+[node name="Spacer2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/H_Divider"]
+margin_left = 216.0
+margin_right = 320.0
+margin_bottom = 181.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/VBoxContainer/H_Divider/Spacer2"]
+margin_right = 104.0
+margin_bottom = 181.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/H_Divider/Interactables/Sliders/Music" to="." method="_on_Music_value_changed"]
