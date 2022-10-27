@@ -25,4 +25,3 @@ func set_health(value):
 		
 func _ready():
 	self.health = max_health
-	AudioServer.set_bus_volume_db(music_bus, music_volume)

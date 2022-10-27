@@ -5,7 +5,7 @@
 			"set_theme": "theme-1664511736.cfg"
 		},
 		{
-			"audio_bus": "Master",
+			"audio_bus": "Music",
 			"background-music": "play",
 			"event_id": "dialogic_031",
 			"event_name": "BackgroundMusic",

@@ -1,9 +1,9 @@
 extends Control
 
-onready var pauseMenu = $GUI/Pause
+onready var optionMenu = $GUI/Options
 
 func _ready():
-	pauseMenu.visible = false
+	optionMenu.visible = false
 
 func _on_NewGame_pressed():
 	print(PlayerStats.max_health)
@@ -15,8 +15,8 @@ func _on_NewGame_pressed():
 
 
 func _on_Options_pressed():
-	pauseMenu.visible = true
+	optionMenu.visible = true
 
 
 func _on_Back_pressed():
-	pauseMenu.visible = false
+	optionMenu.visible = false

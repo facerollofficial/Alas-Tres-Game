@@ -390,6 +390,7 @@ anims/fade_to_bus = SubResource( 7 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
+bus = "SFX"
 
 [node name="SponsorIntro" type="Node2D" parent="."]
 visible = false
