@@ -24,7 +24,6 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var pagiHitbox = $HitboxPivot/PagiHitbox
 onready var hurtbox = $Hurtbox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
-onready var gameOverScreen = $GUI/GameOver
 
 func _ready():
 	randomize()
