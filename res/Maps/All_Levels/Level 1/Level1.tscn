@@ -9,7 +9,7 @@
 [ext_resource path="res://Extras/Tilemaps/DirtTileset1.png" type="Texture" id=7]
 [ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Effects/Shaders/WhiteColor.shader" type="Shader" id=9]
-[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/PlayerGUI/GUI.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 0, 0, 16, 0, 3.73082, 4.40062, 0, 16 )
@@ -106,13 +106,7 @@ shader_param/active = false
 
 [node name="Level1" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 10 )]
-margin_left = 6.0
-margin_top = 7.0
-margin_right = 94.0
-margin_bottom = 23.0
+[node name="GUI" parent="." instance=ExtResource( 10 )]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

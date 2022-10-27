@@ -4,9 +4,9 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Extras/Tilemaps/Tree.png" type="Texture" id=3]
 [ext_resource path="res://Effects/Lights/light.png" type="Texture" id=4]
+[ext_resource path="res://UI/PlayerGUI/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=6]
 [ext_resource path="res://Extras/Tilemaps/DirtTileset1.png" type="Texture" id=7]
-[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=52]
 points = PoolVector2Array( 0, 0, 16, 0, 3.73082, 4.40062, 0, 16 )
@@ -92,15 +92,7 @@ points = PoolVector2Array( 32, 38.1416, 29.7691, 43.7232, 24.8852, 48, 12.7917, 
 } ]
 0/z_index = 0
 
-[node name="Level1" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 10 )]
-margin_left = 6.0
-margin_top = 7.0
-margin_right = 94.0
-margin_bottom = 23.0
+[node name="Level2" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -143,3 +135,5 @@ texture = ExtResource( 4 )
 texture_scale = 0.61
 energy = 0.85
 mode = 2
+
+[node name="GUI" parent="." instance=ExtResource( 5 )]

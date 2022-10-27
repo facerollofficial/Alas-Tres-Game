@@ -62,7 +62,7 @@ script = ExtResource( 3 )
 position = Vector2( 160, 90 )
 frames = SubResource( 11 )
 animation = "Animation"
-frame = 1
+frame = 5
 playing = true
 
 [node name="Menu" type="VBoxContainer" parent="."]
@@ -80,20 +80,20 @@ stretch_mode = 4
 [node name="HBoxContainer2" type="HBoxContainer" parent="Menu"]
 margin_top = 84.0
 margin_right = 256.0
-margin_bottom = 148.0
+margin_bottom = 156.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="Spacer" type="VBoxContainer" parent="Menu/HBoxContainer2"]
 margin_right = 82.0
-margin_bottom = 64.0
+margin_bottom = 72.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="Menu/HBoxContainer2/Spacer"]
 margin_right = 82.0
-margin_bottom = 64.0
+margin_bottom = 72.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 1, 1, 1, 0 )
@@ -101,25 +101,24 @@ color = Color( 1, 1, 1, 0 )
 [node name="VBoxContainer2" type="VBoxContainer" parent="Menu/HBoxContainer2"]
 margin_left = 86.0
 margin_right = 169.0
-margin_bottom = 64.0
+margin_bottom = 72.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="NewGame" type="Button" parent="Menu/HBoxContainer2/VBoxContainer2"]
 margin_left = 20.0
-margin_top = 5.0
 margin_right = 63.0
-margin_bottom = 20.0
+margin_bottom = 15.0
 size_flags_horizontal = 4
 theme = ExtResource( 2 )
 text = "New Game"
 
 [node name="Continue" type="Button" parent="Menu/HBoxContainer2/VBoxContainer2"]
 margin_left = 21.0
-margin_top = 24.0
+margin_top = 19.0
 margin_right = 61.0
-margin_bottom = 39.0
+margin_bottom = 34.0
 size_flags_horizontal = 4
 theme = ExtResource( 2 )
 disabled = true
@@ -127,24 +126,33 @@ text = "Continue"
 
 [node name="Options" type="Button" parent="Menu/HBoxContainer2/VBoxContainer2"]
 margin_left = 25.0
-margin_top = 43.0
+margin_top = 38.0
 margin_right = 58.0
-margin_bottom = 58.0
+margin_bottom = 53.0
 size_flags_horizontal = 4
 theme = ExtResource( 2 )
 text = "Options"
 
+[node name="Quit" type="Button" parent="Menu/HBoxContainer2/VBoxContainer2"]
+margin_left = 32.0
+margin_top = 57.0
+margin_right = 50.0
+margin_bottom = 72.0
+size_flags_horizontal = 4
+theme = ExtResource( 2 )
+text = "Quit"
+
 [node name="Spacer2" type="VBoxContainer" parent="Menu/HBoxContainer2"]
 margin_left = 173.0
 margin_right = 256.0
-margin_bottom = 64.0
+margin_bottom = 72.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 2
 
 [node name="ColorRect2" type="ColorRect" parent="Menu/HBoxContainer2/Spacer2"]
 margin_right = 83.0
-margin_bottom = 64.0
+margin_bottom = 72.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 1, 1, 1, 0 )
@@ -152,6 +160,7 @@ color = Color( 1, 1, 1, 0 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Options" parent="GUI" instance=ExtResource( 5 )]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -160,6 +169,7 @@ bus = "Music"
 
 [connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="GUI/Options/VBoxContainer/VBoxContainer/H_Divider/Interactables/Buttons/Back" to="." method="_on_Back_pressed"]
 
 [editable path="GUI/Options"]

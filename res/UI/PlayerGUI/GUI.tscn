@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/PlayerGUI/GUI.gd" type="Script" id=3]
+[ext_resource path="res://UI/Options/Options.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Pause/Pause.tscn" type="PackedScene" id=6]
+
+[node name="GUI" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="HealthUI" parent="." instance=ExtResource( 5 )]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 94.0
+margin_bottom = 23.0
+
+[node name="Pause" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="Options" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/VBoxContainer/H_Divider/Interactables/Buttons/Back" to="." method="_on_Back_pressed"]
+
+[editable path="Pause"]
+[editable path="Options"]

@@ -12,11 +12,11 @@ func _on_NewGame_pressed():
 	#transition to bus station
 	#get_tree().change_scene("res://Maps/Bus Station/BusStationScene.tscn")
 
-
-
 func _on_Options_pressed():
 	optionMenu.visible = true
 
-
 func _on_Back_pressed():
 	optionMenu.visible = false
+
+func _on_Quit_pressed():
+	get_tree().quit()
