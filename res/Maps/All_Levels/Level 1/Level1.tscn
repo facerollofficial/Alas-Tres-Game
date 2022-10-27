@@ -114,7 +114,7 @@ region_enabled = true
 region_rect = Rect2( -1420.54, -907.219, 2500.54, 1634.23 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -808, -513 )
+position = Vector2( 505, 442 )
 current = true
 smoothing_enabled = true
 
@@ -269,7 +269,7 @@ material = SubResource( 3 )
 position = Vector2( 5, 218 )
 
 [node name="Player" parent="Combat Field" instance=ExtResource( 2 )]
-position = Vector2( -808, -513 )
+position = Vector2( 505, 442 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Combat Field/Player"]
 remote_path = NodePath("../../../Camera2D")

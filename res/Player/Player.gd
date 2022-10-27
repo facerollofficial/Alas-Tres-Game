@@ -24,12 +24,17 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var pagiHitbox = $HitboxPivot/PagiHitbox
 onready var hurtbox = $Hurtbox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
+onready var gameOverScreen = $GUI/GameOver
 
 func _ready():
 	randomize()
 	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true
-	pagiHitbox.knockback_vector = roll_vector 
+	pagiHitbox.knockback_vector = roll_vector
+
+func game_over():
+	queue_free()
+	
 
 func _physics_process(delta):
 	

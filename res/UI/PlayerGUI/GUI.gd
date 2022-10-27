@@ -3,9 +3,11 @@ var is_paused = false setget set_is_paused
 
 onready var optionsScreen = $Options
 onready var pauseScreen = $Pause
+onready var gameOverScreen = $GameOver
 
 func _ready():
 	optionsScreen.visible = false
+	gameOverScreen.visible = false
 
 func _unhandled_input(event):
 	if event.is_action_pressed("Pause"):
