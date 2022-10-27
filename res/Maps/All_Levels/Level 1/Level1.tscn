@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Effects/Shaders/WhiteColor.shader" type="Shader" id=9]
 [ext_resource path="res://UI/PlayerGUI/GUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://NPC/Aghoy/Aghoy.png" type="Texture" id=11]
+[ext_resource path="res://Effects/Shadows/SmallShadow.png" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 0, 0, 16, 0, 3.73082, 4.40062, 0, 16 )
@@ -114,7 +116,7 @@ region_enabled = true
 region_rect = Rect2( -1420.54, -907.219, 2500.54, 1634.23 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 505, 442 )
+position = Vector2( 1125, 126 )
 current = true
 smoothing_enabled = true
 
@@ -268,8 +270,16 @@ position = Vector2( -235, 279 )
 material = SubResource( 3 )
 position = Vector2( 5, 218 )
 
+[node name="SmallShadow" type="Sprite" parent="Combat Field"]
+position = Vector2( 1169, 101 )
+texture = ExtResource( 12 )
+
+[node name="Aghoy" type="Sprite" parent="Combat Field/SmallShadow"]
+position = Vector2( 0, -7 )
+texture = ExtResource( 11 )
+
 [node name="Player" parent="Combat Field" instance=ExtResource( 2 )]
-position = Vector2( 505, 442 )
+position = Vector2( 1125, 126 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Combat Field/Player"]
 remote_path = NodePath("../../../Camera2D")
