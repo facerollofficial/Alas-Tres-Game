@@ -6,4 +6,5 @@
 [node name="PlayerHurtSound" type="AudioStreamPlayer"]
 stream = ExtResource( 2 )
 autoplay = true
+bus = "SFX"
 script = ExtResource( 1 )

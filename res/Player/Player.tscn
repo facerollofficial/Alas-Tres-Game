@@ -988,6 +988,7 @@ shape = SubResource( 51 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+bus = "SFX"
 
 [node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AudioStreamPlayer")
