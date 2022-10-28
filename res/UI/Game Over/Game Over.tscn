@@ -97,4 +97,5 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
+[connection signal="pressed" from="Layout/Buttons/Button 1/LoadLastSave" to="." method="_on_LoadLastSave_pressed"]
 [connection signal="pressed" from="Layout/Buttons/Button 2/Quit to Title" to="." method="_on_Quit_to_Title_pressed"]

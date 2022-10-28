@@ -27,15 +27,28 @@ onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 
 func _ready():
 	randomize()
-	stats.connect("no_health", self, "queue_free")
+	PlayerStats.connect("no_health", self, "queue_free")
+	#PlayerStats.connect("xposchanged",self,"player_posx")
+	#PlayerStats.connect("yposchanged",self,"player_posy")
 	animationTree.active = true
 	pagiHitbox.knockback_vector = roll_vector
+	#set the initial position of the character
+	self.global_position.x = GameManager.player_x
+	self.global_position.y = GameManager.player_y
+
+#func player_posx(value):
+#	self.global_position.x = value
+	
+#func player_posy(value):
+#	self.global_position.y = value
 
 func game_over():
 	queue_free()
 	
-
 func _physics_process(delta):
+	
+	#GameManager.player_x = self.global_position.x
+	#GameManager.player_y = self.global_position.y
 	
 	match state:
 		MOVE:

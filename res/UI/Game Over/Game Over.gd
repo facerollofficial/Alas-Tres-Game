@@ -9,4 +9,6 @@ func game_over():
 func _on_Quit_to_Title_pressed():
 	get_tree().change_scene("res://UI/Title Screen/TitleScreen.tscn")
 
-
+func _on_LoadLastSave_pressed():
+	self.visible = false
+	GameManager.do_load()
