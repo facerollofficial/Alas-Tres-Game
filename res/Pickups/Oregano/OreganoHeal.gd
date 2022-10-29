@@ -1,8 +1,11 @@
 extends Area2D
 var stats = PlayerStats
-
+onready var animplayer = $AnimationPlayer
 signal playerpickedup
 
 func _on_OreganoHeal_area_entered(_area):
 	stats.oreganoHeal += 1
-	self.queue_free()
+	animplayer.play("Pickup")
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	queue_free()
