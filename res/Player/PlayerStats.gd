@@ -11,9 +11,9 @@ var health = max_health setget set_health
 export(int) var positionx = -808 setget set_x_pos
 export(int) var positiony = -513 setget set_y_pos
 
-export(int) var asinAmmo = 1 setget set_asin
-export(int) var bawangAmmo = 1 setget set_bawang
-export(int) var oreganoHeal = 1 setget set_oregano
+var asinAmmo = 0 setget set_asin
+var bawangAmmo = 0 setget set_bawang
+var oreganoHeal = 0 setget set_oregano
 
 
 signal no_health
@@ -26,12 +26,15 @@ signal bawang_ammo_changed(value)
 signal oregano_changed(value)
 
 func set_asin(value):
+	asinAmmo = value
 	emit_signal("asin_ammo_changed", value)
 
 func set_bawang(value):
+	bawangAmmo = value
 	emit_signal("bawang_ammo_changed", value)
 
 func set_oregano(value):
+	oreganoHeal = value
 	emit_signal("oregano_changed", value)
 
 func set_x_pos(value):

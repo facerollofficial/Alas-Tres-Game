@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/mcplayer.png" type="Texture" id=2]
@@ -913,6 +913,10 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="CapsuleShape2D" id=56]
+radius = 4.0
+height = 4.0
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 65
@@ -928,7 +932,7 @@ material = SubResource( 55 )
 position = Vector2( 0, -9 )
 texture = ExtResource( 2 )
 hframes = 60
-frame = 39
+frame = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -994,6 +998,14 @@ bus = "SFX"
 root_node = NodePath("../AudioStreamPlayer")
 anims/Start = SubResource( 52 )
 anims/Stop = SubResource( 53 )
+
+[node name="PickupCollector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupCollector"]
+rotation = 1.5708
+shape = SubResource( 56 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]

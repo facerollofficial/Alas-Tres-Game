@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://NPC/Aghoy/Aghoy.png" type="Texture" id=11]
 [ext_resource path="res://Effects/Shadows/SmallShadow.png" type="Texture" id=12]
 [ext_resource path="res://Maps/All_Levels/Level 1/Level1.gd" type="Script" id=13]
+[ext_resource path="res://Pickups/Oregano/OreganoHeal.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Pickups/Asin/AsinPickup.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Pickups/Bawang/BawangPickup.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 0, 0, 16, 0, 3.73082, 4.40062, 0, 16 )
@@ -280,6 +283,24 @@ texture = ExtResource( 12 )
 position = Vector2( 0, -7 )
 texture = ExtResource( 11 )
 
+[node name="OreganoHeal" parent="Combat Field" instance=ExtResource( 14 )]
+position = Vector2( -817, -441 )
+
+[node name="OreganoHeal2" parent="Combat Field" instance=ExtResource( 14 )]
+position = Vector2( -793, -419 )
+
+[node name="OreganoHeal3" parent="Combat Field" instance=ExtResource( 14 )]
+position = Vector2( -820, -401 )
+
+[node name="OreganoHeal4" parent="Combat Field" instance=ExtResource( 14 )]
+position = Vector2( -770, -388 )
+
+[node name="BawangPickup" parent="Combat Field/OreganoHeal4" instance=ExtResource( 16 )]
+position = Vector2( 7, -62 )
+
+[node name="BawangPickup2" parent="Combat Field/OreganoHeal4" instance=ExtResource( 16 )]
+position = Vector2( -92, -68 )
+
 [node name="Player" parent="Combat Field" instance=ExtResource( 2 )]
 position = Vector2( -800, -513 )
 
@@ -291,6 +312,21 @@ texture = ExtResource( 4 )
 texture_scale = 0.61
 energy = 0.85
 mode = 2
+
+[node name="AsinPickup" parent="." instance=ExtResource( 15 )]
+position = Vector2( -824, -467 )
+
+[node name="AsinPickup2" parent="." instance=ExtResource( 15 )]
+position = Vector2( -847, -435 )
+
+[node name="AsinPickup3" parent="." instance=ExtResource( 15 )]
+position = Vector2( -799, -464 )
+
+[node name="BawangPickup" parent="." instance=ExtResource( 16 )]
+position = Vector2( -777, -478 )
+
+[node name="BawangPickup2" parent="." instance=ExtResource( 16 )]
+position = Vector2( -846, -485 )
 
 [editable path="Combat Field/Boss/Tikbalang"]
 [editable path="Combat Field/Boss/Tikbalang/HitboxPivot/TikbalangHitbox"]
