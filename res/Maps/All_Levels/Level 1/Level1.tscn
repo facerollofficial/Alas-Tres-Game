@@ -120,7 +120,6 @@ region_rect = Rect2( -1420.54, -907.219, 2500.54, 1634.23 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 1125, 126 )
 current = true
-zoom = Vector2( 5, 5 )
 smoothing_enabled = true
 
 [node name="Dirt" type="TileMap" parent="."]

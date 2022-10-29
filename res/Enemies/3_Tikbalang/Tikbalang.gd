@@ -66,11 +66,9 @@ func _physics_process(delta):
 			else:
 				state = IDLE
 		CHARGE:
-			velocity = Vector2.ZERO
 			animationState.travel("Charging")
 			
 		ATTACK:
-			velocity = Vector2.ZERO
 			animationState.travel("Attack")
 
 	if softCollision.is_colliding():
