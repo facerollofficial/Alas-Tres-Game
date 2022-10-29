@@ -1,5 +1,4 @@
 extends Node
-
 #config:
 var music_bus = AudioServer.get_bus_index("Music")
 var music_volume = -18
@@ -14,7 +13,6 @@ export(int) var positiony = -513 setget set_y_pos
 var asinAmmo = 0 setget set_asin
 var bawangAmmo = 0 setget set_bawang
 var oreganoHeal = 0 setget set_oregano
-
 
 signal no_health
 signal health_changed(value)

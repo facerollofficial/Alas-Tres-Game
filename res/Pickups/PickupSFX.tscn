@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Pickups/PickupSFX.gd" type="Script" id=1]
+[ext_resource path="res://Audio/SFX/Pickup/pop2.ogg" type="AudioStream" id=2]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource( 2 )
 bus = "SFX"
 script = ExtResource( 1 )
