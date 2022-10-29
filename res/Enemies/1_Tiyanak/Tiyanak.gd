@@ -28,10 +28,14 @@ onready var animationPlayer = $AnimationPlayer
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+onready var enemyHealthBar= $EnemyHealthBar
 
 ## READY FUNC ##
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
+	enemyHealthBar.min_value = 0
+	enemyHealthBar.max_value = stats.max_health
+	enemyHealthBar.value = stats.health
 
 ## PHYSICS PROCESS ##
 func _physics_process(delta):
@@ -106,6 +110,7 @@ func _on_Hurtbox_invincibility_ended():
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
+	enemyHealthBar.value = stats.health
 	knockback = area.knockback_vector * 120
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(0.4)

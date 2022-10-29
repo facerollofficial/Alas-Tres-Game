@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Enemies/1_Tiyanak/Tiyanak.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/1_Tiyanak/tiyanak_walk.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/Enemy Scripts/PlayerDetectionZone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Effects/Shaders/WhiteColor.shader" type="Shader" id=10]
+[ext_resource path="res://Stats/Stats.gd" type="Script" id=12]
 
 [sub_resource type="ShaderMaterial" id=33]
 resource_local_to_scene = true
@@ -338,6 +339,21 @@ start_node = "Idle"
 [sub_resource type="CircleShape2D" id=25]
 radius = 3.0
 
+[sub_resource type="BitmapFont" id=35]
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.635294, 0.698039, 0.196078, 1 )
+
+[sub_resource type="Theme" id=38]
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/fonts/font = SubResource( 35 )
+ProgressBar/styles/bg = SubResource( 36 )
+ProgressBar/styles/fg = SubResource( 37 )
+
 [sub_resource type="CircleShape2D" id=26]
 radius = 80.025
 
@@ -408,12 +424,12 @@ ACCELERATION = 250
 MAX_SPEED = 55
 
 [node name="ShadowSprite" type="Sprite" parent="."]
-position = Vector2( 0, -1 )
+position = Vector2( 0, 1 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 33 )
-position = Vector2( 3, -11 )
+position = Vector2( 3, -7 )
 texture = ExtResource( 2 )
 hframes = 6
 vframes = 4
@@ -439,29 +455,40 @@ parameters/Crawl/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -3 )
+position = Vector2( 0, 1 )
 shape = SubResource( 25 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
+script = ExtResource( 12 )
 max_health = 2
 
+[node name="EnemyHealthBar" type="ProgressBar" parent="."]
+margin_left = -9.0
+margin_top = -15.0
+margin_right = 9.0
+margin_bottom = -13.0
+theme = SubResource( 38 )
+value = 50.0
+percent_visible = false
+
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 9 )]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 7 )
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+position = Vector2( 0, -8 )
 shape = SubResource( 26 )
 
 [node name="WanderController" parent="." instance=ExtResource( 7 )]
 
 [node name="SoftCollision" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 7 )
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 0, -9 )
 shape = SubResource( 27 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 8 )]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 7 )
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
@@ -469,7 +496,7 @@ position = Vector2( 0, -8 )
 shape = SubResource( 28 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 6 )]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 7 )
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
