@@ -11,9 +11,9 @@ var health = max_health setget set_health
 export(int) var positionx = -808 setget set_x_pos
 export(int) var positiony = -513 setget set_y_pos
 
-export(int) var asinAmmo = 99 setget set_asin
-export(int) var bawangAmmo = 99 setget set_bawang
-export(int) var oreganoHeal = 99 setget set_oregano
+export(int) var asinAmmo = 1 setget set_asin
+export(int) var bawangAmmo = 1 setget set_bawang
+export(int) var oreganoHeal = 1 setget set_oregano
 
 
 signal no_health
