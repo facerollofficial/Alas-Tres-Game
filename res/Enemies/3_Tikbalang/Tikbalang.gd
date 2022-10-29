@@ -31,10 +31,14 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 onready var animationState = animationTree.get("parameters/playback")
+onready var enemyHealthBar= $EnemyHealthBar
 
 func _ready():
 	randomize()
 	animationTree.active = true
+	enemyHealthBar.min_value = 0
+	enemyHealthBar.max_value = stats.max_health
+	enemyHealthBar.value = stats.health
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -130,6 +134,7 @@ func _on_Stats_no_health():
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
+	enemyHealthBar.value = stats.health
 	knockback = area.knockback_vector * 50
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(0.4)

@@ -85,6 +85,10 @@ func move_state(delta):
 	
 	move()
 	
+	if Input.is_action_just_pressed("heal_oregano"):
+		if stats.health<stats.max_health:
+			stats.health += 1
+			stats.oreganoHeal -=1
 	# THIS ALLOWS THE PLAYER TO CHANGE STATE AND ATTACK
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK

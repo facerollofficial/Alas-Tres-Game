@@ -339,20 +339,20 @@ start_node = "Idle"
 [sub_resource type="CircleShape2D" id=25]
 radius = 3.0
 
-[sub_resource type="BitmapFont" id=35]
+[sub_resource type="BitmapFont" id=39]
 
-[sub_resource type="StyleBoxFlat" id=36]
+[sub_resource type="StyleBoxFlat" id=40]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=37]
-bg_color = Color( 0.635294, 0.698039, 0.196078, 1 )
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="Theme" id=38]
 ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
-ProgressBar/fonts/font = SubResource( 35 )
-ProgressBar/styles/bg = SubResource( 36 )
-ProgressBar/styles/fg = SubResource( 37 )
+ProgressBar/fonts/font = SubResource( 39 )
+ProgressBar/styles/bg = SubResource( 40 )
+ProgressBar/styles/fg = SubResource( 41 )
 
 [sub_resource type="CircleShape2D" id=26]
 radius = 80.025
