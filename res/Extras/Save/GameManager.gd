@@ -8,6 +8,9 @@ var game_data: Dictionary
 var player_x = -808
 var player_y = -513
 var player_stat = PlayerStats.health
+var player_asin = PlayerStats.asinAmmo
+var player_bawang = PlayerStats.bawangAmmo
+var player_heal = PlayerStats.oreganoHeal
 
 #change data before actual save
 func update_data():
@@ -16,7 +19,10 @@ func update_data():
 				#"pos": player_position,
 				"stat": player_stat,
 				"posx": player_x,
-				"posy": player_y
+				"posy": player_y,
+				"asin": player_asin,
+				"bawang": player_bawang,
+				"heal": player_heal
 			}
 		}
 	
@@ -45,6 +51,9 @@ func do_load() -> bool:
 		player_x = player_data["posx"]
 		player_y = player_data["posy"]
 		PlayerStats.health = player_data["stat"] #load last saved health
+		PlayerStats.asinAmmo = player_data["asin"]
+		PlayerStats.bawangAmmo = player_data["bawang"]
+		PlayerStats.oreganoHeal = player_data["heal"]
 		print("loaded")
 		
 		return true

@@ -6,9 +6,9 @@ onready var healCount = $Heal/HealCount
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	asinCount.text = str(PlayerStats.asinAmmo)
-	bawangCount.text = str(PlayerStats.bawangAmmo)
-	healCount.text = str(PlayerStats.oreganoHeal)
+	change_asin_text(PlayerStats.asinAmmo)
+	change_bawang_text(PlayerStats.bawangAmmo)
+	change_heal_text(PlayerStats.oreganoHeal)
 	PlayerStats.connect("no_health", self, "game_over")
 	PlayerStats.connect("asin_ammo_changed", self, "change_asin_text")
 	PlayerStats.connect("bawang_ammo_changed",self,"change_bawang_text")
