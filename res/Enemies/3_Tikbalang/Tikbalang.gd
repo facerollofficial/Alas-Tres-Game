@@ -66,6 +66,7 @@ func _physics_process(delta):
 			else:
 				state = IDLE
 		CHARGE:
+			velocity = Vector2.ZERO
 			animationState.travel("Charging")
 			
 		ATTACK:

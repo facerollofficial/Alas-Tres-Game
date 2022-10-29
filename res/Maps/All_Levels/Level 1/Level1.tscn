@@ -118,7 +118,7 @@ region_enabled = true
 region_rect = Rect2( -1420.54, -907.219, 2500.54, 1634.23 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 1125, 126 )
+position = Vector2( -800, -408 )
 current = true
 smoothing_enabled = true
 
@@ -142,7 +142,7 @@ tile_data = PoolIntArray( -1900571, 0, 0, -1900570, 0, 0, -1900569, 0, 0, -19005
 [node name="Boss" type="YSort" parent="Combat Field"]
 
 [node name="Tikbalang" parent="Combat Field/Boss" instance=ExtResource( 8 )]
-position = Vector2( 833, 376 )
+position = Vector2( 711, 394 )
 scale = Vector2( 1.8, 1.8 )
 
 [node name="Sprite" parent="Combat Field/Boss/Tikbalang" index="1"]
@@ -246,7 +246,7 @@ position = Vector2( 491, 144 )
 
 [node name="Tiyanak14" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 3 )
-position = Vector2( 451, 231 )
+position = Vector2( 557, 238 )
 
 [node name="Tiyanak15" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 3 )
@@ -273,7 +273,7 @@ material = SubResource( 3 )
 position = Vector2( 5, 218 )
 
 [node name="SmallShadow" type="Sprite" parent="Combat Field"]
-position = Vector2( 1169, 101 )
+position = Vector2( -740, -448 )
 texture = ExtResource( 12 )
 
 [node name="Aghoy" type="Sprite" parent="Combat Field/SmallShadow"]
@@ -281,7 +281,7 @@ position = Vector2( 0, -7 )
 texture = ExtResource( 11 )
 
 [node name="Player" parent="Combat Field" instance=ExtResource( 2 )]
-position = Vector2( 1125, 126 )
+position = Vector2( -800, -408 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Combat Field/Player"]
 remote_path = NodePath("../../../Camera2D")

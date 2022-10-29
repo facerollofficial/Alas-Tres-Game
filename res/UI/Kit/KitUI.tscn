@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/PlayerGUI/Kit.gd" type="Script" id=1]
+[ext_resource path="res://UI/PlayerGUI/Sprite/heal_ui.png" type="Texture" id=2]
+[ext_resource path="res://UI/PlayerGUI/Sprite/asin_ui.png" type="Texture" id=3]
+[ext_resource path="res://UI/PlayerGUI/Sprite/bawang_ui.png" type="Texture" id=4]
+[ext_resource path="res://UI/Fonts/KitUI.tres" type="DynamicFont" id=5]
+
+[node name="KitUI" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="Asin" type="Sprite" parent="."]
+position = Vector2( 296, 107 )
+texture = ExtResource( 3 )
+
+[node name="AsinCount" type="Label" parent="Asin"]
+margin_left = -44.0
+margin_top = -11.0
+margin_right = -4.0
+margin_bottom = 3.0
+custom_fonts/font = ExtResource( 5 )
+text = "01"
+align = 2
+
+[node name="Bawang" type="Sprite" parent="."]
+position = Vector2( 296, 138 )
+texture = ExtResource( 4 )
+
+[node name="BawangCount" type="Label" parent="Bawang"]
+margin_left = -44.0
+margin_top = -11.0
+margin_right = -4.0
+margin_bottom = 3.0
+custom_fonts/font = ExtResource( 5 )
+text = "01"
+align = 2
+
+[node name="Heal" type="Sprite" parent="."]
+position = Vector2( 296, 169 )
+texture = ExtResource( 2 )
+
+[node name="HealCount" type="Label" parent="Heal"]
+margin_left = -44.0
+margin_top = -11.0
+margin_right = -4.0
+margin_bottom = 3.0
+custom_fonts/font = ExtResource( 5 )
+text = "01"
+align = 2

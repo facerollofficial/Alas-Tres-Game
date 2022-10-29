@@ -5,6 +5,7 @@ func _ready():
 
 func game_over():
 	self.visible = true
+	
 
 func _on_Quit_to_Title_pressed():
 	get_tree().change_scene("res://UI/Title Screen/TitleScreen.tscn")
