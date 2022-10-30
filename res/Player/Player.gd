@@ -47,8 +47,8 @@ func game_over():
 	
 func _physics_process(delta):
 	
-	#GameManager.player_x = self.global_position.x
-	#GameManager.player_y = self.global_position.y
+	GameManager.player_x = self.global_position.x
+	GameManager.player_y = self.global_position.y
 	
 	match state:
 		MOVE:

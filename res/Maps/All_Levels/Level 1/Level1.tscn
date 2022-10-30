@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Pickups/Oregano/OreganoHeal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Pickups/Asin/AsinPickup.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Pickups/Bawang/BawangPickup.tscn" type="PackedScene" id=16]
+[ext_resource path="res://NPC/Aghoy/Aghoy.tscn" type="PackedScene" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 0, 0, 16, 0, 3.73082, 4.40062, 0, 16 )
@@ -301,18 +302,6 @@ position = Vector2( 7, -62 )
 [node name="BawangPickup2" parent="Combat Field/OreganoHeal4" instance=ExtResource( 16 )]
 position = Vector2( -92, -68 )
 
-[node name="Player" parent="Combat Field" instance=ExtResource( 2 )]
-position = Vector2( -800, -513 )
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Combat Field/Player"]
-remote_path = NodePath("../../../Camera2D")
-
-[node name="Light2D" type="Light2D" parent="Combat Field/Player"]
-texture = ExtResource( 4 )
-texture_scale = 0.6
-energy = 0.85
-mode = 2
-
 [node name="AsinPickup" parent="." instance=ExtResource( 15 )]
 position = Vector2( -824, -467 )
 
@@ -328,9 +317,33 @@ position = Vector2( -777, -478 )
 [node name="BawangPickup2" parent="." instance=ExtResource( 16 )]
 position = Vector2( -846, -485 )
 
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -800, -513 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
+
+[node name="Light2D" type="Light2D" parent="YSort/Player"]
+texture = ExtResource( 4 )
+texture_scale = 0.6
+energy = 0.85
+mode = 2
+
+[node name="Aghoy" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( -814, 401 )
+
+[node name="Aghoy2" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 175, -433 )
+
+[node name="Aghoy3" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 290, 588 )
+
 [editable path="Combat Field/Boss/Tikbalang"]
 [editable path="Combat Field/Boss/Tikbalang/HitboxPivot/TikbalangHitbox"]
 [editable path="Combat Field/Boss/Tikbalang/SoftCollision"]
 [editable path="Combat Field/Boss/Tikbalang/AttackZone"]
 [editable path="Combat Field/Boss/Tikbalang/PlayerDetectionZone"]
 [editable path="Combat Field/Boss/Tikbalang/Hurtbox"]
+[editable path="YSort/Aghoy"]
