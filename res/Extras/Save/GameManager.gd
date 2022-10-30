@@ -37,21 +37,6 @@ func do_save():
 	file.close()
 	print("saved data")
 
-#func scene_change():
-#	var file: File = File.new()
-#	if(file.file_exists("res://saved_game/game.dat")):
-#		file.open("res://saved_game/game.dat",File.READ)
-#		game_data = parse_json(file.get_as_text())
-#		file.close()
-		
-		#load the json file
-#		var player_data = game_data["player_data"]
-		
-		#get path
-#		var path = player_data["scene"]
-		#change scene 
-#		get_tree().change_scene(path)
-	
 #load past
 func load_data():
 	var file: File = File.new()
@@ -104,3 +89,10 @@ func do_load() -> bool:
 		return true
 	else:
 		return false
+
+#delete json file if new game
+func delete_data():
+	print("del")
+	var dir = Directory.new()
+	dir.remove("res://saved_game/game.dat")
+	get_tree().change_scene("res://UI/Intro/Intro Scripts/Intro2.tscn")
