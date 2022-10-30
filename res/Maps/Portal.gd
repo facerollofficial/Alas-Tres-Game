@@ -20,4 +20,5 @@ func _on_Portal_body_entered(body):
 		if get_tree().change_scene(next_scene_path) != OK:
 			#error handling
 			print("Error: Unavailable scene!")
-		Global.dia_active = false
+		#Global.dia_active = false
+		Global.IsPlayed = false

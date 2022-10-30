@@ -62,7 +62,7 @@ script = ExtResource( 3 )
 position = Vector2( 160, 90 )
 frames = SubResource( 11 )
 animation = "Animation"
-frame = 4
+frame = 7
 playing = true
 
 [node name="Menu" type="VBoxContainer" parent="."]
@@ -168,6 +168,7 @@ autoplay = true
 bus = "Music"
 
 [connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="GUI/Options/VBoxContainer/VBoxContainer/H_Divider/Interactables/Buttons/Back" to="." method="_on_Back_pressed"]

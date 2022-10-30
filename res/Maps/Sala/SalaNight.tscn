@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Maps/Sprites/HOME SCENE.png" type="Texture" id=1]
 [ext_resource path="res://World/tableNight.tscn" type="PackedScene" id=2]
@@ -18,8 +18,9 @@
 [ext_resource path="res://Maps/Sala/Teleport.gdshader" type="Shader" id=16]
 [ext_resource path="res://Extras/Transitions/TransitionScene.tscn" type="PackedScene" id=17]
 [ext_resource path="res://UI/PlayerGUI/GUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://UI/PlayerGUI/GUI_noskill.gd" type="Script" id=19]
 
-[sub_resource type="SegmentShape2D" id=1]
+[sub_resource type="SegmentShape2D" id=11]
 b = Vector2( 0, 187 )
 
 [sub_resource type="SegmentShape2D" id=2]
@@ -84,9 +85,16 @@ shader_param/color = Color( 0, 1.02, 1.2, 1 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 1.5, 23.5 )
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://UI/Fonts/pixelplay.ttf"
 
-[node name="GUI" parent="." instance=ExtResource( 18 )]
+[sub_resource type="DynamicFont" id=12]
+resource_local_to_scene = true
+size = 14
+outline_color = Color( 0.117647, 0.117647, 0.117647, 1 )
+font_data = SubResource( 1 )
+
+[node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -107,7 +115,7 @@ polygon = PoolVector2Array( 320, 49, 313, 49, 313, 116, 320, 139 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 137, -12 )
-shape = SubResource( 1 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 148, 176 )
@@ -195,8 +203,20 @@ player_spawn_location = Vector2( 12, 152 )
 position = Vector2( 314.5, 25.5 )
 shape = SubResource( 7 )
 
+[node name="GUI" parent="." instance=ExtResource( 18 )]
+script = ExtResource( 19 )
+
+[node name="HealthUI" parent="GUI" index="0"]
+visible = false
+
+[node name="Label" parent="GUI/QuitConfirm" index="1"]
+custom_fonts/font = SubResource( 12 )
+
 [editable path="Camera2D"]
 [editable path="FallenBook/YSort/Player"]
 [editable path="FallenBook/YSort/Player/HitboxPivot/PagiHitbox"]
 [editable path="FallenBook/YSort/Player/Hurtbox"]
 [editable path="Portal"]
+[editable path="GUI"]
+[editable path="GUI/Pause"]
+[editable path="GUI/Options"]

@@ -4,8 +4,9 @@ var active = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("body_entered",self,'_on_Area2D_body_entered')
-	connect("body_entered",self,'_on_Area2D_body_exited')
+	pass
+	#connect("body_entered",self,'_on_Area2D_body_entered')
+	#connect("body_entered",self,'_on_Area2D_body_exited')
 	
 func _process(delta):
 	$mark.visible = active

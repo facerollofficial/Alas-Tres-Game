@@ -14,6 +14,8 @@ export(int)var asinAmmo = 0 setget set_asin
 export(int)var bawangAmmo = 0 setget set_bawang
 export(int)var oreganoHeal = 0 setget set_oregano
 
+export(String) var pathScene = "" setget set_path_scene
+
 signal no_health
 signal health_changed(value)
 signal max_health_changed(value)
@@ -22,6 +24,7 @@ signal yposchanged(value)
 signal asin_ammo_changed(value)
 signal bawang_ammo_changed(value)
 signal oregano_changed(value)
+signal pathScene_changed(value)
 
 func set_asin(value):
 	asinAmmo = value
@@ -38,13 +41,22 @@ func set_oregano(value):
 	emit_signal("oregano_changed", value)
 	GameManager.player_heal = oreganoHeal
 
+func set_path_scene(value):
+	pathScene = value
+	emit_signal("pathScene_changed",value)
+	GameManager.scene_path = pathScene
+
 func set_x_pos(value):
 	print("xpos: ",value)
+	positionx = value
 	emit_signal("xposchanged",value)
+	GameManager.player_x = positionx
 	
 func set_y_pos(value):
 	print("ypos: ",value)
+	positiony = value
 	emit_signal("yposchanged",value)
+	GameManager.player_y = positiony
 
 func set_max_health(value):
 	max_health = value
