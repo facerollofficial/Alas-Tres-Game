@@ -176,7 +176,7 @@ to interact. "
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-modulate = Color( 1, 1, 1, 0.395316 )
+modulate = Color( 1, 1, 1, 0.17651 )
 margin_left = 216.0
 margin_top = 168.0
 margin_right = 320.0

@@ -80,13 +80,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=39]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=9]
 outline_size = 1
 outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-font_data = SubResource( 8 )
+font_data = SubResource( 39 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 10
@@ -140,19 +140,19 @@ font_data = ExtResource( 1 )
 size = 7
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=40]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=37]
 size = 8
-font_data = SubResource( 7 )
+font_data = SubResource( 40 )
 
 [sub_resource type="Animation" id=38]
 resource_name = "SkipButton"
 length = 3.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("RichTextLabel2:modulate")
+tracks/0/path = NodePath("SkipText:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -192,6 +192,7 @@ texture = ExtResource( 4 )
 [node name="Mcplayer2" type="AnimatedSprite" parent="."]
 position = Vector2( 225, 102 )
 frames = SubResource( 19 )
+frame = 3
 playing = true
 
 [node name="SmallShadow" type="Sprite" parent="."]
@@ -292,8 +293,8 @@ bbcode_text = "[center]Time your attacks and hit the enemy until they lose all t
 text = "Time your attacks and hit the enemy until they lose all their health."
 scroll_active = false
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-modulate = Color( 1, 1, 1, 0.746103 )
+[node name="SkipText" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.995835 )
 margin_left = 216.0
 margin_top = 168.0
 margin_right = 320.0
