@@ -8,14 +8,30 @@
 	"name": "Aghoy",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 0,
+	"offset_x": 100,
+	"offset_y": -50,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": ""
+			"path": "res://NPC/Aghoy/aghoy_2.png"
+		},
+		{
+			"name": "Angry",
+			"path": "res://NPC/Aghoy/aghoy_3.png"
+		},
+		{
+			"name": "Worried",
+			"path": "res://NPC/Aghoy/aghoy_4.png"
+		},
+		{
+			"name": "Relief",
+			"path": "res://NPC/Aghoy/aghoy_5.png"
+		},
+		{
+			"name": "Happy",
+			"path": "res://NPC/Aghoy/aghoy_1.png"
 		}
 	],
-	"scale": 100,
+	"scale": 50,
 	"theme": "default-theme.cfg"
 }
