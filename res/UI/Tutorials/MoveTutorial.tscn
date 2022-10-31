@@ -7,13 +7,13 @@
 [ext_resource path="res://UI/Tutorials/Sprite/direction.png" type="Texture" id=5]
 [ext_resource path="res://UI/Tutorials/MoveTutorial.gd" type="Script" id=6]
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=11]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 outline_size = 1
 outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-font_data = SubResource( 8 )
+font_data = SubResource( 11 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 10
@@ -29,12 +29,12 @@ font_data = ExtResource( 1 )
 size = 10
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=12]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=6]
 size = 8
-font_data = SubResource( 7 )
+font_data = SubResource( 12 )
 
 [sub_resource type="Animation" id=9]
 length = 0.001
@@ -100,7 +100,6 @@ size_flags_vertical = 3
 
 [node name="Spacer" type="VBoxContainer" parent="Body"]
 margin_right = 320.0
-margin_bottom = 9.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
@@ -109,6 +108,7 @@ size_flags_stretch_ratio = 0.0
 margin_top = 4.0
 margin_right = 320.0
 margin_bottom = 37.0
+size_flags_vertical = 0
 alignment = 1
 
 [node name="Title" type="Label" parent="Body/Title"]
@@ -177,8 +177,60 @@ bbcode_enabled = true
 bbcode_text = "Press [b] W, A, S, D[/b]  keys to move."
 text = "Press  W, A, S, D  keys to move."
 
+[node name="W" type="RichTextLabel" parent="."]
+margin_left = 73.0
+margin_top = 27.0
+margin_right = 83.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[b]W[/b]"
+text = "W"
+
+[node name="A" type="RichTextLabel" parent="."]
+margin_left = 11.0
+margin_top = 96.0
+margin_right = 21.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[b]A[/b]"
+text = "A"
+
+[node name="A2" type="RichTextLabel" parent="."]
+margin_left = 137.0
+margin_top = 96.0
+margin_right = 147.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[b]D[/b]"
+text = "D"
+
+[node name="A3" type="RichTextLabel" parent="."]
+margin_left = 72.0
+margin_top = 162.0
+margin_right = 82.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = " [b]S[/b]"
+text = " S"
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-modulate = Color( 1, 1, 1, 0.178407 )
+modulate = Color( 1, 1, 1, 0.250419 )
 margin_left = 216.0
 margin_top = 168.0
 margin_right = 320.0

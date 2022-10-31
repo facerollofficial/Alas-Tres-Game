@@ -1,0 +1,201 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Tutorials/Sprite/unknown.png" type="Texture" id=2]
+[ext_resource path="res://Player/up/mc_up_2.png" type="Texture" id=3]
+[ext_resource path="res://interactpopup.png" type="Texture" id=4]
+[ext_resource path="res://Player/up/mc_up_1.png" type="Texture" id=5]
+[ext_resource path="res://UI/Tutorials/InteractTutorial.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+outline_size = 1
+outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 7
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=15]
+size = 8
+font_data = SubResource( 7 )
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RichTextLabel2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "SkipButton"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="InteractTutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_vertical_guides_": [ 160.0 ]
+}
+
+[node name="Backdrop" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[node name="Body" type="VBoxContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer" type="VBoxContainer" parent="Body"]
+margin_right = 320.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Title" type="VBoxContainer" parent="Body"]
+margin_top = 4.0
+margin_right = 320.0
+margin_bottom = 37.0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Title" type="Label" parent="Body/Title"]
+margin_right = 320.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 9 )
+text = "Tutorial"
+align = 1
+
+[node name="Subtitle" type="Label" parent="Body/Title"]
+margin_top = 19.0
+margin_right = 320.0
+margin_bottom = 33.0
+custom_colors/font_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Interaction"
+align = 1
+
+[node name="LoloSprite" type="Sprite" parent="."]
+position = Vector2( 130, 95 )
+texture = ExtResource( 2 )
+offset = Vector2( -23, -26 )
+
+[node name="LoloSprite2" type="Sprite" parent="."]
+position = Vector2( 236, 95 )
+texture = ExtResource( 2 )
+offset = Vector2( -23, -26 )
+
+[node name="Interactpopup" type="Sprite" parent="LoloSprite2"]
+position = Vector2( -23, -46 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="McUp2" type="Sprite" parent="."]
+position = Vector2( 107, 107 )
+texture = ExtResource( 3 )
+
+[node name="McUp1" type="Sprite" parent="McUp2"]
+position = Vector2( 106, -22 )
+texture = ExtResource( 5 )
+
+[node name="1" type="RichTextLabel" parent="."]
+margin_left = 56.0
+margin_top = 124.0
+margin_right = 157.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 13 )
+custom_fonts/normal_font = SubResource( 14 )
+bbcode_enabled = true
+bbcode_text = "[center]Walk towards a character
+or an object.[/center]"
+text = "Walk towards a character
+or an object."
+scroll_active = false
+
+[node name="2" type="RichTextLabel" parent="."]
+margin_left = 163.0
+margin_top = 123.0
+margin_right = 264.0
+margin_bottom = 163.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 13 )
+custom_fonts/normal_font = SubResource( 14 )
+bbcode_enabled = true
+bbcode_text = "[center]Click the [b] [ H ] [/b]button
+to interact.[/center] "
+text = "Click the  [ H ] button
+to interact. "
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.909177 )
+margin_left = 216.0
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 179.0
+custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+custom_fonts/normal_font = SubResource( 15 )
+text = "Press [ H ] to close tutorial."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/RESET = SubResource( 16 )
+anims/SkipButton = SubResource( 17 )
