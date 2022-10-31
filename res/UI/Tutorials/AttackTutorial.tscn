@@ -1,0 +1,307 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
+[ext_resource path="res://Player/mcplayer.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Bat/Bat.png" type="Texture" id=3]
+[ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=4]
+[ext_resource path="res://Effects/Shadows/SmallShadow.png" type="Texture" id=5]
+[ext_resource path="res://Effects/Combat/EnemyDeathEffect.png" type="Texture" id=6]
+[ext_resource path="res://UI/Tutorials/AttackTutorial.gd" type="Script" id=7]
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 6 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 6 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 6 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 6 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 6 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 6 )
+region = Rect2( 288, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=36]
+animations = [ {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 1536, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 1600, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 1664, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 1728, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+outline_size = 1
+outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 16, 24 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="DynamicFont" id=11]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 7
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=37]
+size = 8
+font_data = SubResource( 7 )
+
+[sub_resource type="Animation" id=38]
+resource_name = "SkipButton"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="AttackTutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_vertical_guides_": [ 160.0 ]
+}
+
+[node name="Backdrop" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 253, 111 )
+frames = SubResource( 36 )
+frame = 3
+playing = true
+
+[node name="MediumShadow2" type="Sprite" parent="."]
+position = Vector2( 223, 113 )
+texture = ExtResource( 4 )
+
+[node name="Mcplayer2" type="AnimatedSprite" parent="."]
+position = Vector2( 225, 102 )
+frames = SubResource( 19 )
+playing = true
+
+[node name="SmallShadow" type="Sprite" parent="."]
+position = Vector2( 101, 113 )
+texture = ExtResource( 5 )
+
+[node name="MediumShadow" type="Sprite" parent="."]
+position = Vector2( 62, 113 )
+texture = ExtResource( 4 )
+
+[node name="Mcplayer" type="Sprite" parent="MediumShadow"]
+position = Vector2( 1, -11 )
+texture = ExtResource( 2 )
+hframes = 60
+frame = 24
+
+[node name="Body" type="VBoxContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer" type="VBoxContainer" parent="Body"]
+margin_right = 320.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Title" type="VBoxContainer" parent="Body"]
+margin_top = 4.0
+margin_right = 320.0
+margin_bottom = 37.0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Title" type="Label" parent="Body/Title"]
+margin_right = 320.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 9 )
+text = "Tutorial"
+align = 1
+
+[node name="Subtitle" type="Label" parent="Body/Title"]
+margin_top = 19.0
+margin_right = 320.0
+margin_bottom = 33.0
+custom_colors/font_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Attacking - Pagi Slash"
+align = 1
+
+[node name="Bat" type="AnimatedSprite" parent="."]
+position = Vector2( 101, 102 )
+frames = SubResource( 25 )
+frame = 3
+playing = true
+flip_h = true
+
+[node name="Main" type="RichTextLabel" parent="."]
+margin_left = 30.0
+margin_top = 49.0
+margin_right = 289.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 12 )
+bbcode_enabled = true
+bbcode_text = "[center]You have received the \"Buntot ng Pagi\" for you to defend youself.[/center]"
+text = "You have received the \"Buntot ng Pagi\" for you to defend youself."
+scroll_active = false
+
+[node name="1" type="RichTextLabel" parent="."]
+margin_left = 29.0
+margin_top = 128.0
+margin_right = 130.0
+margin_bottom = 168.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 13 )
+custom_fonts/normal_font = SubResource( 14 )
+bbcode_enabled = true
+bbcode_text = "[center]Press [b]J[/b] key to use Buntot ng Pagi and perform a slash attack.[/center]"
+text = "Press J key to use Buntot ng Pagi and perform a slash attack."
+scroll_active = false
+
+[node name="2" type="RichTextLabel" parent="."]
+margin_left = 191.0
+margin_top = 128.0
+margin_right = 292.0
+margin_bottom = 168.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 13 )
+custom_fonts/normal_font = SubResource( 14 )
+bbcode_enabled = true
+bbcode_text = "[center]Time your attacks and hit the enemy until they lose all their health.[/center]"
+text = "Time your attacks and hit the enemy until they lose all their health."
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.746103 )
+margin_left = 216.0
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 179.0
+custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+custom_fonts/normal_font = SubResource( 37 )
+text = "Press [ H ] to close tutorial."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/SkipButton = SubResource( 38 )

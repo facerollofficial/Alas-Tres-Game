@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://Player/down/mc_down_2.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Player/up/mc_up_2.png" type="Texture" id=4]
 [ext_resource path="res://UI/Tutorials/Sprite/direction.png" type="Texture" id=5]
 [ext_resource path="res://UI/Tutorials/MoveTutorial.gd" type="Script" id=6]
+[ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFontData" id=11]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
@@ -91,6 +92,22 @@ margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[node name="MediumShadow" type="Sprite" parent="."]
+position = Vector2( 62, 112 )
+texture = ExtResource( 7 )
+
+[node name="MediumShadow2" type="Sprite" parent="."]
+position = Vector2( 79, 95 )
+texture = ExtResource( 7 )
+
+[node name="MediumShadow3" type="Sprite" parent="."]
+position = Vector2( 96, 112 )
+texture = ExtResource( 7 )
+
+[node name="MediumShadow4" type="Sprite" parent="."]
+position = Vector2( 79, 130 )
+texture = ExtResource( 7 )
 
 [node name="Body" type="VBoxContainer" parent="."]
 margin_right = 320.0
@@ -230,7 +247,7 @@ bbcode_text = " [b]S[/b]"
 text = " S"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-modulate = Color( 1, 1, 1, 0.250419 )
+modulate = Color( 1, 1, 1, 0.211756 )
 margin_left = 216.0
 margin_top = 168.0
 margin_right = 320.0

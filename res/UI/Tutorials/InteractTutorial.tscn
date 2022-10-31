@@ -6,14 +6,15 @@
 [ext_resource path="res://interactpopup.png" type="Texture" id=4]
 [ext_resource path="res://Player/up/mc_up_1.png" type="Texture" id=5]
 [ext_resource path="res://UI/Tutorials/InteractTutorial.gd" type="Script" id=6]
+[ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=18]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=9]
 outline_size = 1
 outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-font_data = SubResource( 8 )
+font_data = SubResource( 18 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 10
@@ -29,39 +30,12 @@ font_data = ExtResource( 1 )
 size = 7
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=19]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=15]
 size = 8
-font_data = SubResource( 7 )
-
-[sub_resource type="Animation" id=16]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("RichTextLabel2:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("RichTextLabel2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
+font_data = SubResource( 19 )
 
 [sub_resource type="Animation" id=17]
 resource_name = "SkipButton"
@@ -94,6 +68,22 @@ margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[node name="MediumShadow" type="Sprite" parent="."]
+position = Vector2( 106, 80 )
+texture = ExtResource( 7 )
+
+[node name="MediumShadow2" type="Sprite" parent="."]
+position = Vector2( 107, 118 )
+texture = ExtResource( 7 )
+
+[node name="MediumShadow3" type="Sprite" parent="."]
+position = Vector2( 213, 96 )
+texture = ExtResource( 7 )
+
+[node name="MediumShadow4" type="Sprite" parent="."]
+position = Vector2( 213, 76 )
+texture = ExtResource( 7 )
 
 [node name="Body" type="VBoxContainer" parent="."]
 margin_right = 320.0
@@ -171,9 +161,9 @@ scroll_active = false
 
 [node name="2" type="RichTextLabel" parent="."]
 margin_left = 163.0
-margin_top = 123.0
+margin_top = 124.0
 margin_right = 264.0
-margin_bottom = 163.0
+margin_bottom = 164.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/bold_font = SubResource( 13 )
@@ -186,7 +176,7 @@ to interact. "
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-modulate = Color( 1, 1, 1, 0.909177 )
+modulate = Color( 1, 1, 1, 0.395316 )
 margin_left = 216.0
 margin_top = 168.0
 margin_right = 320.0
@@ -197,5 +187,4 @@ text = "Press [ H ] to close tutorial."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
-anims/RESET = SubResource( 16 )
 anims/SkipButton = SubResource( 17 )
