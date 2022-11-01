@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://Pickups/Asin/AsinPickup.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Pickups/Bawang/BawangPickup.tscn" type="PackedScene" id=16]
 [ext_resource path="res://NPC/Aghoy/Aghoy.tscn" type="PackedScene" id=17]
+[ext_resource path="res://NPC/Stranger/StrangerAttack.tscn" type="PackedScene" id=18]
+[ext_resource path="res://NPC/Stranger/Stranger.tscn" type="PackedScene" id=19]
+[ext_resource path="res://UI/Tutorials/AttackTutorial.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 0, 0, 16, 0, 3.73082, 4.40062, 0, 16 )
@@ -110,6 +113,104 @@ shader_param/active = false
 [sub_resource type="AnimationNodeStateMachinePlayback" id=55]
 
 [sub_resource type="CanvasItemMaterial" id=3]
+
+[sub_resource type="Animation" id=58]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("YSort/StrangerAttack:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -764, -513 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("YSort/StrangerAttack/Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=60]
+resource_name = "attack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("YSort/StrangerAttack:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -764, -513 ), Vector2( -769, -513 ), Vector2( -774, -513 ), Vector2( -779, -513 ), Vector2( -784, -513 ), Vector2( -784, -515 ), Vector2( -786, -517 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("YSort/StrangerAttack/Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "flash"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "white_to_fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 13 )
@@ -277,10 +378,12 @@ material = SubResource( 3 )
 position = Vector2( 5, 218 )
 
 [node name="SmallShadow" type="Sprite" parent="Combat Field"]
+visible = false
 position = Vector2( -740, -448 )
 texture = ExtResource( 12 )
 
 [node name="Aghoy" type="Sprite" parent="Combat Field/SmallShadow"]
+visible = false
 position = Vector2( 0, -7 )
 texture = ExtResource( 11 )
 
@@ -340,6 +443,34 @@ position = Vector2( 175, -433 )
 [node name="Aghoy3" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( 290, 588 )
 
+[node name="Stranger" parent="YSort" instance=ExtResource( 19 )]
+pause_mode = 2
+position = Vector2( -776, -523 )
+
+[node name="StrangerAttack" parent="YSort" instance=ExtResource( 18 )]
+pause_mode = 2
+position = Vector2( -764, -513 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+pause_mode = 2
+margin_left = -1371.0
+margin_top = -979.0
+margin_right = 1720.0
+margin_bottom = 1113.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+pause_mode = 2
+root_node = NodePath("../..")
+anims/RESET = SubResource( 58 )
+anims/attack = SubResource( 60 )
+anims/flash = SubResource( 61 )
+anims/white_to_fade = SubResource( 59 )
+
+[node name="AttackTutorial" parent="CanvasLayer" instance=ExtResource( 20 )]
+
 [editable path="Combat Field/Boss/Tikbalang"]
 [editable path="Combat Field/Boss/Tikbalang/HitboxPivot/TikbalangHitbox"]
 [editable path="Combat Field/Boss/Tikbalang/SoftCollision"]
@@ -347,3 +478,4 @@ position = Vector2( 290, 588 )
 [editable path="Combat Field/Boss/Tikbalang/PlayerDetectionZone"]
 [editable path="Combat Field/Boss/Tikbalang/Hurtbox"]
 [editable path="YSort/Aghoy"]
+[editable path="YSort/StrangerAttack"]
