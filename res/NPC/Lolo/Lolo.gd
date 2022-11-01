@@ -26,12 +26,13 @@ func _input(event):
 			get_tree().paused = true #allows the player not to move when convo is on going
 			var dialog = Dialogic.start(text)
 			dialog.pause_mode = Node.PAUSE_MODE_PROCESS 
-			dialog.connect('timeline_end',self,'unpause')
+			#dialog.connect('timeline_end',self,'unpause')
+			dialog.connect('timeline_end',self,'anim_start')
 			add_child(dialog)
 
-#unpause the player once conversation is done
-func unpause(timeline_name):
-	get_tree().paused = false
+func anim_start(timeline_name):
+	print("moved here")
+	$mark.visible = false
 	$AnimationPlayer.play("walk")
 	yield(get_tree().create_timer(2.5), "timeout")
 	$AnimationPlayer.play("fade_out")
@@ -47,11 +48,13 @@ func unpause(timeline_name):
 	yield(get_tree().create_timer(3), "timeout")
 	$AnimationPlayer.play("walk_back")
 	var dialog = Dialogic.start("timeline-2")
+	dialog.pause_mode = Node.PAUSE_MODE_PROCESS 
 	dialog.connect('timeline_end',self,'next_scene')
 	add_child(dialog)
 	
 func next_scene(timeline_name):
 	sceneDone = true
+	get_tree().paused = false
 	
 #checks if the player is inside the area set for lolo or not; used for the mark if it will show up or not
 func _on_NPC_body_entered(body):

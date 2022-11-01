@@ -90,9 +90,24 @@ func do_load() -> bool:
 	else:
 		return false
 
-#delete json file if new game
+#new game
 func delete_data():
 	print("del")
+	#delete json file
 	var dir = Directory.new()
 	dir.remove("res://saved_game/game.dat")
+	#mc room position
+	Global.player_initial_map_position = Vector2(197,115)
+	#sala day position
+	Global.player_initial_map_position2 = Vector2(120,115)
+	#hallway night fallen book
+	Global.minNum = 0
+	#level 1
+	GameManager.player_x = -808
+	GameManager.player_y = -513
+	PlayerStats.health = 4
+	PlayerStats.asinAmmo = 0
+	PlayerStats.bawangAmmo = 0
+	PlayerStats.oreganoHeal = 0
+	PlayerStats.pathScene = ""
 	get_tree().change_scene("res://UI/Intro/Intro Scripts/Intro2.tscn")

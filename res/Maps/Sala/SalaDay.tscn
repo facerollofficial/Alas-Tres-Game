@@ -255,7 +255,11 @@ anims/walk = SubResource( 12 )
 [node name="CollisionShape2D" parent="YSort/Lolo/Area2D" index="0"]
 position = Vector2( 0, 2 )
 
+[node name="mark" parent="YSort/Lolo/Area2D" index="1"]
+pause_mode = 2
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/Lolo/Area2D" index="2"]
+pause_mode = 2
 anims/RESET = SubResource( 13 )
 anims/fade_in = SubResource( 17 )
 anims/fade_out = SubResource( 15 )
@@ -283,6 +287,7 @@ script = ExtResource( 14 )
 ROLL_SPEED = 100
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+pause_mode = 2
 remote_path = NodePath("../../Camera2D")
 
 [node name="table" parent="YSort" instance=ExtResource( 3 )]
@@ -312,6 +317,7 @@ texture = ExtResource( 9 )
 position = Vector2( 167, 147 )
 
 [node name="Camera2D" parent="YSort" instance=ExtResource( 11 )]
+pause_mode = 2
 position = Vector2( 89, 169 )
 
 [node name="topLeft" parent="YSort/Camera2D/Limits" index="0"]

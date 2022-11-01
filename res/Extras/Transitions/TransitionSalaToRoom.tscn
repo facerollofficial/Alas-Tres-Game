@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/dialogic/Example Assets/Fonts/NameFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Extras/Transitions/TransitionSalaToRoom.gd" type="Script" id=2]
+[ext_resource path="res://world assets/building.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -36,6 +37,18 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -81,6 +94,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="TransitionSalaToRoom" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -101,15 +126,14 @@ anims/fade_text = SubResource( 2 )
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -61.0
-margin_top = -9.5
-margin_right = 61.0
-margin_bottom = 9.5
+anchor_bottom = 1.0
+margin_left = -93.0
+margin_top = -19.0
+margin_right = 93.0
 custom_fonts/normal_font = ExtResource( 1 )
-text = "Talks about Manila Life"
+text = "You talked about your life in Manila"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -123,5 +147,11 @@ margin_right = 22.5
 margin_bottom = 7.0
 custom_fonts/normal_font = ExtResource( 1 )
 text = "3:00 AM"
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 164.5, 84.75 )
+scale = Vector2( 0.790625, 0.808333 )
+texture = ExtResource( 3 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -17,8 +17,9 @@ func _get_configuration_warning() ->String:
 func _on_Portal_body_entered(body):
 	Global.player_initial_map_position = player_spawn_location
 	if body.name == 'Player':
-		if get_tree().change_scene(next_scene_path) != OK:
+		get_tree().change_scene(next_scene_path)
+		#if get_tree().change_scene(next_scene_path) != OK:
 			#error handling
-			print("Error: Unavailable scene!")
+			#print("Error: Unavailable scene!")
 		#Global.dia_active = false
 		Global.IsPlayed = false

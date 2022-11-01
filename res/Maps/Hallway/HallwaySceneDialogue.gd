@@ -22,4 +22,5 @@ func area_entered(body):
 func unpause(timeline_name):
 	get_tree().paused = false
 	$Player/mark.visible = false
-	get_node("CollisionShape2D").disabled= true
+	if Global.minNum == 1:
+		get_node("CollisionShape2D").disabled= true

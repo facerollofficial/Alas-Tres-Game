@@ -1,11 +1,6 @@
 {
 	"events": [
 		{
-			"event_id": "dialogic_023",
-			"hide_dialogbox": true,
-			"wait_seconds": 3
-		},
-		{
 			"character": "character-1664259638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
