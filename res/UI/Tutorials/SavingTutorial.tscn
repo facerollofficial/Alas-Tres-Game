@@ -5,24 +5,24 @@
 [ext_resource path="res://Effects/Lights/light.png" type="Texture" id=3]
 [ext_resource path="res://UI/Tutorials/SavingTutorial.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=17]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=9]
 outline_size = 1
 outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-font_data = SubResource( 8 )
+font_data = SubResource( 17 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 10
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=17]
+[sub_resource type="DynamicFontData" id=18]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=11]
 size = 8
-font_data = SubResource( 17 )
+font_data = SubResource( 18 )
 
 [sub_resource type="Animation" id=15]
 length = 0.001
@@ -149,7 +149,7 @@ anims/RESET = SubResource( 15 )
 anims/SkipButton = SubResource( 12 )
 
 [node name="Light" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.145098 )
+modulate = Color( 1, 1, 1, 0.0588235 )
 position = Vector2( 160, 117 )
 scale = Vector2( 0.238281, 0.238281 )
 texture = ExtResource( 3 )

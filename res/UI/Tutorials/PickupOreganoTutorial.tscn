@@ -1,0 +1,265 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://PickupOreganoTutorial.gd" type="Script" id=1]
+[ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/HeartUIFull.png" type="Texture" id=3]
+[ext_resource path="res://Pickups/ui.png" type="Texture" id=4]
+[ext_resource path="res://UI/Tutorials/Sprite/direction.png" type="Texture" id=5]
+[ext_resource path="res://UI/HeartUIEmpty.png" type="Texture" id=6]
+[ext_resource path="res://Player/mcplayer.png" type="Texture" id=7]
+[ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=8]
+[ext_resource path="res://Pickups/Oregano/OreganoPickup.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=18]
+outline_size = 1
+outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=17]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=20]
+size = 8
+font_data = SubResource( 17 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 7
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.0588235 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "SkipButton"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SkipText:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="PickupOreganoTutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 160.0 ]
+}
+
+[node name="Backdrop" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[node name="Body" type="VBoxContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer" type="VBoxContainer" parent="Body"]
+margin_right = 320.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Title" type="VBoxContainer" parent="Body"]
+margin_top = 4.0
+margin_right = 320.0
+margin_bottom = 37.0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Title" type="Label" parent="Body/Title"]
+margin_right = 320.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 18 )
+text = "Tutorial"
+align = 1
+
+[node name="Subtitle" type="Label" parent="Body/Title"]
+margin_top = 19.0
+margin_right = 320.0
+margin_bottom = 33.0
+custom_colors/font_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_fonts/font = SubResource( 19 )
+text = "Healing - Leaf of Life (Oregano)"
+align = 1
+
+[node name="SkipText" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.492503 )
+margin_left = 216.0
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 179.0
+custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+custom_fonts/normal_font = SubResource( 20 )
+text = "Press [ X ] to close tutorial."
+
+[node name="Main" type="RichTextLabel" parent="."]
+margin_left = 59.0
+margin_top = 48.0
+margin_right = 261.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 23 )
+custom_fonts/normal_font = SubResource( 24 )
+bbcode_enabled = true
+bbcode_text = "[center]Whenever you take damage, you can always regain your health back with Leaf of Life.[/center]"
+text = "Whenever you take damage, you can always regain your health back with Leaf of Life."
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 45.0
+margin_top = 96.0
+margin_right = 77.0
+margin_bottom = 116.0
+
+[node name="UI" type="Sprite" parent="RichTextLabel"]
+position = Vector2( 1.90735e-05, -10 )
+scale = Vector2( 0.151082, 0.151082 )
+texture = ExtResource( 4 )
+
+[node name="1" type="RichTextLabel" parent="."]
+margin_left = 27.0
+margin_top = 129.0
+margin_right = 96.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 25 )
+custom_fonts/normal_font = SubResource( 26 )
+bbcode_enabled = true
+bbcode_text = "[center]Use [b]E[/b] key to consume 1 Leaf of Life.[/center]"
+text = "Use E key to consume 1 Leaf of Life."
+scroll_active = false
+
+[node name="2" type="RichTextLabel" parent="."]
+margin_left = 125.0
+margin_top = 129.0
+margin_right = 194.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 25 )
+custom_fonts/normal_font = SubResource( 26 )
+bbcode_enabled = true
+bbcode_text = "[center]1 Leaf of Life restores 1 health.[/center]"
+text = "1 Leaf of Life restores 1 health."
+scroll_active = false
+
+[node name="3" type="RichTextLabel" parent="."]
+margin_left = 230.0
+margin_top = 129.0
+margin_right = 299.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 25 )
+custom_fonts/normal_font = SubResource( 26 )
+bbcode_enabled = true
+bbcode_text = "[center]Leaf of Life can be obtained by collecting around areas.[/center]"
+text = "Leaf of Life can be obtained by collecting around areas."
+scroll_active = false
+
+[node name="Direction" type="Sprite" parent="."]
+position = Vector2( 160.114, 107.5 )
+rotation = 0.785398
+scale = Vector2( 0.330044, 0.330044 )
+texture = ExtResource( 5 )
+
+[node name="HeartUiFull" type="Sprite" parent="."]
+position = Vector2( 141.114, 99.75 )
+scale = Vector2( 0.681818, 0.681818 )
+texture = ExtResource( 3 )
+
+[node name="HeartUiFull2" type="Sprite" parent="."]
+position = Vector2( 150.114, 99.75 )
+scale = Vector2( 0.681818, 0.681818 )
+texture = ExtResource( 6 )
+
+[node name="HeartUiFull3" type="Sprite" parent="."]
+position = Vector2( 158.114, 99.75 )
+scale = Vector2( 0.681818, 0.681818 )
+texture = ExtResource( 6 )
+
+[node name="HeartUiFull4" type="Sprite" parent="."]
+position = Vector2( 166.227, 117.25 )
+scale = Vector2( 0.681818, 0.681818 )
+texture = ExtResource( 3 )
+
+[node name="HeartUiFull5" type="Sprite" parent="."]
+position = Vector2( 175.114, 117.25 )
+scale = Vector2( 0.681818, 0.681818 )
+texture = ExtResource( 3 )
+
+[node name="HeartUiFull6" type="Sprite" parent="."]
+position = Vector2( 183.114, 117.25 )
+scale = Vector2( 0.681818, 0.681818 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/RESET = SubResource( 27 )
+anims/SkipButton = SubResource( 28 )
+
+[node name="MediumShadow" type="Sprite" parent="."]
+position = Vector2( 259, 118 )
+texture = ExtResource( 8 )
+
+[node name="Mcplayer" type="Sprite" parent="MediumShadow"]
+position = Vector2( 1, -11 )
+texture = ExtResource( 7 )
+hframes = 60
+frame = 4
+
+[node name="OreganoPickup" type="Sprite" parent="."]
+position = Vector2( 278, 116 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
