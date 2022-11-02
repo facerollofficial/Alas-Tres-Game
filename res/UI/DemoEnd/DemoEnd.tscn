@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/Title Screen/TitleScreen2.png" type="Texture" id=2]
 [ext_resource path="res://UI/Themes/TitleScreenTheme.tres" type="Theme" id=3]
+[ext_resource path="res://UI/DemoEnd/DemoEnd.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFontData" id=29]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
@@ -53,6 +54,7 @@ font_data = SubResource( 39 )
 [node name="DemoEnd" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_vertical_guides_": [ 160.0 ]
 }
@@ -163,3 +165,5 @@ size_flags_vertical = 3
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 40 )
 text = "Return to Main Menu"
+
+[connection signal="pressed" from="ReturnToMain" to="." method="_on_ReturnToMain_pressed"]

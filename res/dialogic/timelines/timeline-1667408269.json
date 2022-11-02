@@ -1,0 +1,127 @@
+{
+	"events": [
+		{
+			"character": "character-1664259638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Woah! What just happened? That was a tough fight."
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Happy",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You really did well! Defeating the tikbalang is no joke because of its speed and strength."
+		},
+		{
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "You seem to be a master at defeating those creatures."
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"character": "character-1664259638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'm actually scared and just want to go home."
+		},
+		{
+			"character": "character-1664259638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Maybe I was able to push through because I really want to go home now."
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Don't worry, I'm here to help you. "
+		},
+		{
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But help us first to destroy the evil forces, and I will surely help you to go home."
+		},
+		{
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Now, there are more of them in the next area."
+		},
+		{
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Be ready for what comes next."
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1667408269.json",
+		"name": "timeline-after_tikbalang"
+	}
+}
