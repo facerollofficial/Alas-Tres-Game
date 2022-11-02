@@ -17,12 +17,12 @@ font_data = SubResource( 8 )
 size = 10
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=17]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=11]
 size = 8
-font_data = SubResource( 7 )
+font_data = SubResource( 17 )
 
 [sub_resource type="Animation" id=15]
 length = 0.001

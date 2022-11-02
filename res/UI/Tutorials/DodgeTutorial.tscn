@@ -8,13 +8,13 @@
 [ext_resource path="res://Effects/Shadows/SmallShadow.png" type="Texture" id=6]
 [ext_resource path="res://Effects/Combat/HitEffect.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=47]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=9]
 outline_size = 1
 outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-font_data = SubResource( 8 )
+font_data = SubResource( 47 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 10
@@ -269,7 +269,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MediumShadow"]
 position = Vector2( 1, -10 )
 frames = SubResource( 24 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="MediumShadow2" type="Sprite" parent="."]
@@ -306,5 +306,6 @@ texture = ExtResource( 6 )
 [node name="Bat" type="AnimatedSprite" parent="."]
 position = Vector2( 252, 101 )
 frames = SubResource( 34 )
+frame = 1
 playing = true
 flip_h = true

@@ -1,0 +1,239 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
+[ext_resource path="res://Player/mcplayer.png" type="Texture" id=2]
+[ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=3]
+[ext_resource path="res://Pickups/Oregano/OreganoPickup.png" type="Texture" id=4]
+[ext_resource path="res://Pickups/ui.png" type="Texture" id=5]
+[ext_resource path="res://Pickups/Asin/AsinPickup.png" type="Texture" id=6]
+[ext_resource path="res://UI/Tutorials/PickupsTutorial.gd" type="Script" id=7]
+[ext_resource path="res://Pickups/Bawang/BawangPickup.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+outline_size = 1
+outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 7
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=15]
+size = 8
+font_data = SubResource( 7 )
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.0588235 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "SkipButton"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SkipText:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="PickupsTutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_vertical_guides_": [ 160.0 ]
+}
+
+[node name="Backdrop" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[node name="Body" type="VBoxContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer" type="VBoxContainer" parent="Body"]
+margin_right = 320.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Title" type="VBoxContainer" parent="Body"]
+margin_top = 4.0
+margin_right = 320.0
+margin_bottom = 37.0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Title" type="Label" parent="Body/Title"]
+margin_right = 320.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 9 )
+text = "Tutorial"
+align = 1
+
+[node name="Subtitle" type="Label" parent="Body/Title"]
+margin_top = 19.0
+margin_right = 320.0
+margin_bottom = 33.0
+custom_colors/font_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Item Pickups"
+align = 1
+
+[node name="Main" type="RichTextLabel" parent="."]
+margin_left = 59.0
+margin_top = 48.0
+margin_right = 261.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 12 )
+bbcode_enabled = true
+bbcode_text = "[center]Along the way, some scattered items can be picked up to use them for your advantage.[/center]"
+text = "Along the way, some scattered items can be picked up to use them for your advantage."
+scroll_active = false
+
+[node name="MediumShadow" type="Sprite" parent="."]
+position = Vector2( 29, 118 )
+texture = ExtResource( 3 )
+
+[node name="Mcplayer" type="Sprite" parent="MediumShadow"]
+position = Vector2( 1, -11 )
+texture = ExtResource( 2 )
+hframes = 60
+frame = 4
+
+[node name="OreganoPickup" type="Sprite" parent="."]
+position = Vector2( 48, 116 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="OreganoPickup2" type="Sprite" parent="."]
+position = Vector2( 260, 98 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="OreganoPickup3" type="Sprite" parent="."]
+position = Vector2( 249, 113 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="OreganoPickup4" type="Sprite" parent="."]
+position = Vector2( 270, 114 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="1" type="RichTextLabel" parent="."]
+margin_left = 14.0
+margin_top = 129.0
+margin_right = 83.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 13 )
+custom_fonts/normal_font = SubResource( 14 )
+bbcode_enabled = true
+bbcode_text = "[center]Run over the item to collect it.[/center]"
+text = "Run over the item to collect it."
+scroll_active = false
+
+[node name="2" type="RichTextLabel" parent="."]
+margin_left = 120.0
+margin_top = 129.0
+margin_right = 200.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( 105, -21 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 13 )
+custom_fonts/normal_font = SubResource( 14 )
+bbcode_enabled = true
+bbcode_text = "[center]You can monitor the count of your items in the bottom right of the screen.[/center]"
+text = "You can monitor the count of your items in the bottom right of the screen."
+scroll_active = false
+
+[node name="3" type="RichTextLabel" parent="."]
+margin_left = 222.0
+margin_top = 129.0
+margin_right = 302.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( 105, -21 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 13 )
+custom_fonts/normal_font = SubResource( 14 )
+bbcode_enabled = true
+bbcode_text = "[center]Use them at the right time as items are very rare to find.[/center]"
+text = "Use them at the right time as items are very rare to find."
+scroll_active = false
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 160, 105 )
+scale = Vector2( 0.0874384, 0.0874384 )
+texture = ExtResource( 5 )
+
+[node name="SkipText" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.492503 )
+margin_left = 216.0
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 179.0
+custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+custom_fonts/normal_font = SubResource( 15 )
+text = "Press [ X ] to close tutorial."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/RESET = SubResource( 16 )
+anims/SkipButton = SubResource( 17 )
