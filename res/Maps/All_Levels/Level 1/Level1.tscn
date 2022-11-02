@@ -762,10 +762,8 @@ stream = ExtResource( 22 )
 
 [node name="AttackTutorial" parent="CanvasLayer" instance=ExtResource( 20 )]
 pause_mode = 2
-visible = false
 
 [node name="SavingTutorial" parent="CanvasLayer" instance=ExtResource( 21 )]
-visible = false
 
 [connection signal="body_entered" from="TiyanakCutscene" to="TiyanakCutscene" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="TikbalangCutscene" to="TikbalangCutscene" method="_on_Area2D_body_entered"]

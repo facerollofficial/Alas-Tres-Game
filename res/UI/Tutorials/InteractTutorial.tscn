@@ -182,7 +182,7 @@ margin_right = 320.0
 margin_bottom = 179.0
 custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
 custom_fonts/normal_font = SubResource( 15 )
-text = "Press [ H ] to close tutorial."
+text = "Press [ X ] to close tutorial."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
