@@ -1,0 +1,165 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Title Screen/TitleScreen2.png" type="Texture" id=2]
+[ext_resource path="res://UI/Themes/TitleScreenTheme.tres" type="Theme" id=3]
+
+[sub_resource type="DynamicFontData" id=29]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=30]
+outline_size = 1
+outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+font_data = SubResource( 29 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=38]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=33]
+size = 11
+font_data = SubResource( 38 )
+
+[sub_resource type="DynamicFontData" id=34]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=35]
+size = 9
+font_data = SubResource( 34 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=37]
+size = 7
+outline_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=39]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=40]
+size = 10
+font_data = SubResource( 39 )
+
+[node name="DemoEnd" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_vertical_guides_": [ 160.0 ]
+}
+
+[node name="Backdrop" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[node name="Title" type="Label" parent="."]
+margin_top = 45.0
+margin_right = 320.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 30 )
+text = "Thank you for playing!"
+align = 1
+
+[node name="TitleScreen2" type="Sprite" parent="."]
+position = Vector2( 160, 28 )
+scale = Vector2( 0.61875, 0.61875 )
+texture = ExtResource( 2 )
+
+[node name="Main" type="RichTextLabel" parent="."]
+margin_left = 19.0
+margin_top = 71.0
+margin_right = 301.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 32 )
+custom_fonts/normal_font = SubResource( 33 )
+bbcode_enabled = true
+bbcode_text = "[center]This concludes the DEMO of \"ALAS TRES\".
+We hope you had fun. [/center] - TEAM4"
+text = "This concludes the DEMO of \"ALAS TRES\".
+We hope you had fun.  - TEAM4"
+scroll_active = false
+
+[node name="Description" type="RichTextLabel" parent="."]
+margin_left = 13.0
+margin_top = 108.0
+margin_right = 243.0
+margin_bottom = 163.0
+custom_fonts/normal_font = SubResource( 35 )
+bbcode_enabled = true
+bbcode_text = "In the full game you'll find:"
+text = "In the full game you'll find:"
+
+[node name="1" type="RichTextLabel" parent="Description"]
+margin_top = 10.0
+margin_right = 163.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 36 )
+custom_fonts/normal_font = SubResource( 37 )
+bbcode_enabled = true
+bbcode_text = "- Additional areas to explore.
+- More monsters you'll encounter.
+- More items to aid you in combat.
+- Strong bosses to fight.
+"
+text = "- Additional areas to explore.
+- More monsters you'll encounter.
+- More items to aid you in combat.
+- Strong bosses to fight.
+"
+scroll_active = false
+
+[node name="Description2" type="RichTextLabel" parent="."]
+margin_left = 172.0
+margin_top = 108.0
+margin_right = 402.0
+margin_bottom = 163.0
+custom_fonts/normal_font = SubResource( 35 )
+bbcode_enabled = true
+bbcode_text = "We would like to hear from you:"
+text = "We would like to hear from you:"
+
+[node name="2" type="RichTextLabel" parent="Description2"]
+margin_left = 1.0
+margin_top = 10.0
+margin_right = 164.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 36 )
+custom_fonts/normal_font = SubResource( 37 )
+bbcode_enabled = true
+bbcode_text = "Email the devs at :
+alastresgame@gmail.com"
+text = "Email the devs at :
+alastresgame@gmail.com"
+scroll_active = false
+
+[node name="ReturnToMain" type="Button" parent="."]
+margin_left = 216.0
+margin_top = 163.0
+margin_right = 310.0
+margin_bottom = 178.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 40 )
+text = "Return to Main Menu"

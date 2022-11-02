@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Enemies/1_Tiyanak/Tiyanak.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=6]
 [ext_resource path="res://Extras/Tilemaps/DirtTileset1.png" type="Texture" id=7]
-[ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.gd" type="Script" id=8]
 [ext_resource path="res://Effects/Shaders/WhiteColor.shader" type="Shader" id=9]
 [ext_resource path="res://UI/PlayerGUI/GUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://NPC/Aghoy/Aghoy.png" type="Texture" id=11]
@@ -29,6 +29,15 @@
 [ext_resource path="res://world assets/tikbalang.png" type="Texture" id=27]
 [ext_resource path="res://Maps/All_Levels/Level 1/Tiyanak Details.gd" type="Script" id=28]
 [ext_resource path="res://world assets/tiyanak.png" type="Texture" id=29]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=32]
+[ext_resource path="res://Enemies/Enemy Scripts/PlayerDetectionZone.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Hitboxes and Hurtboxes/SoftCollision.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Stats/Stats.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Enemies/Enemy Scripts/WanderController.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Enemies/Enemy Scripts/AttackZone.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.png" type="Texture" id=38]
 
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 67.5, 6.5 )
@@ -94,7 +103,7 @@ extents = Vector2( 2.5, 139 )
 [sub_resource type="Animation" id=64]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Combat Field/Boss/Tikbalang/Sprite:frame")
+tracks/0/path = NodePath("../Combat Field/Boss/BossTikbalang/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -133,7 +142,7 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=65]
 resource_name = "tikbalang_cutscene"
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Combat Field/Boss/Tikbalang/Sprite:frame")
+tracks/0/path = NodePath("../Combat Field/Boss/BossTikbalang/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -271,16 +280,933 @@ points = PoolVector2Array( 32, 38.1416, 29.7691, 43.7232, 24.8852, 48, 12.7917, 
 } ]
 0/z_index = 0
 
+[sub_resource type="CanvasItemMaterial" id=59]
+light_mode = 2
+
 [sub_resource type="ShaderMaterial" id=54]
 resource_local_to_scene = true
 shader = ExtResource( 9 )
 shader_param/active = false
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=55]
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 8.0
+height = 6.0
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="Animation" id=17]
+resource_name = "Attack_Down"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 29, 30, 31, 29, 30, 31 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -11 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot/TikbalangHitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HitboxPivot/TikbalangHitbox/CollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 2, 11 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "Attack_Left"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 21, 22, 23, 21, 22, 23 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, -11 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot/TikbalangHitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 90.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitboxPivot/TikbalangHitbox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -4, 18 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Attack_Right"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 13, 14, 15 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3, -11 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot/TikbalangHitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitboxPivot/TikbalangHitbox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 20 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Attack_Up"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -11 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot/TikbalangHitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0.0, 180.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitboxPivot/TikbalangHitbox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 3.8147e-06, 21 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Charging_Down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 24 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -11 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "doneCharging"
+} ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Charging_Left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -3, -11 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "doneCharging"
+} ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Charging_Right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 3, -9 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "doneCharging"
+} ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Charging_Up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -11 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "doneCharging"
+} ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "Idle_Down"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 25 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -11 ) ]
+}
+
+[sub_resource type="Animation" id=71]
+resource_name = "Idle_Left"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 17 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -3, -11 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle_Right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 3, -11 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle_Up"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -9 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "Run_Down"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 26, 27, 28, 25 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -11 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Run_Left"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 19, 20, 17 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -3, -11 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Run_Right"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 3, -11 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Run_Up"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 4, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -11 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "Attack_Down"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Attack_Up"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "Attack_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "Attack_Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=24]
+blend_point_0/node = SubResource( 20 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 21 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 22 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 23 )
+blend_point_3/pos = Vector2( 1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "Charging_Down"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "Charging_Up"
+
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "Charging_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "Charging_Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=29]
+blend_point_0/node = SubResource( 25 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 26 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 27 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 28 )
+blend_point_3/pos = Vector2( 1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "Idle_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "Idle_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "Idle_Up"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "Idle_Down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=34]
+blend_point_0/node = SubResource( 30 )
+blend_point_0/pos = Vector2( 1, 0 )
+blend_point_1/node = SubResource( 31 )
+blend_point_1/pos = Vector2( -1, 0 )
+blend_point_2/node = SubResource( 32 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 33 )
+blend_point_3/pos = Vector2( 0, 1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "Run_Down"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "Run_Up"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "Run_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "Run_Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=39]
+blend_point_0/node = SubResource( 35 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 36 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 37 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 38 )
+blend_point_3/pos = Vector2( 1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=72]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=73]
+
+[sub_resource type="AnimationNodeStateMachine" id=46]
+states/Attack/node = SubResource( 24 )
+states/Attack/position = Vector2( 545, 294 )
+states/Charging/node = SubResource( 29 )
+states/Charging/position = Vector2( 331, 216 )
+states/Idle/node = SubResource( 34 )
+states/Idle/position = Vector2( 331, 102 )
+states/Run/node = SubResource( 39 )
+states/Run/position = Vector2( 117, 294 )
+transitions = [ "Charging", "Attack", SubResource( 40 ), "Run", "Idle", SubResource( 41 ), "Idle", "Run", SubResource( 42 ), "Run", "Charging", SubResource( 43 ), "Charging", "Run", SubResource( 44 ), "Attack", "Charging", SubResource( 45 ), "Idle", "Attack", SubResource( 53 ), "Attack", "Idle", SubResource( 72 ), "Attack", "Run", SubResource( 55 ), "Run", "Attack", SubResource( 73 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -403.116, 93.1881 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=74]
+
+[sub_resource type="CapsuleShape2D" id=48]
+radius = 8.0
+height = 18.0
+
+[sub_resource type="CapsuleShape2D" id=49]
+radius = 7.0
+height = 0.0
+
+[sub_resource type="CircleShape2D" id=51]
+radius = 13.3449
+
+[sub_resource type="CircleShape2D" id=50]
+radius = 145.862
+
+[sub_resource type="CapsuleShape2D" id=52]
+radius = 8.0
+height = 6.0
+
+[sub_resource type="Animation" id=75]
+resource_name = "Start"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=58]
+resource_name = "Stop"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="BitmapFont" id=60]
+
+[sub_resource type="StyleBoxFlat" id=61]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=76]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="Theme" id=63]
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/fonts/font = SubResource( 60 )
+ProgressBar/styles/bg = SubResource( 61 )
+ProgressBar/styles/fg = SubResource( 76 )
+
+[sub_resource type="CanvasItemMaterial" id=77]
+
+[sub_resource type="Animation" id=78]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
@@ -319,8 +1245,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=60]
-resource_name = "attack"
+[sub_resource type="Animation" id=79]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("YSort/StrangerAttack:position")
@@ -361,8 +1286,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=61]
-resource_name = "flash"
+[sub_resource type="Animation" id=80]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
 tracks/0/interp = 1
@@ -390,11 +1314,9 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=63]
-resource_name = "tikbalang"
+[sub_resource type="Animation" id=81]
 
-[sub_resource type="Animation" id=59]
-resource_name = "white_to_fade"
+[sub_resource type="Animation" id=82]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
@@ -536,25 +1458,118 @@ position = Vector2( -846, -485 )
 
 [node name="Boss" type="YSort" parent="Combat Field"]
 
-[node name="Tikbalang" parent="Combat Field/Boss" instance=ExtResource( 8 )]
+[node name="BossTikbalang" type="KinematicBody2D" parent="Combat Field/Boss"]
+material = SubResource( 59 )
 position = Vector2( 779, 394 )
 scale = Vector2( 1.8, 1.8 )
+collision_layer = 16
+script = ExtResource( 8 )
+MAX_SPEED = 65
 
-[node name="Sprite" parent="Combat Field/Boss/Tikbalang" index="1"]
+[node name="ShadowSprite" type="Sprite" parent="Combat Field/Boss/BossTikbalang"]
+texture = ExtResource( 32 )
+
+[node name="Sprite" type="Sprite" parent="Combat Field/Boss/BossTikbalang"]
 pause_mode = 2
 material = SubResource( 54 )
+position = Vector2( 0, -11 )
+texture = ExtResource( 38 )
+hframes = 8
+vframes = 4
 frame = 26
 
-[node name="AnimationTree" parent="Combat Field/Boss/Tikbalang" index="4"]
-parameters/playback = SubResource( 55 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang"]
+visible = false
+shape = SubResource( 19 )
 
-[node name="Stats" parent="Combat Field/Boss/Tikbalang" index="7"]
-max_health = 4
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Combat Field/Boss/BossTikbalang"]
+anims/Attack_Down = SubResource( 17 )
+anims/Attack_Left = SubResource( 18 )
+anims/Attack_Right = SubResource( 15 )
+anims/Attack_Up = SubResource( 16 )
+anims/Charging_Down = SubResource( 9 )
+anims/Charging_Left = SubResource( 10 )
+anims/Charging_Right = SubResource( 11 )
+anims/Charging_Up = SubResource( 12 )
+anims/Idle_Down = SubResource( 70 )
+anims/Idle_Left = SubResource( 71 )
+anims/Idle_Right = SubResource( 3 )
+anims/Idle_Up = SubResource( 4 )
+anims/Run_Down = SubResource( 14 )
+anims/Run_Left = SubResource( 8 )
+anims/Run_Right = SubResource( 6 )
+anims/Run_Up = SubResource( 7 )
 
-[node name="PlayerDetectionZone" parent="Combat Field/Boss/Tikbalang" index="9"]
-visible = true
+[node name="AnimationTree" type="AnimationTree" parent="Combat Field/Boss/BossTikbalang"]
+tree_root = SubResource( 46 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 74 )
+parameters/Attack/blend_position = Vector2( -0.490547, 0.576442 )
+parameters/Charging/blend_position = Vector2( -0.0865672, -1.0101 )
+parameters/Idle/blend_position = Vector2( 0.327363, 0.682212 )
+parameters/Run/blend_position = Vector2( -0.00259739, 0.673276 )
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Combat Field/Boss/Tikbalang"]
+[node name="HitboxPivot" type="Position2D" parent="Combat Field/Boss/BossTikbalang"]
+position = Vector2( 0, -4 )
+__meta__ = {
+"_gizmo_extents_": 8.0
+}
+
+[node name="TikbalangHitbox" parent="Combat Field/Boss/BossTikbalang/HitboxPivot" instance=ExtResource( 30 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/HitboxPivot/TikbalangHitbox" index="0"]
+position = Vector2( 2, 11 )
+rotation = 1.5708
+shape = SubResource( 48 )
+disabled = true
+
+[node name="SoftCollision" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 34 )]
+position = Vector2( 0, -8 )
+
+[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/SoftCollision" index="0"]
+position = Vector2( 0, 8 )
+shape = SubResource( 49 )
+
+[node name="Stats" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 35 )]
+
+[node name="AttackZone" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 37 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/AttackZone" index="0"]
+shape = SubResource( 51 )
+
+[node name="PlayerDetectionZone" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 33 )]
+
+[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/PlayerDetectionZone" index="0"]
+shape = SubResource( 50 )
+
+[node name="WanderController" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 36 )]
+visible = false
+
+[node name="Hurtbox" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 31 )]
+visible = false
+position = Vector2( 0, -8 )
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/Hurtbox" index="0"]
+shape = SubResource( 52 )
+
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="Combat Field/Boss/BossTikbalang"]
+anims/Start = SubResource( 75 )
+anims/Stop = SubResource( 58 )
+
+[node name="EnemyHealthBar" type="ProgressBar" parent="Combat Field/Boss/BossTikbalang"]
+margin_left = -9.0
+margin_top = -40.0
+margin_right = 9.0
+margin_bottom = -38.0
+theme = SubResource( 63 )
+value = 50.0
+percent_visible = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Combat Field/Boss/BossTikbalang"]
 pause_mode = 2
 remote_path = NodePath("../../../../TikbalangCutscene/Camera2D2")
 
@@ -562,115 +1577,115 @@ remote_path = NodePath("../../../../TikbalangCutscene/Camera2D2")
 position = Vector2( -432, 201 )
 
 [node name="Tiyanak" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( -484, -71 )
 
 [node name="Tiyanak17" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 92, -226 )
 
 [node name="Tiyanak18" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 597, -98 )
 
 [node name="Tiyanak25" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 82, -7 )
 
 [node name="Tiyanak26" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 819, -732 )
 
 [node name="Tiyanak27" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 1281, -499 )
 
 [node name="Tiyanak28" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 361, -639 )
 
 [node name="Tiyanak5" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( -398, 62 )
 
 [node name="Tiyanak4" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 968, -681 )
 
 [node name="Tiyanak19" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 967, -331 )
 
 [node name="Tiyanak20" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( -377, 355 )
 
 [node name="Tiyanak21" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 1311, -717 )
 
 [node name="Tiyanak6" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 1399, -672 )
 
 [node name="Tiyanak7" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 441, -738 )
 
 [node name="Tiyanak8" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 1120, -361 )
 
 [node name="Tiyanak9" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 1415, -756 )
 
 [node name="Tiyanak10" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 683, -241 )
 
 [node name="Tiyanak24" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 8, 314 )
 
 [node name="Tiyanak11" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 488, 191 )
 
 [node name="Tiyanak12" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 431, 110 )
 
 [node name="Tiyanak13" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 491, 144 )
 
 [node name="Tiyanak14" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 557, 238 )
 
 [node name="Tiyanak15" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 59, -457 )
 
 [node name="Tiyanak22" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 208, -449 )
 
 [node name="Tiyanak23" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 563, -789 )
 
 [node name="Tiyanak2" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( -522, 356 )
 
 [node name="Tiyanak3" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( -235, 279 )
 
 [node name="Tiyanak16" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 77 )
 position = Vector2( 5, 218 )
 
 [node name="SmallShadow" type="Sprite" parent="Combat Field"]
@@ -746,11 +1761,11 @@ color = Color( 1, 1, 1, 0 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 pause_mode = 2
 root_node = NodePath("../..")
-anims/RESET = SubResource( 58 )
-anims/attack = SubResource( 60 )
-anims/flash = SubResource( 61 )
-anims/tikbalang = SubResource( 63 )
-anims/white_to_fade = SubResource( 59 )
+anims/RESET = SubResource( 78 )
+anims/attack = SubResource( 79 )
+anims/flash = SubResource( 80 )
+anims/tikbalang = SubResource( 81 )
+anims/white_to_fade = SubResource( 82 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 pause_mode = 2
@@ -767,14 +1782,17 @@ pause_mode = 2
 
 [connection signal="body_entered" from="TiyanakCutscene" to="TiyanakCutscene" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="TikbalangCutscene" to="TikbalangCutscene" method="_on_Area2D_body_entered"]
+[connection signal="no_health" from="Combat Field/Boss/BossTikbalang/Stats" to="Combat Field/Boss/BossTikbalang" method="_on_Stats_no_health"]
+[connection signal="area_entered" from="Combat Field/Boss/BossTikbalang/Hurtbox" to="Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_area_entered"]
+[connection signal="invincibility_ended" from="Combat Field/Boss/BossTikbalang/Hurtbox" to="Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_invincibility_ended"]
+[connection signal="invincibility_started" from="Combat Field/Boss/BossTikbalang/Hurtbox" to="Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_invincibility_started"]
 
 [editable path="TikbalangCutscene/Camera2D"]
 [editable path="TikbalangCutscene/Camera2D2"]
-[editable path="Combat Field/Boss/Tikbalang"]
-[editable path="Combat Field/Boss/Tikbalang/HitboxPivot/TikbalangHitbox"]
-[editable path="Combat Field/Boss/Tikbalang/SoftCollision"]
-[editable path="Combat Field/Boss/Tikbalang/AttackZone"]
-[editable path="Combat Field/Boss/Tikbalang/PlayerDetectionZone"]
-[editable path="Combat Field/Boss/Tikbalang/Hurtbox"]
+[editable path="Combat Field/Boss/BossTikbalang/HitboxPivot/TikbalangHitbox"]
+[editable path="Combat Field/Boss/BossTikbalang/SoftCollision"]
+[editable path="Combat Field/Boss/BossTikbalang/AttackZone"]
+[editable path="Combat Field/Boss/BossTikbalang/PlayerDetectionZone"]
+[editable path="Combat Field/Boss/BossTikbalang/Hurtbox"]
 [editable path="YSort/Aghoy"]
 [editable path="YSort/StrangerAttack"]

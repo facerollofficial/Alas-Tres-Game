@@ -10,13 +10,13 @@
 [ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=8]
 [ext_resource path="res://Pickups/Oregano/OreganoPickup.png" type="Texture" id=9]
 
-[sub_resource type="DynamicFontData" id=29]
+[sub_resource type="DynamicFontData" id=31]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=18]
 outline_size = 1
 outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-font_data = SubResource( 29 )
+font_data = SubResource( 31 )
 
 [sub_resource type="DynamicFont" id=19]
 size = 10

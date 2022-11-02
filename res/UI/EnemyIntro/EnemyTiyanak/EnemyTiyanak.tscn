@@ -54,12 +54,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFontData" id=30]
+[sub_resource type="DynamicFontData" id=33]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=15]
 size = 9
-font_data = SubResource( 30 )
+font_data = SubResource( 33 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 8
@@ -166,7 +166,7 @@ bbcode_text = "[center][/center]"
 position = Vector2( 29, 18 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 24 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="Description" type="RichTextLabel" parent="."]
@@ -201,7 +201,7 @@ margin_bottom = 167.0
 custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
 bbcode_text = "[center]Weakness:[/center]"
-text = "[center]Weakness:[/center]"
+text = "Weakness:"
 
 [node name="Weakness Desc" type="RichTextLabel" parent="Weakness"]
 margin_left = 9.0
@@ -215,7 +215,7 @@ custom_fonts/bold_font = SubResource( 12 )
 custom_fonts/normal_font = SubResource( 17 )
 bbcode_enabled = true
 bbcode_text = "[center]Garlic and Rosary.[/center]"
-text = "[center]Garlic and Rosary.[/center]"
+text = "Garlic and Rosary."
 scroll_active = false
 
 [node name="Special Ability" type="RichTextLabel" parent="."]
@@ -226,7 +226,7 @@ margin_bottom = 179.0
 custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
 bbcode_text = "[center]Special Ability:[/center]"
-text = "[center]Special Ability:[/center]"
+text = "Special Ability:"
 
 [node name="Special Ability Desc" type="RichTextLabel" parent="Special Ability"]
 margin_left = 1.0
@@ -240,7 +240,7 @@ custom_fonts/bold_font = SubResource( 12 )
 custom_fonts/normal_font = SubResource( 17 )
 bbcode_enabled = true
 bbcode_text = "[center]Shapeshift[center]"
-text = "[center]Shapeshift[center]"
+text = "Shapeshift"
 scroll_active = false
 
 [node name="Health" type="RichTextLabel" parent="."]
@@ -251,7 +251,7 @@ margin_bottom = 144.0
 custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
 bbcode_text = "[center]Health Stat:[/center]"
-text = "[center]Health Stat:[/center]"
+text = "Health Stat:"
 
 [node name="HealthGroup" type="Control" parent="Health"]
 margin_left = -1.0
@@ -296,7 +296,7 @@ margin_bottom = 147.0
 custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
 bbcode_text = "[center]Damage:[/center]"
-text = "[center]Damage:[/center]"
+text = "Damage:"
 
 [node name="DamageGroup" type="Control" parent="Damage"]
 margin_left = -1.0
