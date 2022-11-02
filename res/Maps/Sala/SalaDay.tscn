@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Maps/Sprites/HOME SCENE_DAY.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Player/PlayerPortalMorning.gd" type="Script" id=14]
 [ext_resource path="res://Maps/Portal2.gd" type="Script" id=15]
 [ext_resource path="res://Extras/Transitions/TransitionSalaToRoom.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Maps/Sala/SalaDay.gd" type="Script" id=17]
+[ext_resource path="res://UI/Tutorials/InteractTutorial.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 6, 4.5 )
@@ -203,6 +205,7 @@ extents = Vector2( 24, 2 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 72, -5 )
+script = ExtResource( 17 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 90, 42 )
@@ -334,6 +337,11 @@ player_spawn_location = Vector2( 400, 103 )
 [node name="CollisionShape2D" parent="Portal" index="0"]
 position = Vector2( 86, 181 )
 shape = SubResource( 10 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InteractTutorial" parent="CanvasLayer" instance=ExtResource( 18 )]
+pause_mode = 2
 
 [editable path="YSort/Lolo"]
 [editable path="YSort/Camera2D"]
