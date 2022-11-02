@@ -296,7 +296,6 @@ text = "-0 dmg"
 position = Vector2( 241, 102 )
 scale = Vector2( 0.583333, 0.583333 )
 frames = SubResource( 28 )
-frame = 1
 playing = true
 
 [node name="SmallShadow" type="Sprite" parent="."]
@@ -306,6 +305,6 @@ texture = ExtResource( 6 )
 [node name="Bat" type="AnimatedSprite" parent="."]
 position = Vector2( 252, 101 )
 frames = SubResource( 34 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
