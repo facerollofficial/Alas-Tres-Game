@@ -1,7 +1,9 @@
 extends Node2D
 
 var anim_done = false
+var tutorial_visible = false
 onready var attack_tutorial = $CanvasLayer/AttackTutorial
+onready var saving_tutorial = $CanvasLayer/SavingTutorial
 
 func _ready():
 	#to avoid clash with options
@@ -11,6 +13,7 @@ func _ready():
 	
 	#to avoid covering the screen
 	attack_tutorial.visible = false
+	saving_tutorial.visible = false
 	
 	#loading and saving
 	var file: File = File.new()
@@ -67,32 +70,33 @@ func flash(timeline_name):
 	$CanvasLayer/AnimationPlayer.play("flash")
 	anim_done = true
 	aghoyEnter()
-	
+
 func aghoyEnter():
 	yield(get_tree().create_timer(1), "timeout")
 	#dialog with aghoy
 	var dialog = Dialogic.start('timeline-after_encounter')
 	dialog.pause_mode = Node.PAUSE_MODE_PROCESS
 	add_child(dialog)
-	dialog.connect('timeline_end',self,'unpause')
-
-func unpause(timeline_name):
-	print("unpause")
-	get_tree().paused = false
-	$CanvasLayer/ColorRect.visible = false
-	
-#func move_to_tutorial(timeline_name):
-#	tutorial()
+	#dialog.connect('timeline_end',self,'unpause')
+	dialog.connect('timeline_end',self,'tutorial')
 
 #tutorial function
-#func tutorial():
+func tutorial(timeline_name):
+	print("tutorial visible")
 	#tutorial weapon
-#	attack_tutorial.visible = true
+	get_tree().paused = false
+	attack_tutorial.visible = true
+	$CanvasLayer/ColorRect.visible = false
+	tutorial_visible = true
 
-#func _input(event):
-#	if event.is_action_pressed("trigger_convo"):
-#		print("closed")
-#		attack_tutorial.visible = false
-#	print("unpause")
-#	get_tree().paused = false
-##	$CanvasLayer/ColorRect.visible = false
+#to close the tutorial
+func _input(event):
+	if event.is_action_pressed("next") and tutorial_visible:
+		print("proceed na")
+		attack_tutorial.visible = false
+		saving_tutorial.visible = true
+
+	if event.is_action_pressed("close") and tutorial_visible:
+		print("closed")
+		saving_tutorial.visible = false
+		tutorial_visible = false

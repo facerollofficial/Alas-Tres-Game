@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/magic-spell-6005.wav-fe7681c2d35764d2a22dffa133a8309e.sample"
+
+[deps]
+
+source_file="res://Audio/BGM/magic-spell-6005.wav"
+dest_files=[ "res://.import/magic-spell-6005.wav-fe7681c2d35764d2a22dffa133a8309e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
