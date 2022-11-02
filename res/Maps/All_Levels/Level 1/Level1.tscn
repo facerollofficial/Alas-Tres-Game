@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=118 format=2]
+=======
+[gd_scene load_steps=53 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -29,6 +33,7 @@
 [ext_resource path="res://world assets/tikbalang.png" type="Texture" id=27]
 [ext_resource path="res://Maps/All_Levels/Level 1/Tiyanak Details.gd" type="Script" id=28]
 [ext_resource path="res://world assets/tiyanak.png" type="Texture" id=29]
+<<<<<<< Updated upstream
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=32]
@@ -38,6 +43,12 @@
 [ext_resource path="res://Enemies/Enemy Scripts/WanderController.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Enemies/Enemy Scripts/AttackZone.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.png" type="Texture" id=38]
+=======
+[ext_resource path="res://UI/Tutorials/PickupOreganoTutorial.tscn" type="PackedScene" id=30]
+[ext_resource path="res://UI/Tutorials/DodgeTutorial.tscn" type="PackedScene" id=31]
+[ext_resource path="res://UI/Tutorials/PickupsTutorial.tscn" type="PackedScene" id=32]
+[ext_resource path="res://UI/Tutorials/PauseTutorial.tscn" type="PackedScene" id=33]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 67.5, 6.5 )
@@ -1779,6 +1790,14 @@ stream = ExtResource( 22 )
 pause_mode = 2
 
 [node name="SavingTutorial" parent="CanvasLayer" instance=ExtResource( 21 )]
+
+[node name="DodgeTutorial" parent="CanvasLayer" instance=ExtResource( 31 )]
+
+[node name="PickupOreganoTutorial" parent="CanvasLayer" instance=ExtResource( 30 )]
+
+[node name="PickupsTutorial" parent="CanvasLayer" instance=ExtResource( 32 )]
+
+[node name="PauseTutorial" parent="CanvasLayer" instance=ExtResource( 33 )]
 
 [connection signal="body_entered" from="TiyanakCutscene" to="TiyanakCutscene" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="TikbalangCutscene" to="TikbalangCutscene" method="_on_Area2D_body_entered"]

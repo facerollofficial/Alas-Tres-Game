@@ -27,6 +27,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 texture_scale = 0.6
 energy = 0.85
+mode = 2
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( 0, 7 )

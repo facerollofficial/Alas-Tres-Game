@@ -2,8 +2,13 @@ extends Node2D
 
 var anim_done = false
 var tutorial_visible = false
+var ctr = 1
 onready var attack_tutorial = $CanvasLayer/AttackTutorial
+onready var dodge_tutorial = $CanvasLayer/DodgeTutorial
+onready var pickup_tutorial = $CanvasLayer/PickupsTutorial
+onready var pickup_oregano = $CanvasLayer/PickupOreganoTutorial
 onready var saving_tutorial = $CanvasLayer/SavingTutorial
+onready var pause_tutorial = $CanvasLayer/PauseTutorial
 
 func _ready():
 	#to avoid clash with options
@@ -15,7 +20,11 @@ func _ready():
 	
 	#to avoid covering the screen
 	attack_tutorial.visible = false
+	dodge_tutorial.visible = false
+	pickup_tutorial.visible = false
+	pickup_oregano.visible = false
 	saving_tutorial.visible = false
+	pause_tutorial.visible = false
 	
 	#loading and saving
 	var file: File = File.new()
@@ -93,12 +102,37 @@ func tutorial(timeline_name):
 
 #to close the tutorial
 func _input(event):
-	if event.is_action_pressed("next") and tutorial_visible:
-		print("proceed na")
+	if event.is_action_pressed("next") and ctr == 1:
+		print("tut1")
 		attack_tutorial.visible = false
+		dodge_tutorial.visible = true
+		ctr+=1
+	elif event.is_action_pressed("next") and ctr == 2:
+		print("tut",ctr)
+		dodge_tutorial.visible = false
+		pickup_tutorial.visible = true
+		ctr+=1
+	elif event.is_action_pressed("next") and ctr == 3:
+		print("tut",ctr)
+		pickup_tutorial.visible = false
+		pickup_oregano.visible = true
+		ctr+=1
+	elif event.is_action_pressed("next") and ctr == 4:
+		print("tut",ctr)
+		pickup_oregano.visible = false
 		saving_tutorial.visible = true
-
+		ctr+=1
+	elif event.is_action_pressed("next") and ctr == 5:
+		print("tut",ctr)
+		saving_tutorial.visible = false
+		pause_tutorial.visible = true
+		ctr+=1
+		
 	if event.is_action_pressed("close") and tutorial_visible:
 		print("closed")
+		attack_tutorial.visible = false
+		dodge_tutorial.visible = false
+		pickup_tutorial.visible = false
+		pickup_oregano.visible = false
 		saving_tutorial.visible = false
-		tutorial_visible = false
+		pause_tutorial.visible = false

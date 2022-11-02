@@ -225,13 +225,13 @@ texture = ExtResource( 5 )
 
 [node name="SkipText" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0.492503 )
-margin_left = 216.0
+margin_left = 197.0
 margin_top = 168.0
 margin_right = 320.0
 margin_bottom = 179.0
 custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
 custom_fonts/normal_font = SubResource( 15 )
-text = "Press [ X ] to close tutorial."
+text = "Press [N] key to continue tutorial."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
