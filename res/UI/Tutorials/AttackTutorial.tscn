@@ -182,6 +182,7 @@ color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 253, 111 )
 frames = SubResource( 36 )
+frame = 3
 playing = true
 
 [node name="MediumShadow2" type="Sprite" parent="."]
@@ -246,6 +247,7 @@ align = 1
 [node name="Bat" type="AnimatedSprite" parent="."]
 position = Vector2( 101, 102 )
 frames = SubResource( 25 )
+frame = 3
 playing = true
 flip_h = true
 

@@ -207,7 +207,7 @@ align = 1
 
 [node name="SkipText" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0.492503 )
-margin_left = 195.0
+margin_left = 197.0
 margin_top = 168.0
 margin_right = 320.0
 margin_bottom = 179.0
@@ -269,7 +269,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MediumShadow"]
 position = Vector2( 1, -10 )
 frames = SubResource( 24 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="MediumShadow2" type="Sprite" parent="."]
@@ -296,6 +296,7 @@ text = "-0 dmg"
 position = Vector2( 241, 102 )
 scale = Vector2( 0.583333, 0.583333 )
 frames = SubResource( 28 )
+frame = 1
 playing = true
 
 [node name="SmallShadow" type="Sprite" parent="."]
@@ -305,6 +306,5 @@ texture = ExtResource( 6 )
 [node name="Bat" type="AnimatedSprite" parent="."]
 position = Vector2( 252, 101 )
 frames = SubResource( 34 )
-frame = 3
 playing = true
 flip_h = true

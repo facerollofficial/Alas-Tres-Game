@@ -127,7 +127,7 @@ func _input(event):
 		saving_tutorial.visible = false
 		pause_tutorial.visible = true
 		ctr+=1
-		
+
 	if event.is_action_pressed("close") and tutorial_visible:
 		print("closed")
 		attack_tutorial.visible = false

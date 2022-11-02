@@ -225,7 +225,7 @@ texture = ExtResource( 5 )
 
 [node name="SkipText" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0.492503 )
-margin_left = 197.0
+margin_left = 196.0
 margin_top = 168.0
 margin_right = 320.0
 margin_bottom = 179.0

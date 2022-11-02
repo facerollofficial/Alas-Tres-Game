@@ -1,21 +1,23 @@
 extends Area2D
 
+onready var tiyanak_details = $CanvasLayer/EnemyTiyanakInfo
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$CanvasLayer/ColorRect.visible = false
-	$CanvasLayer/Sprite.visible = false
+	tiyanak_details.visible = false
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		get_tree().paused = true
-		$CanvasLayer/ColorRect.visible = true
-		$CanvasLayer/Sprite.visible = true
-		$AnimationPlayer.play("tiyanak_details")
-		yield(get_tree().create_timer(20.6), "timeout")
+		tiyanak_details.visible = true
 		unpause()
-	
+
 func unpause():
-	print("done")
-	$CanvasLayer/ColorRect.visible = false
-	$CanvasLayer/Sprite.visible = false
+	print("unpause")
 	get_tree().paused = false
+
+func _input(event):
+	if event.is_action_pressed("close"):
+		print("tyanak info")
+		tiyanak_details.visible = false
+		$CollisionShape2D.disabled = true
