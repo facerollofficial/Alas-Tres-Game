@@ -244,8 +244,8 @@ size_flags_vertical = 3
 custom_fonts/bold_font = SubResource( 17 )
 custom_fonts/normal_font = SubResource( 18 )
 bbcode_enabled = true
-bbcode_text = "[center]Press [b]K[/b] key to use perform a roll and evade an attacking enemy.[/center]"
-text = "Press K key to use perform a roll and evade an attacking enemy."
+bbcode_text = "[center]Press [b]K[/b] key to perform a full-body roll and evade an attacking enemy.[/center]"
+text = "Press K key to perform a full-body roll and evade an attacking enemy."
 scroll_active = false
 
 [node name="2" type="RichTextLabel" parent="."]
@@ -296,6 +296,7 @@ text = "-0 dmg"
 position = Vector2( 241, 102 )
 scale = Vector2( 0.583333, 0.583333 )
 frames = SubResource( 28 )
+frame = 1
 playing = true
 
 [node name="SmallShadow" type="Sprite" parent="."]
@@ -305,6 +306,5 @@ texture = ExtResource( 6 )
 [node name="Bat" type="AnimatedSprite" parent="."]
 position = Vector2( 252, 101 )
 frames = SubResource( 34 )
-frame = 2
 playing = true
 flip_h = true
