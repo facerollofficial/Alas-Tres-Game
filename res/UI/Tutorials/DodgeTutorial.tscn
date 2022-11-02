@@ -59,23 +59,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "flickerlight"
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Light:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.145098 ), Color( 1, 1, 1, 0.0588235 ), Color( 1, 1, 1, 0.145098 ) ]
-}
-
 [sub_resource type="DynamicFont" id=15]
 size = 8
 outline_size = 1
@@ -124,9 +107,12 @@ animations = [ {
 "speed": 7.0
 } ]
 
+[sub_resource type="DynamicFontData" id=46]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
 [sub_resource type="DynamicFont" id=25]
-size = 5
-font_data = ExtResource( 1 )
+size = 4
+font_data = SubResource( 46 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 7 )
@@ -141,7 +127,7 @@ animations = [ {
 "frames": [ SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 1.0
 } ]
 
 [sub_resource type="AtlasTexture" id=41]
@@ -169,7 +155,7 @@ animations = [ {
 "frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
 "loop": true,
 "name": "default",
-"speed": 7.0
+"speed": 2.0
 } ]
 
 [node name="DodgeTutorial" type="Control"]
@@ -234,9 +220,6 @@ reset_on_save = false
 anims/RESET = SubResource( 12 )
 anims/SkipButton = SubResource( 13 )
 
-[node name="LightFlicker" type="AnimationPlayer" parent="."]
-anims/flickerlight = SubResource( 14 )
-
 [node name="Main" type="RichTextLabel" parent="."]
 margin_left = 30.0
 margin_top = 49.0
@@ -247,8 +230,8 @@ size_flags_vertical = 3
 custom_fonts/bold_font = SubResource( 15 )
 custom_fonts/normal_font = SubResource( 16 )
 bbcode_enabled = true
-bbcode_text = "[center]In order to survive, you need to avoid most of the enemies attacks.[/center]"
-text = "In order to survive, you need to avoid most of the enemies attacks."
+bbcode_text = "[center]In order to survive, you need to avoid most of the enemies' attacks.[/center]"
+text = "In order to survive, you need to avoid most of the enemies' attacks."
 scroll_active = false
 
 [node name="1" type="RichTextLabel" parent="."]
@@ -286,7 +269,7 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MediumShadow"]
 position = Vector2( 1, -10 )
 frames = SubResource( 24 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="MediumShadow2" type="Sprite" parent="."]
@@ -300,11 +283,11 @@ hframes = 60
 frame = 43
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 203.0
-margin_top = 94.0
-margin_right = 273.0
-margin_bottom = 134.0
-custom_colors/default_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+margin_left = 205.0
+margin_top = 98.0
+margin_right = 275.0
+margin_bottom = 138.0
+custom_colors/default_color = Color( 0.666667, 0.176471, 0.176471, 1 )
 custom_fonts/normal_font = SubResource( 25 )
 bbcode_text = "-0 dmg"
 text = "-0 dmg"
@@ -313,7 +296,6 @@ text = "-0 dmg"
 position = Vector2( 241, 102 )
 scale = Vector2( 0.583333, 0.583333 )
 frames = SubResource( 28 )
-frame = 1
 playing = true
 
 [node name="SmallShadow" type="Sprite" parent="."]
