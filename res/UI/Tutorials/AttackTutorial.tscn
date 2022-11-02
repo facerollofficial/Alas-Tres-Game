@@ -92,29 +92,29 @@ font_data = SubResource( 39 )
 size = 10
 font_data = ExtResource( 1 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 3 )
 region = Rect2( 48, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 3 )
 region = Rect2( 64, 0, 16, 24 )
 
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
 "loop": true,
 "name": "default",
 "speed": 7.0
@@ -182,7 +182,7 @@ color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 253, 111 )
 frames = SubResource( 36 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="MediumShadow2" type="Sprite" parent="."]
@@ -192,7 +192,7 @@ texture = ExtResource( 4 )
 [node name="Mcplayer2" type="AnimatedSprite" parent="."]
 position = Vector2( 225, 102 )
 frames = SubResource( 19 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="SmallShadow" type="Sprite" parent="."]
@@ -247,7 +247,7 @@ align = 1
 [node name="Bat" type="AnimatedSprite" parent="."]
 position = Vector2( 101, 102 )
 frames = SubResource( 25 )
-frame = 2
+frame = 3
 playing = true
 flip_h = true
 

@@ -1,0 +1,328 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Tutorials/DodgeTutorial.gd" type="Script" id=2]
+[ext_resource path="res://Player/mcplayer.png" type="Texture" id=3]
+[ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=4]
+[ext_resource path="res://Enemies/Bat/Bat.png" type="Texture" id=5]
+[ext_resource path="res://Effects/Shadows/SmallShadow.png" type="Texture" id=6]
+[ext_resource path="res://Effects/Combat/HitEffect.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+outline_size = 1
+outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=11]
+size = 8
+font_data = SubResource( 7 )
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.0588235 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "SkipButton"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SkipText:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "flickerlight"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.145098 ), Color( 1, 1, 1, 0.0588235 ), Color( 1, 1, 1, 0.145098 ) ]
+}
+
+[sub_resource type="DynamicFont" id=15]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 7
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 2560, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 2624, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 2688, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 2752, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 2816, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="DynamicFont" id=25]
+size = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 7 )
+region = Rect2( 24, 0, 24, 24 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 16, 24 )
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[node name="DodgeTutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Backdrop" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[node name="Body" type="VBoxContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer" type="VBoxContainer" parent="Body"]
+margin_right = 320.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Title" type="VBoxContainer" parent="Body"]
+margin_top = 4.0
+margin_right = 320.0
+margin_bottom = 37.0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Title" type="Label" parent="Body/Title"]
+margin_right = 320.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 9 )
+text = "Tutorial"
+align = 1
+
+[node name="Subtitle" type="Label" parent="Body/Title"]
+margin_top = 19.0
+margin_right = 320.0
+margin_bottom = 33.0
+custom_colors/font_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Dodging Enemy Attacks"
+align = 1
+
+[node name="SkipText" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.492503 )
+margin_left = 216.0
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 179.0
+custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+custom_fonts/normal_font = SubResource( 11 )
+text = "Press [ X ] to close tutorial."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/RESET = SubResource( 12 )
+anims/SkipButton = SubResource( 13 )
+
+[node name="LightFlicker" type="AnimationPlayer" parent="."]
+anims/flickerlight = SubResource( 14 )
+
+[node name="Main" type="RichTextLabel" parent="."]
+margin_left = 30.0
+margin_top = 49.0
+margin_right = 289.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 15 )
+custom_fonts/normal_font = SubResource( 16 )
+bbcode_enabled = true
+bbcode_text = "[center]In order to survive, you need to avoid most of the enemies attacks.[/center]"
+text = "In order to survive, you need to avoid most of the enemies attacks."
+scroll_active = false
+
+[node name="1" type="RichTextLabel" parent="."]
+margin_left = 29.0
+margin_top = 128.0
+margin_right = 130.0
+margin_bottom = 168.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 17 )
+custom_fonts/normal_font = SubResource( 18 )
+bbcode_enabled = true
+bbcode_text = "[center]Press [b]K[/b] key to use perform a roll and evade an attacking enemy.[/center]"
+text = "Press K key to use perform a roll and evade an attacking enemy."
+scroll_active = false
+
+[node name="2" type="RichTextLabel" parent="."]
+margin_left = 191.0
+margin_top = 128.0
+margin_right = 292.0
+margin_bottom = 168.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 17 )
+custom_fonts/normal_font = SubResource( 18 )
+bbcode_enabled = true
+bbcode_text = "[center]If timed correctly, you won't take any external damage from enemy attacks.[/center]"
+text = "If timed correctly, you won't take any external damage from enemy attacks."
+scroll_active = false
+
+[node name="MediumShadow" type="Sprite" parent="."]
+position = Vector2( 76, 113 )
+texture = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MediumShadow"]
+position = Vector2( 1, -10 )
+frames = SubResource( 24 )
+frame = 1
+playing = true
+
+[node name="MediumShadow2" type="Sprite" parent="."]
+position = Vector2( 232, 114 )
+texture = ExtResource( 4 )
+
+[node name="Mcplayer" type="Sprite" parent="MediumShadow2"]
+position = Vector2( 1, -11 )
+texture = ExtResource( 3 )
+hframes = 60
+frame = 43
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 203.0
+margin_top = 94.0
+margin_right = 273.0
+margin_bottom = 134.0
+custom_colors/default_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+custom_fonts/normal_font = SubResource( 25 )
+bbcode_text = "-0 dmg"
+text = "-0 dmg"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 241, 102 )
+scale = Vector2( 0.583333, 0.583333 )
+frames = SubResource( 28 )
+frame = 1
+playing = true
+
+[node name="SmallShadow" type="Sprite" parent="."]
+position = Vector2( 252, 112 )
+texture = ExtResource( 6 )
+
+[node name="Bat" type="AnimatedSprite" parent="."]
+position = Vector2( 252, 101 )
+frames = SubResource( 34 )
+frame = 2
+playing = true
+flip_h = true
