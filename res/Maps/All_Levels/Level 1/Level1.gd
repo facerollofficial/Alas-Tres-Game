@@ -10,6 +10,8 @@ func _ready():
 	$YSort/Stranger.visible = false
 	$YSort/StrangerAttack.visible = false
 	$CanvasLayer/ColorRect.visible = false
+	$TikbalangCutscene/Camera2D.current = true
+	$TikbalangCutscene/Camera2D2.current = false
 	
 	#to avoid covering the screen
 	attack_tutorial.visible = false
