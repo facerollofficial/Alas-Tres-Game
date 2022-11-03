@@ -155,7 +155,7 @@ bbcode_text = "[center][/center]"
 position = Vector2( 33, 63 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 29 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Description" type="RichTextLabel" parent="."]

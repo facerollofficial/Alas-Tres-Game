@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/dialogic/Example Assets/Fonts/NameFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Extras/Transitions/TransitionSalaToRoom.gd" type="Script" id=2]
 [ext_resource path="res://world assets/building.png" type="Texture" id=3]
+[ext_resource path="res://world assets/home scene/clean_up.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -61,6 +62,18 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -130,6 +143,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 4.5, 5, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="TransitionSalaToRoom" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -175,13 +200,12 @@ text = "3:00 AM"
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 margin_left = -83.0
-margin_top = -13.0
+margin_top = -26.0
 margin_right = 83.0
-margin_bottom = 13.0
 custom_fonts/normal_font = ExtResource( 1 )
 text = " You helped Lolo Jose with the chores and rested for the night"
 
@@ -190,5 +214,11 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 164.5, 84.75 )
 scale = Vector2( 0.790625, 0.808333 )
 texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 161, 78 )
+scale = Vector2( 0.74375, 0.766667 )
+texture = ExtResource( 4 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

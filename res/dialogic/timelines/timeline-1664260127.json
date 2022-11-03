@@ -16,7 +16,7 @@
 			"character": "character-1664259621.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Sit down first and I'll get you something to drink. "
+			"text": "Wait here apo and I'll get you something to drink. "
 		},
 		{
 			"character": "character-1664259621.json",
@@ -38,7 +38,7 @@
 			"character": "character-1664259621.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Tea. Good choice."
+			"text": "Good choice apo."
 		},
 		{
 			"definition": "1664268849-432",
@@ -56,21 +56,21 @@
 			"value": ""
 		},
 		{
-			"character": "character-1664259621.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Kape pa. Nako."
-		},
-		{
 			"definition": "1664268849-432",
 			"event_id": "dialogic_014",
 			"operation": "=",
 			"random_upper_limit": 100,
 			"set_random": false,
-			"set_value": "Coffee"
+			"set_value": "coffee"
 		},
 		{
-			"choice": "Milktea",
+			"character": "character-1664259621.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Your still young, apo. Be mindful of your [fruit] intake."
+		},
+		{
+			"choice": "Water",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
@@ -82,13 +82,13 @@
 			"operation": "=",
 			"random_upper_limit": 100,
 			"set_random": false,
-			"set_value": "Milktea"
+			"set_value": "water"
 		},
 		{
 			"character": "character-1664259621.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Loser. No one picks [fruit]."
+			"text": "It seems like you feel hot, apo. I'll get you [fruit] immediately."
 		},
 		{
 			"event_id": "dialogic_013"

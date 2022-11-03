@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=122 format=2]
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Enemies/1_Tiyanak/Tiyanak.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=6]
 [ext_resource path="res://Extras/Tilemaps/DirtTileset1.png" type="Texture" id=7]
-[ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.gd" type="Script" id=8]
+[ext_resource path="res://Enemies/3_Tikbalang/TikbalangDestroy.gd" type="Script" id=8]
 [ext_resource path="res://Effects/Shaders/WhiteColor.shader" type="Shader" id=9]
 [ext_resource path="res://UI/PlayerGUI/GUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://NPC/Aghoy/Aghoy.png" type="Texture" id=11]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Extras/Camera/Camera2D.tscn" type="PackedScene" id=26]
 [ext_resource path="res://world assets/tikbalang.png" type="Texture" id=27]
 [ext_resource path="res://Maps/All_Levels/Level 1/Tiyanak Details.gd" type="Script" id=28]
+[ext_resource path="res://UI/DemoEnd/DemoEnd.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Effects/Shadows/MediumShadow.png" type="Texture" id=32]
@@ -49,45 +50,6 @@ extents = Vector2( 67.5, 6.5 )
 
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 2.5, 139 )
-
-[sub_resource type="Animation" id=64]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Combat Field/Boss/BossTikbalang/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 26 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CanvasLayer/Sprite:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
 
 [sub_resource type="Animation" id=65]
 resource_name = "tikbalang_cutscene"
@@ -1156,6 +1118,8 @@ ProgressBar/styles/fg = SubResource( 76 )
 
 [sub_resource type="CanvasItemMaterial" id=77]
 
+[sub_resource type="AnimationNodeStateMachinePlayback" id=84]
+
 [sub_resource type="Animation" id=78]
 length = 0.001
 tracks/0/type = "value"
@@ -1339,7 +1303,6 @@ position = Vector2( 1269, 812 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TikbalangCutscene"]
 pause_mode = 2
-anims/RESET = SubResource( 64 )
 anims/tikbalang_cutscene = SubResource( 65 )
 anims/tikbalang_details = SubResource( 66 )
 
@@ -1403,7 +1366,6 @@ position = Vector2( 779, 394 )
 scale = Vector2( 1.8, 1.8 )
 collision_layer = 16
 script = ExtResource( 8 )
-MAX_SPEED = 65
 
 [node name="ShadowSprite" type="Sprite" parent="Combat Field/Boss/BossTikbalang"]
 texture = ExtResource( 32 )
@@ -1415,7 +1377,7 @@ position = Vector2( 0, -11 )
 texture = ExtResource( 38 )
 hframes = 8
 vframes = 4
-frame = 26
+frame = 29
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang"]
 visible = false
@@ -1517,6 +1479,10 @@ texture = ExtResource( 4 )
 texture_scale = 0.6
 energy = 0.85
 mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Combat Field/Boss/BossTikbalang"]
+
+[node name="DemoEnd" parent="Combat Field/Boss/BossTikbalang/CanvasLayer" instance=ExtResource( 29 )]
 
 [node name="Tiyanaks" type="YSort" parent="Combat Field"]
 position = Vector2( -432, 201 )
@@ -1666,6 +1632,9 @@ position = Vector2( -92, -68 )
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( -800, -513 )
 
+[node name="AnimationTree" parent="YSort/Player" index="4"]
+parameters/playback = SubResource( 84 )
+
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 pause_mode = 2
 remote_path = NodePath("../../../TikbalangCutscene/Camera2D")
@@ -1747,5 +1716,8 @@ pause_mode = 2
 [editable path="Combat Field/Boss/BossTikbalang/AttackZone"]
 [editable path="Combat Field/Boss/BossTikbalang/PlayerDetectionZone"]
 [editable path="Combat Field/Boss/BossTikbalang/Hurtbox"]
+[editable path="YSort/Player"]
+[editable path="YSort/Player/HitboxPivot/PagiHitbox"]
+[editable path="YSort/Player/Hurtbox"]
 [editable path="YSort/Aghoy"]
 [editable path="YSort/StrangerAttack"]
