@@ -42,7 +42,7 @@ func unpause():
 	get_tree().paused = false
 
 func _input(event):
-	if event.is_action_pressed("close"):
+	if event.is_action_pressed("resume"):
 		print("tikbalang info")
 		tikbalang_details.visible = false
 		$CollisionShape2D.disabled = true

@@ -323,14 +323,14 @@ margin_bottom = 4.0
 color = Color( 0.572549, 0.572549, 0.572549, 1 )
 
 [node name="SkipText" type="RichTextLabel" parent="."]
-margin_left = 243.0
+margin_left = 222.0
 margin_top = 168.0
 margin_right = 320.0
 margin_bottom = 179.0
 custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
 custom_fonts/normal_font = SubResource( 34 )
-bbcode_text = "Press [ X ] to close."
-text = "Press [ X ] to close."
+bbcode_text = "Press [ space ] to resume."
+text = "Press [ space ] to resume."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
