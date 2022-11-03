@@ -1,6 +1,7 @@
 extends Area2D
 
 onready var tikbalang_details = $CanvasLayer/EnemyTikbalangInfo
+var infoShown = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -33,6 +34,7 @@ func creatureDetail():
 	#$AnimationPlayer.play("tikbalang_details")
 	#yield(get_tree().create_timer(20.6), "timeout")
 	tikbalang_details.visible = true
+	infoShown = true
 	unpause()
 
 func unpause():
@@ -42,7 +44,7 @@ func unpause():
 	get_tree().paused = false
 
 func _input(event):
-	if event.is_action_pressed("resume"):
+	if event.is_action_pressed("resume") and infoShown:
 		print("tikbalang info")
 		tikbalang_details.visible = false
 		$CollisionShape2D.disabled = true
