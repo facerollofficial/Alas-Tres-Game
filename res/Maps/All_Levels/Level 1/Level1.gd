@@ -17,6 +17,7 @@ func _ready():
 	$CanvasLayer/ColorRect.visible = false
 	$TikbalangCutscene/Camera2D.current = true
 	$TikbalangCutscene/Camera2D2.current = false
+	$CanvasLayer/ColorRect2.visible = false
 	
 	#to avoid covering the screen
 	attack_tutorial.visible = false
@@ -26,11 +27,21 @@ func _ready():
 	saving_tutorial.visible = false
 	pause_tutorial.visible = false
 	
+#	#black fade
+#	$CanvasLayer/ColorRect2.visible = true
+#	$CanvasLayer/AnimationPlayer.play("black_to_fade")
+#	yield(get_tree().create_timer(1), "timeout")
+#	$CanvasLayer/ColorRect2.visible = false
+	
 	#loading and saving
 	var file: File = File.new()
 	if(file.file_exists("res://saved_game/game.dat")):
 		PlayerStats.pathScene = "res://Maps/All_Levels/Level 1/Level1.tscn"
-		#pass
+		#black fade
+		$CanvasLayer/ColorRect2.visible = true
+		$CanvasLayer/AnimationPlayer.play("black_to_fade")
+		yield(get_tree().create_timer(2), "timeout")
+		$CanvasLayer/ColorRect2.visible = false
 	else:
 		PlayerStats.pathScene = "res://Maps/All_Levels/Level 1/Level1.tscn"
 		GameManager.do_save()

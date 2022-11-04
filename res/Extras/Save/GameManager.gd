@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 export(PackedScene) var autosave_scene: PackedScene
 
@@ -14,7 +14,7 @@ var player_heal = PlayerStats.oreganoHeal
 var scene_path = PlayerStats.pathScene
 
 #func _ready():
-#	$ColorRect.visible = false
+#	#$CanvasLayer.visible = false
 	
 #change data before actual save
 func update_data():
@@ -30,7 +30,7 @@ func update_data():
 				"scene": scene_path
 			}
 		}
-	
+
 #save function
 func do_save():
 	update_data()
@@ -66,7 +66,7 @@ func load_data():
 	#change scene 
 	get_tree().change_scene(path)
 #	$CanvasLayer/ColorRect.visible = true
-	$AnimationPlayer.play("transition")
+	#$AnimationPlayer.play("transition")
 	#load player data
 	player_x = player_data["posx"]
 	print(player_x)
