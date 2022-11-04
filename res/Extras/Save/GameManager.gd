@@ -13,6 +13,9 @@ var player_bawang = PlayerStats.bawangAmmo
 var player_heal = PlayerStats.oreganoHeal
 var scene_path = PlayerStats.pathScene
 
+#func _ready():
+#	$ColorRect.visible = false
+	
 #change data before actual save
 func update_data():
 	game_data = {'player_data':
@@ -62,7 +65,8 @@ func load_data():
 	var path = player_data["scene"]
 	#change scene 
 	get_tree().change_scene(path)
-	
+#	$CanvasLayer/ColorRect.visible = true
+	$AnimationPlayer.play("transition")
 	#load player data
 	player_x = player_data["posx"]
 	print(player_x)

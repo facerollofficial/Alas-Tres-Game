@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Death At My Heels.ogg-e54af24ee300601ebcb077b6582ef673.oggstr"
+
+[deps]
+
+source_file="res://Audio/BGM/Combat/Death At My Heels.ogg"
+dest_files=[ "res://.import/Death At My Heels.ogg-e54af24ee300601ebcb077b6582ef673.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
