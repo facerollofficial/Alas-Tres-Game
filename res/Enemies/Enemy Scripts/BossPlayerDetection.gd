@@ -10,8 +10,8 @@ func _on_PlayerDetectionZone_body_entered(body):
 	
 	print("Enemies Detected You: " + str(MusicController.enemiesDetected))
 
-
 func _on_PlayerDetectionZone_body_exited(_body):
 	player = null
+	
 	MusicController.boss_fight_music_off()
 	print("Enemies Detected You: " + str(MusicController.enemiesDetected))

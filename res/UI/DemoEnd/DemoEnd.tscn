@@ -5,51 +5,51 @@
 [ext_resource path="res://UI/Themes/TitleScreenTheme.tres" type="Theme" id=3]
 [ext_resource path="res://UI/DemoEnd/DemoEnd.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFontData" id=29]
+[sub_resource type="DynamicFontData" id=99]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
-[sub_resource type="DynamicFont" id=30]
+[sub_resource type="DynamicFont" id=100]
 outline_size = 1
 outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-font_data = SubResource( 29 )
+font_data = SubResource( 99 )
 
-[sub_resource type="DynamicFont" id=32]
+[sub_resource type="DynamicFont" id=101]
 size = 8
 outline_size = 1
 outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=38]
+[sub_resource type="DynamicFontData" id=102]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
-[sub_resource type="DynamicFont" id=33]
+[sub_resource type="DynamicFont" id=103]
 size = 11
-font_data = SubResource( 38 )
+font_data = SubResource( 102 )
 
-[sub_resource type="DynamicFontData" id=34]
+[sub_resource type="DynamicFontData" id=104]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
-[sub_resource type="DynamicFont" id=35]
+[sub_resource type="DynamicFont" id=105]
 size = 9
-font_data = SubResource( 34 )
+font_data = SubResource( 104 )
 
-[sub_resource type="DynamicFont" id=36]
+[sub_resource type="DynamicFont" id=106]
 size = 8
 outline_size = 1
 outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=37]
+[sub_resource type="DynamicFont" id=107]
 size = 7
 outline_color = Color( 0.768627, 0.768627, 0.768627, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=39]
+[sub_resource type="DynamicFontData" id=108]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
-[sub_resource type="DynamicFont" id=40]
+[sub_resource type="DynamicFont" id=109]
 size = 10
-font_data = SubResource( 39 )
+font_data = SubResource( 108 )
 
 [node name="DemoEnd" type="Control"]
 anchor_right = 1.0
@@ -70,7 +70,7 @@ color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 margin_top = 45.0
 margin_right = 320.0
 margin_bottom = 60.0
-custom_fonts/font = SubResource( 30 )
+custom_fonts/font = SubResource( 100 )
 text = "Thank you for playing!"
 align = 1
 
@@ -87,8 +87,8 @@ margin_bottom = 97.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
-custom_fonts/bold_font = SubResource( 32 )
-custom_fonts/normal_font = SubResource( 33 )
+custom_fonts/bold_font = SubResource( 101 )
+custom_fonts/normal_font = SubResource( 103 )
 bbcode_enabled = true
 bbcode_text = "[center]This concludes the DEMO of \"ALAS TRES\".
 We hope you had fun. [/center] - TEAM4"
@@ -101,7 +101,7 @@ margin_left = 13.0
 margin_top = 108.0
 margin_right = 243.0
 margin_bottom = 163.0
-custom_fonts/normal_font = SubResource( 35 )
+custom_fonts/normal_font = SubResource( 105 )
 bbcode_enabled = true
 bbcode_text = "In the full game you'll find:"
 text = "In the full game you'll find:"
@@ -113,8 +113,8 @@ margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
-custom_fonts/bold_font = SubResource( 36 )
-custom_fonts/normal_font = SubResource( 37 )
+custom_fonts/bold_font = SubResource( 106 )
+custom_fonts/normal_font = SubResource( 107 )
 bbcode_enabled = true
 bbcode_text = "- Additional areas to explore.
 - More monsters you'll encounter.
@@ -133,7 +133,7 @@ margin_left = 172.0
 margin_top = 108.0
 margin_right = 402.0
 margin_bottom = 163.0
-custom_fonts/normal_font = SubResource( 35 )
+custom_fonts/normal_font = SubResource( 105 )
 bbcode_enabled = true
 bbcode_text = "We would like to hear from you:"
 text = "We would like to hear from you:"
@@ -146,8 +146,8 @@ margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
-custom_fonts/bold_font = SubResource( 36 )
-custom_fonts/normal_font = SubResource( 37 )
+custom_fonts/bold_font = SubResource( 106 )
+custom_fonts/normal_font = SubResource( 107 )
 bbcode_enabled = true
 bbcode_text = "Email the devs at :
 alastresgame@gmail.com"
@@ -163,7 +163,7 @@ margin_bottom = 178.0
 size_flags_horizontal = 4
 size_flags_vertical = 3
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 40 )
+custom_fonts/font = SubResource( 109 )
 text = "Return to Main Menu"
 
 [connection signal="pressed" from="ReturnToMain" to="." method="_on_ReturnToMain_pressed"]

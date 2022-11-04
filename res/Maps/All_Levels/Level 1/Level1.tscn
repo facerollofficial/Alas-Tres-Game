@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=2]
+[gd_scene load_steps=133 format=2]
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Effects/Shadows/SmallShadow.png" type="Texture" id=12]
 [ext_resource path="res://Maps/All_Levels/Level 1/Level1.gd" type="Script" id=13]
 [ext_resource path="res://Pickups/Oregano/OreganoHeal.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Audio/Autoload/MusicController.gd" type="Script" id=15]
+[ext_resource path="res://Audio/SFX/Pickup/02_Heal_02.wav" type="AudioStream" id=16]
 [ext_resource path="res://NPC/Aghoy/Aghoy.tscn" type="PackedScene" id=17]
 [ext_resource path="res://NPC/Stranger/StrangerAttack.tscn" type="PackedScene" id=18]
 [ext_resource path="res://NPC/Stranger/Stranger.tscn" type="PackedScene" id=19]
@@ -43,6 +45,11 @@
 [ext_resource path="res://UI/EnemyIntro/EnemyTikbalang/EnemyTikbalangInfo.tscn" type="PackedScene" id=43]
 [ext_resource path="res://UI/EnemyIntro/EnemyTiyanak/EnemyTiyanak.tscn" type="PackedScene" id=44]
 [ext_resource path="res://Enemies/Enemy Scripts/BossPlayerDetection.gd" type="Script" id=45]
+[ext_resource path="res://Audio/BGM/The Forgotten Forest.mp3" type="AudioStream" id=46]
+[ext_resource path="res://Audio/BGM/Ambience.mp3" type="AudioStream" id=47]
+[ext_resource path="res://Audio/BGM/Combat/It&#039;s Time To Run.ogg" type="AudioStream" id=48]
+[ext_resource path="res://Audio/BGM/Combat/Death At My Heels.ogg" type="AudioStream" id=49]
+[ext_resource path="res://UI/Credits/Credits.tscn" type="PackedScene" id=51]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://UI/Fonts/pixelplay.ttf"
@@ -62,7 +69,7 @@ extents = Vector2( 2.5, 139 )
 [sub_resource type="Animation" id=65]
 resource_name = "tikbalang_cutscene"
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Combat Field/Boss/BossTikbalang/Sprite:frame")
+tracks/0/path = NodePath("../YSort/Combat Field/Boss/BossTikbalang/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1126,6 +1133,10 @@ ProgressBar/fonts/font = SubResource( 60 )
 ProgressBar/styles/bg = SubResource( 61 )
 ProgressBar/styles/fg = SubResource( 76 )
 
+[sub_resource type="CapsuleShape2D" id=90]
+radius = 4.0
+height = 0.0
+
 [sub_resource type="CanvasItemMaterial" id=77]
 
 [sub_resource type="Animation" id=78]
@@ -1281,6 +1292,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Animation" id=89]
+resource_name = "Ambience"
+length = 290.0
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 13 )
 
@@ -1421,34 +1436,34 @@ position = Vector2( -776, -523 )
 pause_mode = 2
 position = Vector2( -764, -513 )
 
-[node name="Combat Field" type="YSort" parent="."]
+[node name="Combat Field" type="YSort" parent="YSort"]
 
-[node name="Boss" type="YSort" parent="Combat Field"]
+[node name="Boss" type="YSort" parent="YSort/Combat Field"]
 
-[node name="BossTikbalang" type="KinematicBody2D" parent="Combat Field/Boss"]
+[node name="BossTikbalang" type="KinematicBody2D" parent="YSort/Combat Field/Boss"]
 material = SubResource( 59 )
 position = Vector2( 779, 394 )
 scale = Vector2( 1.8, 1.8 )
 collision_layer = 16
 script = ExtResource( 8 )
 
-[node name="ShadowSprite" type="Sprite" parent="Combat Field/Boss/BossTikbalang"]
+[node name="ShadowSprite" type="Sprite" parent="YSort/Combat Field/Boss/BossTikbalang"]
 texture = ExtResource( 32 )
 
-[node name="Sprite" type="Sprite" parent="Combat Field/Boss/BossTikbalang"]
+[node name="Sprite" type="Sprite" parent="YSort/Combat Field/Boss/BossTikbalang"]
 pause_mode = 2
 material = SubResource( 54 )
 position = Vector2( 0, -11 )
 texture = ExtResource( 38 )
 hframes = 8
 vframes = 4
-frame = 31
+frame = 29
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Combat Field/Boss/BossTikbalang"]
 visible = false
 shape = SubResource( 19 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Combat Field/Boss/BossTikbalang"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/Combat Field/Boss/BossTikbalang"]
 anims/Attack_Down = SubResource( 17 )
 anims/Attack_Left = SubResource( 18 )
 anims/Attack_Right = SubResource( 15 )
@@ -1466,7 +1481,7 @@ anims/Run_Left = SubResource( 8 )
 anims/Run_Right = SubResource( 6 )
 anims/Run_Up = SubResource( 7 )
 
-[node name="AnimationTree" type="AnimationTree" parent="Combat Field/Boss/BossTikbalang"]
+[node name="AnimationTree" type="AnimationTree" parent="YSort/Combat Field/Boss/BossTikbalang"]
 tree_root = SubResource( 46 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 74 )
@@ -1475,60 +1490,60 @@ parameters/Charging/blend_position = Vector2( -0.0865672, -1.0101 )
 parameters/Idle/blend_position = Vector2( 0.327363, 0.682212 )
 parameters/Run/blend_position = Vector2( -0.00259739, 0.673276 )
 
-[node name="HitboxPivot" type="Position2D" parent="Combat Field/Boss/BossTikbalang"]
+[node name="HitboxPivot" type="Position2D" parent="YSort/Combat Field/Boss/BossTikbalang"]
 position = Vector2( 0, -4 )
 __meta__ = {
 "_gizmo_extents_": 8.0
 }
 
-[node name="TikbalangHitbox" parent="Combat Field/Boss/BossTikbalang/HitboxPivot" instance=ExtResource( 30 )]
+[node name="TikbalangHitbox" parent="YSort/Combat Field/Boss/BossTikbalang/HitboxPivot" instance=ExtResource( 30 )]
 collision_mask = 4
 
-[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/HitboxPivot/TikbalangHitbox" index="0"]
+[node name="CollisionShape2D" parent="YSort/Combat Field/Boss/BossTikbalang/HitboxPivot/TikbalangHitbox" index="0"]
 position = Vector2( 2, 11 )
 rotation = 1.5708
 shape = SubResource( 48 )
 disabled = true
 
-[node name="SoftCollision" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 34 )]
+[node name="SoftCollision" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 34 )]
 position = Vector2( 0, -8 )
 
-[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/SoftCollision" index="0"]
+[node name="CollisionShape2D" parent="YSort/Combat Field/Boss/BossTikbalang/SoftCollision" index="0"]
 position = Vector2( 0, 8 )
 shape = SubResource( 49 )
 
-[node name="Stats" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 35 )]
+[node name="Stats" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 35 )]
 max_health = 30
 
-[node name="AttackZone" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 37 )]
+[node name="AttackZone" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 37 )]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/AttackZone" index="0"]
+[node name="CollisionShape2D" parent="YSort/Combat Field/Boss/BossTikbalang/AttackZone" index="0"]
 shape = SubResource( 51 )
 
-[node name="PlayerDetectionZone" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 33 )]
+[node name="PlayerDetectionZone" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 33 )]
 script = ExtResource( 45 )
 
-[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/PlayerDetectionZone" index="0"]
+[node name="CollisionShape2D" parent="YSort/Combat Field/Boss/BossTikbalang/PlayerDetectionZone" index="0"]
 shape = SubResource( 50 )
 
-[node name="WanderController" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 36 )]
+[node name="WanderController" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 36 )]
 visible = false
 
-[node name="Hurtbox" parent="Combat Field/Boss/BossTikbalang" instance=ExtResource( 31 )]
+[node name="Hurtbox" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 31 )]
 visible = false
 position = Vector2( 0, -8 )
 collision_layer = 8
 
-[node name="CollisionShape2D" parent="Combat Field/Boss/BossTikbalang/Hurtbox" index="0"]
+[node name="CollisionShape2D" parent="YSort/Combat Field/Boss/BossTikbalang/Hurtbox" index="0"]
 shape = SubResource( 52 )
 
-[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="Combat Field/Boss/BossTikbalang"]
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="YSort/Combat Field/Boss/BossTikbalang"]
 anims/Start = SubResource( 75 )
 anims/Stop = SubResource( 58 )
 
-[node name="EnemyHealthBar" type="ProgressBar" parent="Combat Field/Boss/BossTikbalang"]
+[node name="EnemyHealthBar" type="ProgressBar" parent="YSort/Combat Field/Boss/BossTikbalang"]
 margin_left = -9.0
 margin_top = -40.0
 margin_right = 9.0
@@ -1537,161 +1552,171 @@ theme = SubResource( 63 )
 value = 50.0
 percent_visible = false
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Combat Field/Boss/BossTikbalang"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Combat Field/Boss/BossTikbalang"]
 pause_mode = 2
-remote_path = NodePath("../../../../TikbalangCutscene/Camera2D2")
+remote_path = NodePath("../../../../../TikbalangCutscene/Camera2D2")
 
-[node name="Light2D" type="Light2D" parent="Combat Field/Boss/BossTikbalang"]
+[node name="Light2D" type="Light2D" parent="YSort/Combat Field/Boss/BossTikbalang"]
 texture = ExtResource( 4 )
 texture_scale = 0.6
 energy = 0.85
 mode = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Combat Field/Boss/BossTikbalang"]
+[node name="CanvasLayer" type="CanvasLayer" parent="YSort/Combat Field/Boss/BossTikbalang"]
 
-[node name="DemoEnd" parent="Combat Field/Boss/BossTikbalang/CanvasLayer" instance=ExtResource( 29 )]
+[node name="Credits" parent="YSort/Combat Field/Boss/BossTikbalang/CanvasLayer" instance=ExtResource( 51 )]
 
-[node name="Tiyanaks" type="YSort" parent="Combat Field"]
+[node name="DemoEnd" parent="YSort/Combat Field/Boss/BossTikbalang/CanvasLayer" instance=ExtResource( 29 )]
+
+[node name="Hitbox" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 30 )]
+position = Vector2( 0, 7 )
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="YSort/Combat Field/Boss/BossTikbalang/Hitbox" index="0"]
+position = Vector2( 0, -8 )
+shape = SubResource( 90 )
+
+[node name="Tiyanaks" type="YSort" parent="YSort/Combat Field"]
 position = Vector2( -432, 201 )
 
-[node name="Tiyanak" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( -484, -71 )
 
-[node name="Tiyanak17" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak17" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 92, -226 )
 
-[node name="Tiyanak18" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak18" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 597, -98 )
 
-[node name="Tiyanak25" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak25" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 82, -7 )
 
-[node name="Tiyanak26" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak26" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 819, -732 )
 
-[node name="Tiyanak27" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak27" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 1281, -499 )
 
-[node name="Tiyanak28" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak28" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 361, -639 )
 
-[node name="Tiyanak5" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak5" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( -398, 62 )
 
-[node name="Tiyanak4" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak4" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 968, -681 )
 
-[node name="Tiyanak19" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak19" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 967, -331 )
 
-[node name="Tiyanak20" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak20" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( -377, 355 )
 
-[node name="Tiyanak21" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak21" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 1311, -717 )
 
-[node name="Tiyanak6" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak6" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 1399, -672 )
 
-[node name="Tiyanak7" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak7" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 441, -738 )
 
-[node name="Tiyanak8" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak8" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 1120, -361 )
 
-[node name="Tiyanak9" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak9" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 1415, -756 )
 
-[node name="Tiyanak10" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak10" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 683, -241 )
 
-[node name="Tiyanak24" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak24" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 8, 314 )
 
-[node name="Tiyanak11" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak11" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 488, 191 )
 
-[node name="Tiyanak12" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak12" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 431, 110 )
 
-[node name="Tiyanak13" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak13" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 491, 144 )
 
-[node name="Tiyanak14" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak14" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 557, 238 )
 
-[node name="Tiyanak15" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak15" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 59, -457 )
 
-[node name="Tiyanak22" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak22" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 208, -449 )
 
-[node name="Tiyanak23" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak23" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 563, -789 )
 
-[node name="Tiyanak2" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak2" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( -522, 356 )
 
-[node name="Tiyanak3" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak3" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( -235, 279 )
 
-[node name="Tiyanak16" parent="Combat Field/Tiyanaks" instance=ExtResource( 5 )]
+[node name="Tiyanak16" parent="YSort/Combat Field/Tiyanaks" instance=ExtResource( 5 )]
 material = SubResource( 77 )
 position = Vector2( 5, 218 )
 
-[node name="SmallShadow" type="Sprite" parent="Combat Field"]
+[node name="SmallShadow" type="Sprite" parent="YSort/Combat Field"]
 visible = false
 position = Vector2( -740, -448 )
 texture = ExtResource( 12 )
 
-[node name="Aghoy" type="Sprite" parent="Combat Field/SmallShadow"]
+[node name="Aghoy" type="Sprite" parent="YSort/Combat Field/SmallShadow"]
 visible = false
 position = Vector2( 0, -7 )
 texture = ExtResource( 11 )
 
-[node name="OreganoHeal" parent="Combat Field" instance=ExtResource( 14 )]
+[node name="OreganoHeal" parent="YSort/Combat Field" instance=ExtResource( 14 )]
 position = Vector2( -759, -166 )
 
-[node name="OreganoHeal2" parent="Combat Field" instance=ExtResource( 14 )]
+[node name="OreganoHeal2" parent="YSort/Combat Field" instance=ExtResource( 14 )]
 position = Vector2( -304, 85 )
 
-[node name="OreganoHeal3" parent="Combat Field" instance=ExtResource( 14 )]
+[node name="OreganoHeal3" parent="YSort/Combat Field" instance=ExtResource( 14 )]
 position = Vector2( -51, -257 )
 
-[node name="OreganoHeal4" parent="Combat Field" instance=ExtResource( 14 )]
+[node name="OreganoHeal4" parent="YSort/Combat Field" instance=ExtResource( 14 )]
 position = Vector2( 273, -259 )
 
-[node name="OreganoHeal5" parent="Combat Field" instance=ExtResource( 14 )]
+[node name="OreganoHeal5" parent="YSort/Combat Field" instance=ExtResource( 14 )]
 position = Vector2( 812, -178 )
 
-[node name="OreganoHeal6" parent="Combat Field" instance=ExtResource( 14 )]
+[node name="OreganoHeal6" parent="YSort/Combat Field" instance=ExtResource( 14 )]
 position = Vector2( 724, -599 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -1744,12 +1769,43 @@ pause_mode = 2
 
 [node name="PickupsTutorial" parent="CanvasLayer" instance=ExtResource( 40 )]
 
+[node name="MusicController" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 15 )
+
+[node name="HealSFX" type="AudioStreamPlayer" parent="MusicController"]
+stream = ExtResource( 16 )
+bus = "SFX"
+
+[node name="NormalCombat" type="AudioStreamPlayer" parent="MusicController"]
+stream = ExtResource( 48 )
+bus = "Music"
+
+[node name="BossCombat" type="AudioStreamPlayer" parent="MusicController"]
+stream = ExtResource( 49 )
+bus = "Music"
+
+[node name="Level1BGM" type="AudioStreamPlayer" parent="MusicController"]
+pause_mode = 2
+stream = ExtResource( 46 )
+volume_db = 1.0
+bus = "Music"
+
+[node name="DarkAmbience" type="AudioStreamPlayer" parent="MusicController"]
+pause_mode = 2
+stream = ExtResource( 47 )
+bus = "Music"
+
+[node name="AmbiencePlayer" type="AnimationPlayer" parent="MusicController"]
+pause_mode = 2
+anims/Ambience = SubResource( 89 )
+
 [connection signal="body_entered" from="TiyanakCutscene" to="TiyanakCutscene" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="TikbalangCutscene" to="TikbalangCutscene" method="_on_Area2D_body_entered"]
-[connection signal="no_health" from="Combat Field/Boss/BossTikbalang/Stats" to="Combat Field/Boss/BossTikbalang" method="_on_Stats_no_health"]
-[connection signal="area_entered" from="Combat Field/Boss/BossTikbalang/Hurtbox" to="Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_area_entered"]
-[connection signal="invincibility_ended" from="Combat Field/Boss/BossTikbalang/Hurtbox" to="Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_invincibility_ended"]
-[connection signal="invincibility_started" from="Combat Field/Boss/BossTikbalang/Hurtbox" to="Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_invincibility_started"]
+[connection signal="no_health" from="YSort/Combat Field/Boss/BossTikbalang/Stats" to="YSort/Combat Field/Boss/BossTikbalang" method="_on_Stats_no_health"]
+[connection signal="area_entered" from="YSort/Combat Field/Boss/BossTikbalang/Hurtbox" to="YSort/Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_area_entered"]
+[connection signal="invincibility_ended" from="YSort/Combat Field/Boss/BossTikbalang/Hurtbox" to="YSort/Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_invincibility_ended"]
+[connection signal="invincibility_started" from="YSort/Combat Field/Boss/BossTikbalang/Hurtbox" to="YSort/Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_invincibility_started"]
 
 [editable path="GUI"]
 [editable path="GUI/Pause"]
@@ -1762,8 +1818,9 @@ pause_mode = 2
 [editable path="YSort/Player/Hurtbox"]
 [editable path="YSort/Aghoy"]
 [editable path="YSort/StrangerAttack"]
-[editable path="Combat Field/Boss/BossTikbalang/HitboxPivot/TikbalangHitbox"]
-[editable path="Combat Field/Boss/BossTikbalang/SoftCollision"]
-[editable path="Combat Field/Boss/BossTikbalang/AttackZone"]
-[editable path="Combat Field/Boss/BossTikbalang/PlayerDetectionZone"]
-[editable path="Combat Field/Boss/BossTikbalang/Hurtbox"]
+[editable path="YSort/Combat Field/Boss/BossTikbalang/HitboxPivot/TikbalangHitbox"]
+[editable path="YSort/Combat Field/Boss/BossTikbalang/SoftCollision"]
+[editable path="YSort/Combat Field/Boss/BossTikbalang/AttackZone"]
+[editable path="YSort/Combat Field/Boss/BossTikbalang/PlayerDetectionZone"]
+[editable path="YSort/Combat Field/Boss/BossTikbalang/Hurtbox"]
+[editable path="YSort/Combat Field/Boss/BossTikbalang/Hitbox"]

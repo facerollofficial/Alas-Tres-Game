@@ -1,0 +1,254 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://world assets/pixabay.png" type="Texture" id=2]
+[ext_resource path="res://world assets/aseprite.png" type="Texture" id=3]
+[ext_resource path="res://world assets/opengameart.jpg" type="Texture" id=4]
+[ext_resource path="res://world assets/emi.jpg" type="Texture" id=5]
+[ext_resource path="res://world assets/heartbeast.jpg" type="Texture" id=6]
+[ext_resource path="res://UI/Intro/Sponsor/Godot Engine.png" type="Texture" id=7]
+[ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFontData" id=90]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=91]
+outline_size = 1
+outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+font_data = SubResource( 90 )
+
+[sub_resource type="DynamicFont" id=92]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFontData" id=93]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=94]
+size = 11
+font_data = SubResource( 93 )
+
+[sub_resource type="DynamicFont" id=95]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=96]
+size = 7
+outline_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFontData" id=18]
+font_path = "res://UI/Fonts/ChiKareGo2.ttf"
+
+[sub_resource type="DynamicFont" id=97]
+size = 8
+font_data = SubResource( 18 )
+
+[node name="Credits" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Backdrop" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[node name="Title" type="Label" parent="."]
+margin_top = 5.0
+margin_right = 320.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 91 )
+text = "Credits"
+align = 1
+
+[node name="Sound" type="RichTextLabel" parent="."]
+margin_left = 5.0
+margin_top = 44.0
+margin_right = 86.0
+margin_bottom = 85.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 92 )
+custom_fonts/normal_font = SubResource( 94 )
+bbcode_enabled = true
+bbcode_text = "[center]Sound Effects & Background Music[/center]"
+text = "Sound Effects & Background Music"
+scroll_active = false
+
+[node name="Art Assets" type="RichTextLabel" parent="."]
+margin_left = 254.0
+margin_top = 120.0
+margin_right = 312.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 92 )
+custom_fonts/normal_font = SubResource( 94 )
+bbcode_enabled = true
+bbcode_text = "[center]Art Assets[/center]
+"
+text = "Art Assets
+"
+scroll_active = false
+
+[node name="Tutorial" type="RichTextLabel" parent="."]
+margin_left = 11.0
+margin_top = 117.0
+margin_right = 77.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 92 )
+custom_fonts/normal_font = SubResource( 94 )
+bbcode_enabled = true
+bbcode_text = "[center]Development Tutorials [/center] "
+text = "Development Tutorials  "
+scroll_active = false
+
+[node name="Tool" type="RichTextLabel" parent="."]
+margin_left = 251.0
+margin_top = 47.0
+margin_right = 318.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 92 )
+custom_fonts/normal_font = SubResource( 94 )
+bbcode_enabled = true
+bbcode_text = "[center]Development Tools [/center]"
+text = "Development Tools "
+scroll_active = false
+
+[node name="Emi Name" type="RichTextLabel" parent="."]
+margin_left = 104.0
+margin_top = 141.0
+margin_right = 113.0
+margin_bottom = 153.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 95 )
+custom_fonts/normal_font = SubResource( 96 )
+bbcode_enabled = true
+bbcode_text = "Emi
+"
+text = "Emi
+"
+scroll_active = false
+
+[node name="HeartBeast Name" type="RichTextLabel" parent="."]
+margin_left = 128.0
+margin_top = 141.0
+margin_right = 161.0
+margin_bottom = 153.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 95 )
+custom_fonts/normal_font = SubResource( 96 )
+bbcode_enabled = true
+bbcode_text = "Heart Beast
+"
+text = "Heart Beast
+"
+scroll_active = false
+
+[node name="AsepriteName" type="RichTextLabel" parent="."]
+margin_left = 186.0
+margin_top = 74.0
+margin_right = 207.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 95 )
+custom_fonts/normal_font = SubResource( 96 )
+bbcode_enabled = true
+bbcode_text = "Aseprite
+
+"
+text = "Aseprite
+
+"
+scroll_active = false
+
+[node name="GodotName" type="RichTextLabel" parent="."]
+margin_left = 221.0
+margin_top = 74.0
+margin_right = 237.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/bold_font = SubResource( 95 )
+custom_fonts/normal_font = SubResource( 96 )
+bbcode_enabled = true
+bbcode_text = "Godot
+"
+text = "Godot
+"
+scroll_active = false
+
+[node name="Pixabay" type="Sprite" parent="."]
+position = Vector2( 123, 52 )
+scale = Vector2( 0.0543462, 0.0562975 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 249.553, 216.741, 705.388, 219.408 )
+
+[node name="OpenGameArt" type="Sprite" parent="."]
+position = Vector2( 123.157, 70.25 )
+scale = Vector2( 0.2, 0.185 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( -0.250505, 52.0277, 300.44, 100.507 )
+
+[node name="OpenGameArt2" type="Sprite" parent="."]
+position = Vector2( 215, 127 )
+scale = Vector2( 0.2, 0.185 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( -0.250505, 52.0277, 300.44, 100.507 )
+
+[node name="Aseprite" type="Sprite" parent="."]
+position = Vector2( 196, 61 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 31.9822, 25.3551, 158.523, 173.886 )
+
+[node name="Godot" type="Sprite" parent="."]
+position = Vector2( 229, 60 )
+scale = Vector2( 0.11, 0.11 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 67.6011, 36.2161, 247.091, 239.335 )
+
+[node name="Emi" type="Sprite" parent="."]
+position = Vector2( 107.992, 125.992 )
+scale = Vector2( 0.318, 0.318 )
+texture = ExtResource( 5 )
+
+[node name="HeartBeast" type="Sprite" parent="."]
+position = Vector2( 143, 126 )
+scale = Vector2( 0.318, 0.318 )
+texture = ExtResource( 6 )
+
+[node name="SkipText" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.359979 )
+margin_left = 225.0
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 179.0
+custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+custom_fonts/normal_font = SubResource( 97 )
+text = "Press [N] key to continue"

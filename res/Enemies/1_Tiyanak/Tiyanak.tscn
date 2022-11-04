@@ -460,6 +460,7 @@ shape = SubResource( 25 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 script = ExtResource( 12 )
+max_health = 4
 
 [node name="EnemyHealthBar" type="ProgressBar" parent="."]
 margin_left = -9.0

@@ -134,7 +134,6 @@ text = "Saving"
 align = 1
 
 [node name="SkipText" type="RichTextLabel" parent="."]
-modulate = Color( 1, 1, 1, 0.492503 )
 margin_left = 194.0
 margin_top = 168.0
 margin_right = 320.0

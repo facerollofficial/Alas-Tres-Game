@@ -27,12 +27,6 @@ func _ready():
 	saving_tutorial.visible = false
 	pause_tutorial.visible = false
 	
-#	#black fade
-#	$CanvasLayer/ColorRect2.visible = true
-#	$CanvasLayer/AnimationPlayer.play("black_to_fade")
-#	yield(get_tree().create_timer(1), "timeout")
-#	$CanvasLayer/ColorRect2.visible = false
-	
 	#loading and saving
 	var file: File = File.new()
 	if(file.file_exists("res://saved_game/game.dat")):
@@ -55,6 +49,8 @@ func _ready():
 		$YSort/StrangerAttack.visible = true
 		
 		yield(get_tree().create_timer(3), "timeout")
+		$MusicController.play_level1_bgm()
+		$MusicController.play_dark_ambience()
 		#start dialogue with stranger
 		get_tree().paused = true
 		var dialog = Dialogic.start('timeline-stranger')

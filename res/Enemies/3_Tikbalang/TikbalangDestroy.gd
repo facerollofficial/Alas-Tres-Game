@@ -34,9 +34,12 @@ onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 onready var animationState = animationTree.get("parameters/playback")
 onready var enemyHealthBar= $EnemyHealthBar
 onready var end_game = $CanvasLayer/DemoEnd
+onready var credits = $CanvasLayer/Credits
+var infoShown = false
 
 func _ready():
 	end_game.visible = false
+	credits.visible = false
 	
 	randomize()
 	stats.connect("no_health", self, "dead")
@@ -161,4 +164,27 @@ func dead():
 
 func endGame(timeline_name):
 	get_tree().paused = false
-	end_game.visible = true
+	credits.visible = true
+	infoShown = true
+
+#func _process(delta):
+#	if IntroIsPlayed:
+#		if Input.is_action_just_pressed("ui_accept"):
+#			queue_free()
+#			next_scene()
+
+#func _process(delta):
+#	if infoShown:
+#		if Input.is_action_just_pressed("next"):
+#			print("credits done")
+#			credits.visible = false
+#			end_game.visible = true		
+func _input(event):
+	if event.is_action_pressed("next") and infoShown:
+		print("credits done")
+		credits.visible = false
+		#end_game.visible = true
+		next_scene()
+
+func next_scene():
+	get_tree().change_scene("res://UI/DemoEnd/DemoEnd.tscn")
