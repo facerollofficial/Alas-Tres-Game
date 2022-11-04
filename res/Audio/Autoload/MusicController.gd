@@ -19,3 +19,6 @@ func play_heal_sfx():
 
 func play_level1_bgm():
 	$Level1BGM.play()
+
+func play_dark_ambience():
+	$DarkAmbience.play()

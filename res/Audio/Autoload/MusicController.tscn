@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Audio/Autoload/MusicController.gd" type="Script" id=1]
-[ext_resource path="res://Audio/SFX/Player/Hurt.wav" type="AudioStream" id=2]
+[ext_resource path="res://Audio/SFX/Pickup/02_Heal_02.wav" type="AudioStream" id=2]
+[ext_resource path="res://Audio/BGM/The Forgotten Forest.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Audio/BGM/Ambience.mp3" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Ambience"
+length = 290.0
 
 [node name="MusicController" type="Node"]
 script = ExtResource( 1 )
@@ -17,3 +23,12 @@ bus = "Music"
 bus = "Music"
 
 [node name="Level1BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Music"
+
+[node name="DarkAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Music"
+
+[node name="AmbiencePlayer" type="AnimationPlayer" parent="."]
+anims/Ambience = SubResource( 1 )
