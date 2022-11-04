@@ -30,7 +30,19 @@
 			"character": "character-1667105958.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "That really was close, but you're safe for now."
+			"text": "That really was close"
+		},
+		{
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "You really can't be too gullible in a place like this, don't accept dubious stuff from strangers."
+		},
+		{
+			"character": "character-1667105958.json",
+			"event_id": "dialogic_001",
+			"portrait": "Relief",
+			"text": " But, atleast you're safe for now."
 		},
 		{
 			"animation": "[Default]",
@@ -56,7 +68,7 @@
 			"character": "character-1664259638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "What do you mean?"
+			"text": "What do you mean for now?"
 		},
 		{
 			"character": "character-1664259638.json",
