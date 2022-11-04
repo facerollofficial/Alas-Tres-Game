@@ -22,11 +22,13 @@ func normal_fight_music_off():
 	level1BGM.stream_paused = false
 
 # BOSS COMBAT
-func play_boss_combat():
+func boss_fight_music_on():
 	bossCombat.playing = true
+	level1BGM.playing = false
 
-func pause_boss_combat():
-	bossCombat.stream_paused = true
+func boss_fight_music_off():
+	bossCombat.playing = false
+	level1BGM.playing = true
 
 # SFX
 func play_heal_sfx():

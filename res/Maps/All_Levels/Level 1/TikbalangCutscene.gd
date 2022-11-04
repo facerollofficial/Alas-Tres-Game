@@ -13,7 +13,7 @@ func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
 		#pause to avoid reaching the collision shape while animation is playing
 		get_tree().paused = true
-		
+		MusicController.boss_fight_music_on()
 		#pane camera to tikbalang
 		$Camera2D.current = false
 		$Camera2D2.current = true
