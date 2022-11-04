@@ -39,6 +39,8 @@ func _ready():
 		PlayerStats.pathScene = "res://Maps/All_Levels/Level 1/Level1.tscn"
 		#black fade
 		$CanvasLayer/ColorRect2.visible = true
+		MusicController.play_dark_ambience()
+		MusicController.play_level1_bgm()
 		$CanvasLayer/AnimationPlayer.play("black_to_fade")
 		yield(get_tree().create_timer(2), "timeout")
 		$CanvasLayer/ColorRect2.visible = false

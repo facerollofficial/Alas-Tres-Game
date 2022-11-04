@@ -87,8 +87,9 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.tscn"
-Global="*res://Global.gd"
 GameManager="*res://Extras/Save/GameManager.gd"
+MusicController="*res://Audio/Autoload/MusicController.tscn"
+Global="*res://Global.gd"
 
 [display]
 

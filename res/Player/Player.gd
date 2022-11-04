@@ -87,6 +87,7 @@ func move_state(delta):
 	
 	if Input.is_action_just_pressed("heal_oregano"):
 		if stats.health<stats.max_health and PlayerStats.oreganoHeal > 0:
+			MusicController.play_heal_sfx()
 			stats.health += 1
 			stats.oreganoHeal -=1
 	# THIS ALLOWS THE PLAYER TO CHANGE STATE AND ATTACK

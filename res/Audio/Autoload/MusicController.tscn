@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Audio/Autoload/MusicController.gd" type="Script" id=1]
 [ext_resource path="res://Audio/SFX/Pickup/02_Heal_02.wav" type="AudioStream" id=2]
 [ext_resource path="res://Audio/BGM/The Forgotten Forest.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Audio/BGM/Ambience.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Audio/BGM/Combat/It&#039;s Time To Run.ogg" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Ambience"
@@ -17,6 +18,7 @@ stream = ExtResource( 2 )
 bus = "SFX"
 
 [node name="NormalCombat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 bus = "Music"
 
 [node name="BossCombat" type="AudioStreamPlayer" parent="."]
@@ -24,6 +26,7 @@ bus = "Music"
 
 [node name="Level1BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = 1.0
 bus = "Music"
 
 [node name="DarkAmbience" type="AudioStreamPlayer" parent="."]
