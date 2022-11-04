@@ -31,6 +31,16 @@ func update_data():
 #save function
 func do_save():
 	update_data()
+	#create directory
+	var dir = Directory.new()
+	if dir.dir_exists("res://saved_game"):
+		pass
+	else:
+		print("new di created")
+		dir.open("res://")
+		dir.make_dir("saved_game")
+	
+	#create DAT file
 	var file: File = File.new()
 	file.open("res://saved_game/game.dat",File.WRITE)
 	file.store_line(to_json(game_data))
