@@ -36,16 +36,16 @@ func do_save():
 	update_data()
 	#create directory
 	var dir = Directory.new()
-	if dir.dir_exists("res://saved_game"):
+	if dir.dir_exists("user://saved_game"):
 		pass
 	else:
 		print("new di created")
-		dir.open("res://")
+		dir.open("user://")
 		dir.make_dir("saved_game")
 	
 	#create DAT file
 	var file: File = File.new()
-	file.open("res://saved_game/game.dat",File.WRITE)
+	file.open("user://saved_game/game.dat",File.WRITE)
 	file.store_line(to_json(game_data))
 	file.close()
 	print("saved data")
@@ -53,7 +53,7 @@ func do_save():
 #load past
 func load_data():
 	var file: File = File.new()
-	file.open("res://saved_game/game.dat",File.READ)
+	file.open("user://saved_game/game.dat",File.READ)
 	game_data = parse_json(file.get_as_text())
 	file.close()
 		
@@ -81,8 +81,8 @@ func load_data():
 #load
 func do_load() -> bool:
 	var file: File = File.new()
-	if(file.file_exists("res://saved_game/game.dat")):
-		file.open("res://saved_game/game.dat",File.READ)
+	if(file.file_exists("user://saved_game/game.dat")):
+		file.open("user://saved_game/game.dat",File.READ)
 		game_data = parse_json(file.get_as_text())
 		file.close()
 		
@@ -109,7 +109,7 @@ func delete_data():
 	print("del")
 	#delete json file
 	var dir = Directory.new()
-	dir.remove("res://saved_game/game.dat")
+	dir.remove("user://saved_game/game.dat")
 	#mc room position
 	Global.player_initial_map_position = Vector2(197,115)
 	#sala day position
@@ -124,4 +124,4 @@ func delete_data():
 	PlayerStats.bawangAmmo = 0
 	PlayerStats.oreganoHeal = 0
 	PlayerStats.pathScene = ""
-	get_tree().change_scene("res://UI/Intro/Intro Scripts/Intro2.tscn")
+	get_tree().change_scene("user://UI/Intro/Intro Scripts/Intro2.tscn")
