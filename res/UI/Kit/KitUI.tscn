@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/PlayerGUI/Sprite/heal_ui.png" type="Texture" id=2]
 [ext_resource path="res://UI/PlayerGUI/Sprite/asin_ui.png" type="Texture" id=3]
 [ext_resource path="res://UI/PlayerGUI/Sprite/bawang_ui.png" type="Texture" id=4]
-[ext_resource path="res://UI/Fonts/KitUI.tres" type="DynamicFont" id=5]
+[ext_resource path="res://UI/Kit/KitFont.tres" type="DynamicFont" id=5]
 
 [node name="KitUI" type="Control"]
 margin_right = 40.0

@@ -1513,6 +1513,7 @@ position = Vector2( 0, 8 )
 shape = SubResource( 49 )
 
 [node name="TikbalangStats" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 35 )]
+max_health = 30
 
 [node name="AttackZone" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 37 )]
 collision_layer = 0
