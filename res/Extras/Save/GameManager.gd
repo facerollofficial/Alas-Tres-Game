@@ -124,4 +124,4 @@ func delete_data():
 	PlayerStats.bawangAmmo = 0
 	PlayerStats.oreganoHeal = 0
 	PlayerStats.pathScene = ""
-	get_tree().change_scene("user://UI/Intro/Intro Scripts/Intro2.tscn")
+	get_tree().change_scene("res://UI/Intro/Intro Scripts/Intro2.tscn")

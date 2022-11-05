@@ -7,7 +7,7 @@ onready var confirmMsg = $GUI/Confirm
 func _ready():
 	optionMenu.visible = false
 	var file: File = File.new()
-	if(file.file_exists("res://saved_game/game.dat")):
+	if(file.file_exists("user://saved_game/game.dat")):
 		$Menu/HBoxContainer2/VBoxContainer2/Continue.disabled = false
 	else:
 		$Menu/HBoxContainer2/VBoxContainer2/Continue.disabled = true
@@ -15,7 +15,7 @@ func _ready():
 func _on_NewGame_pressed():
 	print(PlayerStats.max_health)
 	var file: File = File.new()
-	if(file.file_exists("res://saved_game/game.dat")):
+	if(file.file_exists("user://saved_game/game.dat")):
 		confirmMsg.visible = true
 	else:
 		#mc room position

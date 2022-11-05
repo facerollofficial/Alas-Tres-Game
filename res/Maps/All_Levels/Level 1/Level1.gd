@@ -30,7 +30,7 @@ func _ready():
 	
 	#loading and saving
 	var file: File = File.new()
-	if(file.file_exists("res://saved_game/game.dat")):
+	if(file.file_exists("user://saved_game/game.dat")):
 		PlayerStats.pathScene = "res://Maps/All_Levels/Level 1/Level1.tscn"
 		#black fade
 		$CanvasLayer/ColorRect2.visible = true

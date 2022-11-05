@@ -9,4 +9,4 @@ func _on_ReturnToMain_pressed():
 	get_tree().change_scene("res://UI/Title Screen/TitleScreen.tscn")
 	#delete data to disable continue button
 	var dir = Directory.new()
-	dir.remove("res://saved_game/game.dat")
+	dir.remove("user://saved_game/game.dat")
