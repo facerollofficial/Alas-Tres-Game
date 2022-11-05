@@ -18,6 +18,7 @@ func _ready():
 	$TikbalangCutscene/Camera2D.current = true
 	$TikbalangCutscene/Camera2D2.current = false
 	$CanvasLayer/ColorRect2.visible = false
+	PlayerStats.health = 4
 	
 	#to avoid covering the screen
 	attack_tutorial.visible = false

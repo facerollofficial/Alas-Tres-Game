@@ -7,7 +7,7 @@ const player = preload("res://Player/Player.tscn")
 var game_data: Dictionary
 var player_x = -808
 var player_y = -513
-var player_stat = PlayerStats.health
+var player_stat = 4
 var player_asin = PlayerStats.asinAmmo
 var player_bawang = PlayerStats.bawangAmmo
 var player_heal = PlayerStats.oreganoHeal

@@ -27,7 +27,7 @@
 [ext_resource path="res://World/flowergrp4.tscn" type="PackedScene" id=25]
 [ext_resource path="res://World/cliffBackHouse.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Maps/Portal.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Player/PlayerPortalMorning.gd" type="Script" id=28]
+[ext_resource path="res://Player/NonCombatPlayer.gd" type="Script" id=28]
 [ext_resource path="res://Maps/Portal2.gd" type="Script" id=29]
 [ext_resource path="res://Maps/Bus Station/BusStationScene.gd" type="Script" id=30]
 [ext_resource path="res://Audio/BGM/mixkit-old-bus-arrival-3033.wav" type="AudioStream" id=31]
