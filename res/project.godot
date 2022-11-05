@@ -109,6 +109,7 @@ enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
 
 cursor=false
 2d=false
+icon=false
 
 [importer_defaults]
 
