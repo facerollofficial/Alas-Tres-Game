@@ -46,10 +46,10 @@
 			"portrait_definition": "",
 			"position": {
 				"0": false,
-				"1": true,
+				"1": false,
 				"2": false,
 				"3": false,
-				"4": false
+				"4": true
 			},
 			"type": 0,
 			"z_index": 0
@@ -75,13 +75,19 @@
 			"character": "character-1664259638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "**These people are too suspicious,  especially the black rice.**"
+			"text": "(These people are too suspicious,  especially the black rice.)"
 		},
 		{
 			"character": "character-1664259638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "No, I'm fine. Thank you for your kind offer."
+			"text": "(Also, Lolo once told me when I was little that I shouldn't accept stuff from strangers.)"
+		},
+		{
+			"character": "character-1664259638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'm sorry, but I'm good."
 		},
 		{
 			"emit_signal": "user_declined",

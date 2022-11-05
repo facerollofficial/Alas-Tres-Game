@@ -4,7 +4,7 @@
 			"character": "character-1664259638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Phew! That was close."
+			"text": "That was.......... I almost....."
 		},
 		{
 			"animation": "[Default]",
@@ -18,10 +18,10 @@
 			"portrait_definition": "",
 			"position": {
 				"0": false,
-				"1": true,
+				"1": false,
 				"2": false,
 				"3": false,
-				"4": false
+				"4": true
 			},
 			"type": 0,
 			"z_index": 0
@@ -30,7 +30,7 @@
 			"character": "character-1667105958.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "That really was close"
+			"text": "That really was close."
 		},
 		{
 			"character": "character-1667105958.json",
@@ -66,18 +66,12 @@
 		},
 		{
 			"character": "character-1664259638.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "What do you mean for now?"
-		},
-		{
-			"character": "character-1664259638.json",
 			"event_id": "dialogic_010",
 			"options": [
 
 			],
 			"portrait": "",
-			"question": "Choose a question"
+			"question": "What do you mean \"for now\"?"
 		},
 		{
 			"choice": "Why am I here?",
@@ -98,10 +92,10 @@
 			"portrait_definition": "",
 			"position": {
 				"0": false,
-				"1": true,
+				"1": false,
 				"2": false,
 				"3": false,
-				"4": false
+				"4": true
 			},
 			"type": 0,
 			"z_index": 0
@@ -110,141 +104,25 @@
 			"character": "character-1667105958.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You must be our savior! "
-		},
-		{
-			"animation": "[Default]",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_position": false,
-			"change_z_index": false,
-			"character": "character-1667105958.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "Worried",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 2,
-			"z_index": 0
+			"text": "What do you mean?"
 		},
 		{
 			"character": "character-1667105958.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "We need your help! A disorder is starting to happen as the evil force wreak havoc."
-		},
-		{
-			"animation": "[Default]",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_position": false,
-			"change_z_index": false,
-			"character": "character-1667105958.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "Default",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": true,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 2,
-			"z_index": 0
-		},
-		{
-			"character": "character-1667105958.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Take this, this is the weapon once used by the unnamed hero long time ago."
-		},
-		{
-			"animation": "[Default]",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1667105958.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 1,
-			"z_index": 0
-		},
-		{
-			"choice": "Will I die?",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"animation": "[Default]",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1667105958.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
 			"portrait": "Happy",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": true,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 0,
-			"z_index": 0
+			"text": "Well of course you're here, you're the returning hero according to the prophecy!"
 		},
 		{
 			"character": "character-1667105958.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "No! To be honest, I think you must be our savior! "
-		},
-		{
-			"animation": "[Default]",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_position": false,
-			"change_z_index": false,
-			"character": "character-1667105958.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "Worried",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 2,
-			"z_index": 0
+			"portrait": "Relief",
+			"text": "This city used to have balance of good and evil, not long until that witch did something bad..."
 		},
 		{
 			"character": "character-1667105958.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "We need your help! A disorder is starting to happen as the evil force wreak havoc."
+			"portrait": "Happy",
+			"text": "..but that's history and now you're here!"
 		},
 		{
 			"animation": "[Default]",
