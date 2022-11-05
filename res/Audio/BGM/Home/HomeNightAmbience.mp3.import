@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/HomeNightAmbience.mp3-3010d535585b53d1a66a9dec138e9feb.mp3str"
+
+[deps]
+
+source_file="res://Audio/BGM/Home/HomeNightAmbience.mp3"
+dest_files=[ "res://.import/HomeNightAmbience.mp3-3010d535585b53d1a66a9dec138e9feb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

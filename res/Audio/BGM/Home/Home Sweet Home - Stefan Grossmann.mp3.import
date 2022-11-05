@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Home Sweet Home - Stefan Grossmann.mp3-5b4c6fa25886fda1167d6d58a6dc004a.mp3str"
+
+[deps]
+
+source_file="res://Audio/BGM/Home/Home Sweet Home - Stefan Grossmann.mp3"
+dest_files=[ "res://.import/Home Sweet Home - Stefan Grossmann.mp3-5b4c6fa25886fda1167d6d58a6dc004a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

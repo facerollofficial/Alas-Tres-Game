@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Forest_Ambience.mp3-988a3489e75d31f978a0e7bbc6afd01d.mp3str"
+path="res://.import/Forest_Ambience.mp3-4970ad78a9811c2144327c76209e2849.mp3str"
 
 [deps]
 
-source_file="res://Audio/BGM/Outside/Forest_Ambience.mp3"
-dest_files=[ "res://.import/Forest_Ambience.mp3-988a3489e75d31f978a0e7bbc6afd01d.mp3str" ]
+source_file="res://Audio/BGM/Home/Forest_Ambience.mp3"
+dest_files=[ "res://.import/Forest_Ambience.mp3-4970ad78a9811c2144327c76209e2849.mp3str" ]
 
 [params]
 
