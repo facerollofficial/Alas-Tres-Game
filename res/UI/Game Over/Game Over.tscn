@@ -20,7 +20,7 @@ margin_right = 320.0
 margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0, 0, 0, 0.0980392 )
+color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
 
 [node name="Layout" type="VBoxContainer" parent="."]
 margin_right = 320.0

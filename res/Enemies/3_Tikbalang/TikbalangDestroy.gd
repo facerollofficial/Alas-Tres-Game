@@ -22,7 +22,7 @@ enum {
 }
 
 ## ONREADY VARIABLES ##
-onready var stats = $Stats
+onready var stats = $TikbalangStats
 onready var playerDetectionZone = $PlayerDetectionZone
 onready var attackZone = $AttackZone
 onready var hurtbox = $Hurtbox

@@ -1512,8 +1512,7 @@ position = Vector2( 0, -8 )
 position = Vector2( 0, 8 )
 shape = SubResource( 49 )
 
-[node name="Stats" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 35 )]
-max_health = 30
+[node name="TikbalangStats" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 35 )]
 
 [node name="AttackZone" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 37 )]
 collision_layer = 0
@@ -1802,7 +1801,7 @@ anims/Ambience = SubResource( 89 )
 
 [connection signal="body_entered" from="TiyanakCutscene" to="TiyanakCutscene" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="TikbalangCutscene" to="TikbalangCutscene" method="_on_Area2D_body_entered"]
-[connection signal="no_health" from="YSort/Combat Field/Boss/BossTikbalang/Stats" to="YSort/Combat Field/Boss/BossTikbalang" method="_on_Stats_no_health"]
+[connection signal="no_health" from="YSort/Combat Field/Boss/BossTikbalang/TikbalangStats" to="YSort/Combat Field/Boss/BossTikbalang" method="_on_Stats_no_health"]
 [connection signal="area_entered" from="YSort/Combat Field/Boss/BossTikbalang/Hurtbox" to="YSort/Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="YSort/Combat Field/Boss/BossTikbalang/Hurtbox" to="YSort/Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="YSort/Combat Field/Boss/BossTikbalang/Hurtbox" to="YSort/Combat Field/Boss/BossTikbalang" method="_on_Hurtbox_invincibility_started"]
