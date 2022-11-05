@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -14,8 +14,6 @@
 [ext_resource path="res://Effects/Shadows/SmallShadow.png" type="Texture" id=12]
 [ext_resource path="res://Maps/All_Levels/Level 1/Level1.gd" type="Script" id=13]
 [ext_resource path="res://Pickups/Oregano/OreganoHeal.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Audio/Autoload/MusicController.gd" type="Script" id=15]
-[ext_resource path="res://Audio/SFX/Pickup/02_Heal_02.wav" type="AudioStream" id=16]
 [ext_resource path="res://NPC/Aghoy/Aghoy.tscn" type="PackedScene" id=17]
 [ext_resource path="res://NPC/Stranger/StrangerAttack.tscn" type="PackedScene" id=18]
 [ext_resource path="res://NPC/Stranger/Stranger.tscn" type="PackedScene" id=19]
@@ -45,10 +43,6 @@
 [ext_resource path="res://UI/EnemyIntro/EnemyTikbalang/EnemyTikbalangInfo.tscn" type="PackedScene" id=43]
 [ext_resource path="res://UI/EnemyIntro/EnemyTiyanak/EnemyTiyanak.tscn" type="PackedScene" id=44]
 [ext_resource path="res://Enemies/Enemy Scripts/BossPlayerDetection.gd" type="Script" id=45]
-[ext_resource path="res://Audio/BGM/The Forgotten Forest.mp3" type="AudioStream" id=46]
-[ext_resource path="res://Audio/BGM/Ambience.mp3" type="AudioStream" id=47]
-[ext_resource path="res://Audio/BGM/Combat/It&#039;s Time To Run.ogg" type="AudioStream" id=48]
-[ext_resource path="res://Audio/BGM/Combat/Death At My Heels.ogg" type="AudioStream" id=49]
 [ext_resource path="res://UI/Credits/Credits.tscn" type="PackedScene" id=51]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -1292,10 +1286,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=89]
-resource_name = "Ambience"
-length = 290.0
-
 [node name="Level1" type="Node2D"]
 script = ExtResource( 13 )
 
@@ -1768,37 +1758,6 @@ pause_mode = 2
 [node name="PickupOreganoTutorial" parent="CanvasLayer" instance=ExtResource( 39 )]
 
 [node name="PickupsTutorial" parent="CanvasLayer" instance=ExtResource( 40 )]
-
-[node name="MusicController" type="Node" parent="."]
-pause_mode = 2
-script = ExtResource( 15 )
-
-[node name="HealSFX" type="AudioStreamPlayer" parent="MusicController"]
-stream = ExtResource( 16 )
-bus = "SFX"
-
-[node name="NormalCombat" type="AudioStreamPlayer" parent="MusicController"]
-stream = ExtResource( 48 )
-bus = "Music"
-
-[node name="BossCombat" type="AudioStreamPlayer" parent="MusicController"]
-stream = ExtResource( 49 )
-bus = "Music"
-
-[node name="Level1BGM" type="AudioStreamPlayer" parent="MusicController"]
-pause_mode = 2
-stream = ExtResource( 46 )
-volume_db = 1.0
-bus = "Music"
-
-[node name="DarkAmbience" type="AudioStreamPlayer" parent="MusicController"]
-pause_mode = 2
-stream = ExtResource( 47 )
-bus = "Music"
-
-[node name="AmbiencePlayer" type="AnimationPlayer" parent="MusicController"]
-pause_mode = 2
-anims/Ambience = SubResource( 89 )
 
 [connection signal="body_entered" from="TiyanakCutscene" to="TiyanakCutscene" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="TikbalangCutscene" to="TikbalangCutscene" method="_on_Area2D_body_entered"]

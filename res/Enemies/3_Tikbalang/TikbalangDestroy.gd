@@ -155,6 +155,7 @@ func dead():
 	print("dead script")
 	set_physics_process(false)
 	print("yay")
+	MusicController.boss_fight_music_off()
 	yield(get_tree().create_timer(1), "timeout")
 	get_tree().paused = true
 	var dialog = Dialogic.start('timeline-after_tikbalang')
@@ -166,19 +167,7 @@ func endGame(timeline_name):
 	get_tree().paused = false
 	credits.visible = true
 	infoShown = true
-
-#func _process(delta):
-#	if IntroIsPlayed:
-#		if Input.is_action_just_pressed("ui_accept"):
-#			queue_free()
-#			next_scene()
-
-#func _process(delta):
-#	if infoShown:
-#		if Input.is_action_just_pressed("next"):
-#			print("credits done")
-#			credits.visible = false
-#			end_game.visible = true		
+	
 func _input(event):
 	if event.is_action_pressed("next") and infoShown:
 		print("credits done")

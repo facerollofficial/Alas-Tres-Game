@@ -15,6 +15,7 @@ func _ready():
 func _unhandled_input(event):
 	if gameOverScreen.visible!=true:
 		if event.is_action_pressed("Pause"):
+			#MusicController.end_sound()
 			self.is_paused = !is_paused
 
 func set_is_paused(value):
@@ -25,6 +26,7 @@ func set_is_paused(value):
 		optionsScreen.visible = false
 	else:
 		is_paused = value
+		MusicController.end_sound()
 		get_tree().paused = is_paused
 		pauseScreen.visible = is_paused
 		optionsScreen.visible = false
@@ -42,12 +44,15 @@ func _on_Quit_pressed():
 func _on_Yes_pressed():
 	self.is_paused = false
 	get_tree().paused = false
+	MusicController.end_sound()
 	get_tree().change_scene("res://UI/Title Screen/TitleScreen.tscn")
 
 func _on_No_pressed():
 	quitConfirm.visible = false
 
 func _on_Resume_pressed():
+	MusicController.play_level1_bgm()
+	MusicController.play_dark_ambience()
 	self.is_paused = false
 
 

@@ -49,8 +49,10 @@ func _ready():
 		$YSort/StrangerAttack.visible = true
 		
 		yield(get_tree().create_timer(3), "timeout")
-		$MusicController.play_level1_bgm()
-		$MusicController.play_dark_ambience()
+		#$MusicController.play_level1_bgm()
+		#$MusicController.play_dark_ambience()
+		MusicController.play_dark_ambience()
+		MusicController.play_level1_bgm()
 		#start dialogue with stranger
 		get_tree().paused = true
 		var dialog = Dialogic.start('timeline-stranger')

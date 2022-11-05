@@ -40,3 +40,7 @@ func play_level1_bgm():
 
 func play_dark_ambience():
 	darkAmbience.playing = true
+	
+func end_sound():
+	level1BGM.playing = false
+	darkAmbience.playing = false
