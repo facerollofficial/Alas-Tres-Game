@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Audio/BGM/Home/Forest_Ambience.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Audio/BGM/Home/HomeNightAmbience.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Audio/BGM/Home/Home Sweet Home - Stefan Grossmann.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Audio/Autoload/Outside_HouseMusicController.gd" type="Script" id=4]
+
+[node name="Outside_HouseMusic" type="Node"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="Forest_Ambiance" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 1 )
+
+[node name="Home_Sweet_Home" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 3 )
+
+[node name="Home_Night_Ambiance" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )

@@ -15,6 +15,7 @@ func _ready():
 	
 func startDialogue():
 	if transDone == true:
+		OutsideHouseMusicController.day_scene()
 		yield(get_tree().create_timer(1), "timeout")
 		if Global.IsPlayed == false:
 			#print the dialogue created in dialogic

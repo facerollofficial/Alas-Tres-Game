@@ -23,3 +23,4 @@ func _input(event):
 	if event.is_action_pressed("close") and tutorial_visible:
 		print("closed")
 		interact_tutorial.visible = false
+		OutsideHouseMusicController.home_day_scene()
