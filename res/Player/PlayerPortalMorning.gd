@@ -69,13 +69,6 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	move()
-	
-	# THIS ALLOWS THE PLAYER TO CHANGE STATE AND ATTACK
-	if Input.is_action_just_pressed("attack"):
-		state = ATTACK
-		
-	if Input.is_action_just_pressed("roll"):
-		state = ROLL
 		
 func roll_state(delta):
 	hurtbox.start_invincibility(I_FRAME_DURATION) # INVINCIBILITY FRAME

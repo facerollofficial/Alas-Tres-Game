@@ -1,0 +1,258 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://UI/Title Screen/TitleScreen2.png" type="Texture" id=1]
+[ext_resource path="res://UI/Themes/TitleScreenTheme.tres" type="Theme" id=2]
+[ext_resource path="res://UI/Title Screen/TitleScreen.gd" type="Script" id=3]
+[ext_resource path="res://UI/Title Screen/TitleScreenBG.png" type="Texture" id=4]
+[ext_resource path="res://UI/Options/Options.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Audio/BGM/Horror Game Menu.mp3" type="AudioStream" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 320, 180 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 180, 320, 180 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 360, 320, 180 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 540, 320, 180 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 720, 320, 180 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 900, 320, 180 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1080, 320, 180 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1260, 320, 180 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1440, 320, 180 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1620, 320, 180 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "Animation",
+"speed": 1.5
+} ]
+
+[sub_resource type="DynamicFontData" id=12]
+font_path = "res://UI/Fonts/pixelplay.ttf"
+
+[sub_resource type="DynamicFont" id=13]
+resource_local_to_scene = true
+size = 14
+outline_color = Color( 0.117647, 0.117647, 0.117647, 1 )
+font_data = SubResource( 12 )
+
+[sub_resource type="DynamicFontData" id=14]
+font_path = "res://UI/Fonts/pixelplay.ttf"
+
+[sub_resource type="DynamicFont" id=15]
+size = 11
+font_data = SubResource( 14 )
+
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://UI/Fonts/pixelplay.ttf"
+
+[sub_resource type="DynamicFont" id=17]
+size = 14
+font_data = SubResource( 16 )
+
+[node name="TitleScreen" type="Control"]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 160, 90 )
+frames = SubResource( 11 )
+animation = "Animation"
+frame = 2
+playing = true
+
+[node name="Menu" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 32.0
+margin_top = 53.0
+margin_right = 288.0
+margin_bottom = 201.0
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 256.0
+margin_bottom = 80.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Menu"]
+visible = false
+margin_top = 84.0
+margin_right = 256.0
+margin_bottom = 156.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Spacer" type="VBoxContainer" parent="Menu/HBoxContainer2"]
+margin_right = 82.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Menu/HBoxContainer2/Spacer"]
+margin_right = 82.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Menu/HBoxContainer2"]
+margin_left = 86.0
+margin_right = 169.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="NewGame" type="Button" parent="Menu/HBoxContainer2/VBoxContainer2"]
+margin_left = 20.0
+margin_right = 63.0
+margin_bottom = 15.0
+size_flags_horizontal = 4
+theme = ExtResource( 2 )
+text = "New Game"
+
+[node name="Continue" type="Button" parent="Menu/HBoxContainer2/VBoxContainer2"]
+margin_left = 21.0
+margin_top = 19.0
+margin_right = 61.0
+margin_bottom = 34.0
+size_flags_horizontal = 4
+theme = ExtResource( 2 )
+text = "Continue"
+
+[node name="Options" type="Button" parent="Menu/HBoxContainer2/VBoxContainer2"]
+margin_left = 25.0
+margin_top = 38.0
+margin_right = 58.0
+margin_bottom = 53.0
+size_flags_horizontal = 4
+theme = ExtResource( 2 )
+text = "Options"
+
+[node name="Quit" type="Button" parent="Menu/HBoxContainer2/VBoxContainer2"]
+margin_left = 32.0
+margin_top = 57.0
+margin_right = 50.0
+margin_bottom = 72.0
+size_flags_horizontal = 4
+theme = ExtResource( 2 )
+text = "Quit"
+
+[node name="Spacer2" type="VBoxContainer" parent="Menu/HBoxContainer2"]
+margin_left = 173.0
+margin_right = 256.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Menu/HBoxContainer2/Spacer2"]
+margin_right = 83.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Options" parent="GUI" instance=ExtResource( 5 )]
+visible = false
+
+[node name="Confirm" type="Control" parent="GUI"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="GUI/Confirm"]
+margin_left = 65.0
+margin_top = 40.0
+margin_right = 255.0
+margin_bottom = 140.0
+color = Color( 0.345098, 0.345098, 0.345098, 1 )
+
+[node name="Label" type="Label" parent="GUI/Confirm"]
+margin_left = 56.0
+margin_top = 47.0
+margin_right = 265.0
+margin_bottom = 91.0
+custom_fonts/font = SubResource( 13 )
+text = "Are you sure you want to restart
+the game?"
+align = 1
+autowrap = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI/Confirm"]
+margin_left = 96.0
+margin_top = 88.0
+margin_right = 236.0
+margin_bottom = 104.0
+grow_horizontal = 0
+hint_tooltip = "Any unsaved progress will be lost."
+size_flags_horizontal = 5
+size_flags_vertical = 5
+custom_colors/default_color = Color( 1, 0.447059, 0.447059, 1 )
+custom_fonts/normal_font = SubResource( 15 )
+text = "All saved progress will be lost."
+
+[node name="No" type="Button" parent="GUI/Confirm"]
+margin_left = 184.0
+margin_top = 116.0
+margin_right = 204.0
+margin_bottom = 135.0
+size_flags_horizontal = 4
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 17 )
+text = "No."
+
+[node name="Yes" type="Button" parent="GUI/Confirm"]
+margin_left = 114.0
+margin_top = 116.0
+margin_right = 136.0
+margin_bottom = 135.0
+size_flags_horizontal = 4
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 17 )
+text = "Yes."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+bus = "Music"
+
+[connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer2/VBoxContainer2/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="GUI/Options/VBoxContainer/VBoxContainer/H_Divider/Interactables/Buttons/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="GUI/Confirm/No" to="." method="_on_No_pressed"]
+[connection signal="pressed" from="GUI/Confirm/Yes" to="." method="_on_Yes_pressed"]
+
+[editable path="GUI/Options"]
