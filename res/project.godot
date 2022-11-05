@@ -91,6 +91,7 @@ PlayerStats="*res://Player/PlayerStats.tscn"
 GameManager="*res://Extras/Save/GameManager.gd"
 MusicController="*res://Audio/Autoload/MusicController.tscn"
 Global="*res://Global.gd"
+OutsideHouseMusicController="*res://Audio/Autoload/Outside_HouseMusicController.tscn"
 
 [display]
 

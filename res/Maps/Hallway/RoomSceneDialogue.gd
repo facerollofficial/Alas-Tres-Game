@@ -4,6 +4,7 @@ var transDone = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	OutsideHouseMusicController.end_night_scene()
 	$AnimationPlayer.play("fade_in")
 	transDone = true
 	startDialogue()

@@ -44,3 +44,4 @@ func play_dark_ambience():
 func end_sound():
 	level1BGM.playing = false
 	darkAmbience.playing = false
+

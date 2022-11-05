@@ -19,6 +19,7 @@ func _on_Book_body_entered(body):
 #unpause function
 func unpause(timeline_name):
 	get_tree().paused = false
+	OutsideHouseMusicController.end_night_scene()
 	flash()
 
 func flash():
