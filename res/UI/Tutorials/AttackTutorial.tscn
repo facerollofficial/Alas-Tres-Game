@@ -80,13 +80,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFontData" id=39]
+[sub_resource type="DynamicFontData" id=46]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=9]
 outline_size = 1
 outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-font_data = SubResource( 39 )
+font_data = SubResource( 46 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 10
@@ -182,7 +182,7 @@ color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 253, 111 )
 frames = SubResource( 36 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="MediumShadow2" type="Sprite" parent="."]
@@ -192,7 +192,6 @@ texture = ExtResource( 4 )
 [node name="Mcplayer2" type="AnimatedSprite" parent="."]
 position = Vector2( 225, 102 )
 frames = SubResource( 19 )
-frame = 2
 playing = true
 
 [node name="SmallShadow" type="Sprite" parent="."]
@@ -247,7 +246,6 @@ align = 1
 [node name="Bat" type="AnimatedSprite" parent="."]
 position = Vector2( 101, 102 )
 frames = SubResource( 25 )
-frame = 4
 playing = true
 flip_h = true
 

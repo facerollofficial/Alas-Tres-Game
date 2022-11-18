@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/Game Over/Game Over.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Kit/KitUI.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Pause/Pause.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Themes/TitleScreenTheme.tres" type="Theme" id=7]
+[ext_resource path="res://UI/CatalogueUI/CatalogueUI.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://UI/Fonts/pixelplay.ttf"
@@ -50,10 +51,12 @@ visible = false
 script = null
 
 [node name="Options" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [node name="KitUI" parent="." instance=ExtResource( 2 )]
 
 [node name="GameOver" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="QuitConfirm" type="Control" parent="."]
 visible = false
@@ -109,6 +112,8 @@ size_flags_horizontal = 4
 theme = ExtResource( 7 )
 custom_fonts/font = SubResource( 4 )
 text = "Yes."
+
+[node name="CatalogueUI" parent="." instance=ExtResource( 8 )]
 
 [connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Options" to="." method="_on_Options_pressed"]

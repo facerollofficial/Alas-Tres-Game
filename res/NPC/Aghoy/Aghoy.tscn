@@ -6,6 +6,7 @@
 [ext_resource path="res://NPC/Aghoy/AghoySave.gd" type="Script" id=4]
 [ext_resource path="res://Effects/Shadows/SmallShadow.png" type="Texture" id=5]
 
+
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.0
 height = 0.0

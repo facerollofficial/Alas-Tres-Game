@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/PlayerGUI/Kit.gd" type="Script" id=1]
 [ext_resource path="res://UI/PlayerGUI/Sprite/heal_ui.png" type="Texture" id=2]
 [ext_resource path="res://UI/PlayerGUI/Sprite/asin_ui.png" type="Texture" id=3]
 [ext_resource path="res://UI/PlayerGUI/Sprite/bawang_ui.png" type="Texture" id=4]
 [ext_resource path="res://UI/Kit/KitFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://world assets/home scene/CatalogueUI.png" type="Texture" id=6]
 
 [node name="KitUI" type="Control"]
 margin_right = 40.0
@@ -49,3 +50,8 @@ margin_bottom = 3.0
 custom_fonts/font = ExtResource( 5 )
 text = "00"
 align = 2
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 300, 15 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 6 )
