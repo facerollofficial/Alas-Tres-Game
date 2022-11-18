@@ -209,7 +209,7 @@ bbcode_text = "[center][/center]"
 position = Vector2( 29, 18 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 43 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Tikbalang" type="RichTextLabel" parent="."]
@@ -225,7 +225,7 @@ bbcode_text = "[center][/center]"
 position = Vector2( 33, 63 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 52 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Manananggal" type="RichTextLabel" parent="."]
@@ -241,7 +241,7 @@ bbcode_text = "[center][/center]"
 position = Vector2( 17, 32 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="Bungisngis" type="RichTextLabel" parent="."]
@@ -258,7 +258,7 @@ position = Vector2( 16, 51 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
 animation = "bungisngis"
-frame = 1
+frame = 5
 speed_scale = 0.3
 playing = true
 
@@ -276,6 +276,7 @@ position = Vector2( 16, 51 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
 animation = "bungisngis"
+frame = 4
 speed_scale = 0.3
 playing = true
 

@@ -3,8 +3,10 @@ extends Control
 
 onready var optionMenu = $GUI/Options
 onready var confirmMsg = $GUI/Confirm
+onready var newGame_btn = $Menu/HBoxContainer2/VBoxContainer2/NewGame
 
 func _ready():
+	newGame_btn.grab_focus()
 	optionMenu.visible = false
 	var file: File = File.new()
 	if(file.file_exists("user://saved_game/game.dat")):
