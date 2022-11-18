@@ -88,8 +88,10 @@ func dialogic_signal(argument):
 
 func flash(timeline_name):
 	#flashing screen
-	$YSort/Stranger.visible = false
-	$YSort/StrangerAttack.visible = false
+	#$YSort/Stranger.visible = false
+	$YSort/Stranger.queue_free()
+	#$YSort/StrangerAttack.visible = false
+	$YSort/StrangerAttack.queue_free()
 	$CanvasLayer/AnimationPlayer.play("flash")
 	anim_done = true
 	aghoyEnter()
