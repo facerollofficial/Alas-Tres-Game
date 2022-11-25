@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://Enemies/1_Tiyanak/tiyanak_walk.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Enemies/4_Bungisngis/Bungisngis.png" type="Texture" id=4]
 [ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.png" type="Texture" id=5]
 [ext_resource path="res://NPC/Aghoy/Aghoy.png" type="Texture" id=6]
+[ext_resource path="res://UI/CatalogueUI/CatalogueUI.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFontData" id=39]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
@@ -56,6 +57,33 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="StyleBoxFlat" id=61]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.694118, 0.235294, 0.235294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=64]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.694118, 0.235294, 0.235294, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=62]
+
+[sub_resource type="StyleBoxFlat" id=65]
+bg_color = Color( 0.694118, 0.235294, 0.235294, 1 )
+
+[sub_resource type="Theme" id=63]
+Button/styles/focus = SubResource( 61 )
+Button/styles/hover = SubResource( 64 )
+Button/styles/normal = SubResource( 62 )
+Button/styles/pressed = SubResource( 65 )
 
 [sub_resource type="StyleBoxFlat" id=49]
 border_width_left = 2
@@ -153,6 +181,7 @@ animations = [ {
 [node name="CatalogueUI" type="Control"]
 margin_right = 320.0
 margin_bottom = 180.0
+script = ExtResource( 7 )
 
 [node name="Backdrop" type="ColorRect" parent="."]
 margin_right = 320.0
@@ -209,8 +238,13 @@ bbcode_text = "[center][/center]"
 position = Vector2( 29, 18 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 43 )
-frame = 2
+frame = 5
 playing = true
+
+[node name="TiyanakButton" type="Button" parent="Tiyanak"]
+margin_right = 54.0
+margin_bottom = 52.0
+theme = SubResource( 63 )
 
 [node name="Tikbalang" type="RichTextLabel" parent="."]
 margin_left = 168.0
@@ -228,6 +262,11 @@ frames = SubResource( 52 )
 frame = 1
 playing = true
 
+[node name="TikbalangButton" type="Button" parent="Tikbalang"]
+margin_right = 54.0
+margin_bottom = 52.0
+theme = SubResource( 63 )
+
 [node name="Manananggal" type="RichTextLabel" parent="."]
 margin_left = 98.0
 margin_top = 113.0
@@ -241,8 +280,13 @@ bbcode_text = "[center][/center]"
 position = Vector2( 17, 32 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
-frame = 4
+frame = 1
 playing = true
+
+[node name="ManananggalButton" type="Button" parent="Manananggal"]
+margin_right = 54.0
+margin_bottom = 52.0
+theme = SubResource( 63 )
 
 [node name="Bungisngis" type="RichTextLabel" parent="."]
 margin_left = 168.0
@@ -258,9 +302,14 @@ position = Vector2( 16, 51 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
 animation = "bungisngis"
-frame = 5
+frame = 2
 speed_scale = 0.3
 playing = true
+
+[node name="BungisngisButton" type="Button" parent="Bungisngis"]
+margin_right = 54.0
+margin_bottom = 52.0
+theme = SubResource( 63 )
 
 [node name="Mangkukulam" type="RichTextLabel" parent="."]
 margin_left = 238.0
@@ -271,14 +320,19 @@ custom_styles/normal = SubResource( 53 )
 bbcode_enabled = true
 bbcode_text = "[center][/center]"
 
-[node name="Bungisngis" type="AnimatedSprite" parent="Mangkukulam"]
+[node name="Mangkukulam" type="AnimatedSprite" parent="Mangkukulam"]
 position = Vector2( 16, 51 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
 animation = "bungisngis"
-frame = 4
+frame = 1
 speed_scale = 0.3
 playing = true
+
+[node name="MangkukulamButton" type="Button" parent="Mangkukulam"]
+margin_right = 54.0
+margin_bottom = 52.0
+theme = SubResource( 63 )
 
 [node name="Aghoy" type="RichTextLabel" parent="."]
 margin_left = 28.0
@@ -293,3 +347,15 @@ bbcode_text = "[center][/center]"
 position = Vector2( 27, 27 )
 scale = Vector2( 1.37438, 1.37438 )
 texture = ExtResource( 6 )
+
+[node name="AghoyButton" type="Button" parent="Aghoy"]
+margin_right = 54.0
+margin_bottom = 52.0
+theme = SubResource( 63 )
+
+[connection signal="pressed" from="Tiyanak/TiyanakButton" to="." method="_on_TiyanakButton_pressed"]
+[connection signal="pressed" from="Tikbalang/TikbalangButton" to="." method="_on_TikbalangButton_pressed"]
+[connection signal="pressed" from="Manananggal/ManananggalButton" to="." method="_on_ManananggalButton_pressed"]
+[connection signal="pressed" from="Bungisngis/BungisngisButton" to="." method="_on_BungisngisButton_pressed"]
+[connection signal="pressed" from="Mangkukulam/MangkukulamButton" to="." method="_on_MangkukulamButton_pressed"]
+[connection signal="pressed" from="Aghoy/AghoyButton" to="." method="_on_AghoyButton_pressed"]

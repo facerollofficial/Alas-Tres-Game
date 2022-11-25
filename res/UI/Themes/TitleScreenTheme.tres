@@ -9,10 +9,7 @@ font_data = SubResource( 12 )
 
 [sub_resource type="StyleBoxEmpty" id=21]
 
-[sub_resource type="StyleBoxLine" id=24]
-content_margin_top = 11.0
-color = Color( 1, 1, 1, 1 )
-thickness = 2
+[sub_resource type="StyleBoxEmpty" id=24]
 
 [sub_resource type="StyleBoxEmpty" id=22]
 
@@ -22,6 +19,7 @@ thickness = 2
 
 [resource]
 Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_focus = Color( 0.490196, 0.490196, 0.490196, 1 )
 Button/colors/font_color_hover = Color( 0.490196, 0.490196, 0.490196, 1 )
 Button/fonts/clicked = null
 Button/fonts/font = SubResource( 13 )
