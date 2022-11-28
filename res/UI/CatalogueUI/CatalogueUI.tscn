@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://Enemies/1_Tiyanak/tiyanak_walk.png" type="Texture" id=2]
@@ -7,6 +7,13 @@
 [ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.png" type="Texture" id=5]
 [ext_resource path="res://NPC/Aghoy/Aghoy.png" type="Texture" id=6]
 [ext_resource path="res://UI/CatalogueUI/CatalogueUI.gd" type="Script" id=7]
+[ext_resource path="res://Enemies/5_Mangkukulam/MANGKUKULAM.png" type="Texture" id=8]
+[ext_resource path="res://UI/AllyInfo/AllyAghoy/AllyAghoyInfo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/EnemyIntro/EnemyTikbalang/EnemyTikbalangInfo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/EnemyIntro/EnemyBungisngis/EnemyBungisngis.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/EnemyIntro/EnemyManananggal/EnemyManananggalInfo.tscn" type="PackedScene" id=12]
+[ext_resource path="res://UI/EnemyIntro/EnemyMangkukulam/EnemyMangkukulam.tscn" type="PackedScene" id=13]
+[ext_resource path="res://UI/EnemyIntro/EnemyTiyanak/EnemyTiyanak.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFontData" id=39]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
@@ -165,6 +172,30 @@ region = Rect2( 192, 0, 64, 64 )
 atlas = ExtResource( 3 )
 region = Rect2( 256, 0, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 384, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 448, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 704, 64, 64 )
+
 [sub_resource type="SpriteFrames" id=60]
 animations = [ {
 "frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
@@ -176,6 +207,11 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 2.0
+}, {
+"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": true,
+"name": "mangkuku",
+"speed": 5.0
 } ]
 
 [node name="CatalogueUI" type="Control"]
@@ -238,7 +274,6 @@ bbcode_text = "[center][/center]"
 position = Vector2( 29, 18 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 43 )
-frame = 5
 playing = true
 
 [node name="TiyanakButton" type="Button" parent="Tiyanak"]
@@ -259,7 +294,7 @@ bbcode_text = "[center][/center]"
 position = Vector2( 33, 63 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 52 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="TikbalangButton" type="Button" parent="Tikbalang"]
@@ -302,34 +337,10 @@ position = Vector2( 16, 51 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
 animation = "bungisngis"
-frame = 2
 speed_scale = 0.3
 playing = true
 
 [node name="BungisngisButton" type="Button" parent="Bungisngis"]
-margin_right = 54.0
-margin_bottom = 52.0
-theme = SubResource( 63 )
-
-[node name="Mangkukulam" type="RichTextLabel" parent="."]
-margin_left = 238.0
-margin_top = 79.0
-margin_right = 292.0
-margin_bottom = 131.0
-custom_styles/normal = SubResource( 53 )
-bbcode_enabled = true
-bbcode_text = "[center][/center]"
-
-[node name="Mangkukulam" type="AnimatedSprite" parent="Mangkukulam"]
-position = Vector2( 16, 51 )
-scale = Vector2( 2.39844, 2.39844 )
-frames = SubResource( 60 )
-animation = "bungisngis"
-frame = 1
-speed_scale = 0.3
-playing = true
-
-[node name="MangkukulamButton" type="Button" parent="Mangkukulam"]
 margin_right = 54.0
 margin_bottom = 52.0
 theme = SubResource( 63 )
@@ -353,9 +364,50 @@ margin_right = 54.0
 margin_bottom = 52.0
 theme = SubResource( 63 )
 
+[node name="Mangkukulam" type="RichTextLabel" parent="."]
+margin_left = 238.0
+margin_top = 79.0
+margin_right = 292.0
+margin_bottom = 131.0
+custom_styles/normal = SubResource( 53 )
+bbcode_enabled = true
+bbcode_text = "[center][/center]"
+
+[node name="Mangkukulam" type="AnimatedSprite" parent="Mangkukulam"]
+position = Vector2( 71, 42 )
+scale = Vector2( 2.39844, 2.39844 )
+frames = SubResource( 60 )
+animation = "mangkuku"
+frame = 1
+speed_scale = 0.3
+playing = true
+
+[node name="MangkukulamButton" type="Button" parent="Mangkukulam"]
+margin_right = 54.0
+margin_bottom = 52.0
+theme = SubResource( 63 )
+
+[node name="EnemyTiyanakInfo" parent="." instance=ExtResource( 14 )]
+visible = false
+
+[node name="EnemyBungisngis" parent="." instance=ExtResource( 11 )]
+visible = false
+
+[node name="EnemyManananggalInfo" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[node name="EnemyTikbalangInfo" parent="." instance=ExtResource( 10 )]
+visible = false
+
+[node name="AllyAghoy" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="EnemyMangkukulam" parent="." instance=ExtResource( 13 )]
+visible = false
+
 [connection signal="pressed" from="Tiyanak/TiyanakButton" to="." method="_on_TiyanakButton_pressed"]
 [connection signal="pressed" from="Tikbalang/TikbalangButton" to="." method="_on_TikbalangButton_pressed"]
 [connection signal="pressed" from="Manananggal/ManananggalButton" to="." method="_on_ManananggalButton_pressed"]
 [connection signal="pressed" from="Bungisngis/BungisngisButton" to="." method="_on_BungisngisButton_pressed"]
-[connection signal="pressed" from="Mangkukulam/MangkukulamButton" to="." method="_on_MangkukulamButton_pressed"]
 [connection signal="pressed" from="Aghoy/AghoyButton" to="." method="_on_AghoyButton_pressed"]
+[connection signal="pressed" from="Mangkukulam/MangkukulamButton" to="." method="_on_MangkukulamButton_pressed"]

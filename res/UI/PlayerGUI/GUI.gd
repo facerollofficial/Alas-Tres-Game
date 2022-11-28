@@ -6,26 +6,30 @@ onready var pauseScreen = $Pause
 onready var gameOverScreen = $GameOver
 onready var kitUI = $KitUI
 onready var quitConfirm = $QuitConfirm
+onready var catalogUI = $CatalogueUI
 
 func _ready():
 	optionsScreen.visible = false
 	gameOverScreen.visible = false
 	quitConfirm.visible = false
+	catalogUI.visible = false
 
 func _unhandled_input(event):
 	if gameOverScreen.visible!=true:
 		if event.is_action_pressed("Pause"):
 			#MusicController.end_sound()
 			self.is_paused = !is_paused
+		if is_paused != true:
+			if event.is_action_pressed("Catalog"):
+				catalogUI.visible = true
 
 func set_is_paused(value):
-	
 	if quitConfirm.visible == true:
 		quitConfirm.visible = false
 	elif optionsScreen.visible == true:
 		optionsScreen.visible = false
 	else:
-		is_paused = value
+		is_paused = value    
 		MusicController.end_sound()
 		get_tree().paused = is_paused
 		pauseScreen.visible = is_paused
@@ -54,8 +58,3 @@ func _on_Resume_pressed():
 	MusicController.play_level1_bgm()
 	MusicController.play_dark_ambience()
 	self.is_paused = false
-
-
-
-
-

@@ -1,83 +1,121 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.png" type="Texture" id=1]
-[ext_resource path="res://UI/EnemyIntro/EnemyTikbalang/EnemyTikbalangInfo.gd" type="Script" id=2]
+[ext_resource path="res://Enemies/1_Tiyanak/tiyanak_walk.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/4_Bungisngis/Bungisngis.png" type="Texture" id=2]
 [ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=3]
+[ext_resource path="res://UI/EnemyIntro/EnemyBungisngis/EnemyBungisngis.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=29]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
-[sub_resource type="DynamicFont" id=26]
+[sub_resource type="DynamicFont" id=9]
 outline_size = 1
 outline_color = Color( 0.231373, 0.231373, 0.231373, 1 )
-font_data = SubResource( 8 )
+font_data = SubResource( 29 )
 
-[sub_resource type="DynamicFont" id=27]
+[sub_resource type="DynamicFont" id=10]
 size = 10
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=28]
+[sub_resource type="StyleBoxFlat" id=11]
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 84, 64 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 2 )
+region = Rect2( 84, 0, 84, 64 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 2 )
+region = Rect2( 168, 0, 84, 64 )
+
 [sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 64, 64, 64 )
+atlas = ExtResource( 2 )
+region = Rect2( 252, 0, 84, 64 )
 
 [sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 64, 64, 64 )
+atlas = ExtResource( 2 )
+region = Rect2( 336, 0, 84, 64 )
 
-[sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 1 )
-region = Rect2( 192, 64, 64, 64 )
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 2 )
+region = Rect2( 420, 0, 84, 64 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 256, 64, 64, 64 )
+region = Rect2( 0, 64, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=29]
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=24]
 animations = [ {
-"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 50 ), SubResource( 51 ) ],
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+"loop": true,
+"name": "bungis",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
 "name": "default",
-"speed": 2.0
+"speed": 5.0
 } ]
 
-[sub_resource type="DynamicFontData" id=14]
+[sub_resource type="DynamicFontData" id=33]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
-[sub_resource type="DynamicFont" id=30]
+[sub_resource type="DynamicFont" id=15]
 size = 9
-font_data = SubResource( 14 )
+font_data = SubResource( 33 )
 
-[sub_resource type="DynamicFont" id=31]
+[sub_resource type="DynamicFont" id=12]
 size = 8
 outline_size = 1
 outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=32]
+[sub_resource type="DynamicFont" id=13]
 size = 7
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFontData" id=16]
+[sub_resource type="DynamicFontData" id=31]
 font_path = "res://UI/Fonts/pixelplay.ttf"
 
-[sub_resource type="DynamicFont" id=33]
+[sub_resource type="DynamicFont" id=17]
 size = 7
-font_data = SubResource( 16 )
+font_data = SubResource( 31 )
 
-[sub_resource type="DynamicFontData" id=25]
+[sub_resource type="DynamicFontData" id=32]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
-[sub_resource type="DynamicFont" id=34]
+[sub_resource type="DynamicFont" id=26]
 size = 8
-font_data = SubResource( 25 )
+font_data = SubResource( 32 )
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=28]
 resource_name = "SkipButton"
 length = 3.5
 loop = true
@@ -94,10 +132,13 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="EnemyTikbalangInfo" type="Control"]
+[node name="EnemyBungisngis" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_vertical_guides_": [ 160.0, 80.0, 240.0 ]
+}
 
 [node name="Backdrop" type="ColorRect" parent="."]
 margin_right = 320.0
@@ -129,8 +170,8 @@ alignment = 1
 margin_right = 320.0
 margin_bottom = 15.0
 custom_colors/font_color = Color( 0.988235, 0.368627, 0.368627, 1 )
-custom_fonts/font = SubResource( 26 )
-text = "Tikbalang"
+custom_fonts/font = SubResource( 9 )
+text = "Bungisngis"
 align = 1
 
 [node name="Subtitle" type="Label" parent="Body/Title"]
@@ -138,7 +179,7 @@ margin_top = 19.0
 margin_right = 320.0
 margin_bottom = 33.0
 custom_colors/font_color = Color( 0.392157, 0.392157, 0.392157, 1 )
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 10 )
 text = "Evil Creature"
 align = 1
 
@@ -147,14 +188,16 @@ margin_left = 10.0
 margin_top = 53.0
 margin_right = 64.0
 margin_bottom = 105.0
-custom_styles/normal = SubResource( 28 )
+custom_styles/normal = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[center][/center]"
 
-[node name="TikbalangWalk" type="AnimatedSprite" parent="ProfileImage"]
-position = Vector2( 33, 63 )
+[node name="TiyanakWalk" type="AnimatedSprite" parent="ProfileImage"]
+position = Vector2( 17, 54 )
 scale = Vector2( 2.39844, 2.39844 )
-frames = SubResource( 29 )
+frames = SubResource( 24 )
+animation = "bungis"
+frame = 2
 playing = true
 
 [node name="Description" type="RichTextLabel" parent="."]
@@ -162,7 +205,7 @@ margin_left = 74.0
 margin_top = 51.0
 margin_right = 304.0
 margin_bottom = 106.0
-custom_fonts/normal_font = SubResource( 30 )
+custom_fonts/normal_font = SubResource( 15 )
 text = "Description:"
 
 [node name="Main" type="RichTextLabel" parent="Description"]
@@ -173,11 +216,13 @@ margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.709804, 0.709804, 0.709804, 1 )
-custom_fonts/bold_font = SubResource( 31 )
-custom_fonts/normal_font = SubResource( 32 )
+custom_fonts/bold_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 13 )
 bbcode_enabled = true
-bbcode_text = "Equine shaped halimaw, usually very dangerous to humans. They have human bodies but horse heads, have long limbs and when they sit, their knees reach above their head. They also bring sickness, kill and eat humans. - Ramos"
-text = "Equine shaped halimaw, usually very dangerous to humans. They have human bodies but horse heads, have long limbs and when they sit, their knees reach above their head. They also bring sickness, kill and eat humans. - Ramos"
+bbcode_text = "A large, strong man who is always laughing and has an upper lip so large that when it is thrown back, it completely covers the face. They appear to have had a human appetite commensurable with their size. They also have immense strength as they can individually carry a cow.
+"
+text = "A large, strong man who is always laughing and has an upper lip so large that when it is thrown back, it completely covers the face. They appear to have had a human appetite commensurable with their size. They also have immense strength as they can individually carry a cow.
+"
 scroll_active = false
 
 [node name="Weakness" type="RichTextLabel" parent="."]
@@ -186,7 +231,7 @@ margin_left = 130.0
 margin_top = 114.0
 margin_right = 219.0
 margin_bottom = 167.0
-custom_fonts/normal_font = SubResource( 30 )
+custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
 bbcode_text = "[center]Weakness:[/center]"
 text = "Weakness:"
@@ -199,8 +244,8 @@ margin_bottom = 52.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.709804, 0.709804, 0.709804, 1 )
-custom_fonts/bold_font = SubResource( 31 )
-custom_fonts/normal_font = SubResource( 33 )
+custom_fonts/bold_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 17 )
 bbcode_enabled = true
 bbcode_text = "[center]Garlic and Rosary.[/center]"
 text = "Garlic and Rosary."
@@ -211,7 +256,7 @@ margin_left = 209.0
 margin_top = 125.0
 margin_right = 271.0
 margin_bottom = 179.0
-custom_fonts/normal_font = SubResource( 30 )
+custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
 bbcode_text = "[center]Special Ability:[/center]"
 text = "Special Ability:"
@@ -224,11 +269,11 @@ margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.709804, 0.709804, 0.709804, 1 )
-custom_fonts/bold_font = SubResource( 31 )
-custom_fonts/normal_font = SubResource( 33 )
+custom_fonts/bold_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 17 )
 bbcode_enabled = true
-bbcode_text = "[center]Fast Movement and Attacks twice[center]"
-text = "Fast Movement and Attacks twice"
+bbcode_text = "[center]Super Strength[center]"
+text = "Super Strength"
 scroll_active = false
 
 [node name="Health" type="RichTextLabel" parent="."]
@@ -236,7 +281,7 @@ margin_left = 49.0
 margin_top = 124.0
 margin_right = 111.0
 margin_bottom = 144.0
-custom_fonts/normal_font = SubResource( 30 )
+custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
 bbcode_text = "[center]Health Stat:[/center]"
 text = "Health Stat:"
@@ -250,25 +295,25 @@ margin_bottom = 54.0
 [node name="HealthContent" type="ColorRect" parent="Health/HealthGroup"]
 margin_right = 10.0
 margin_bottom = 4.0
-color = Color( 0.937255, 0.972549, 0.313726, 1 )
+color = Color( 0.972549, 0.623529, 0.313726, 1 )
 
 [node name="HealthContent2" type="ColorRect" parent="Health/HealthGroup"]
 margin_left = 13.0
 margin_right = 23.0
 margin_bottom = 4.0
-color = Color( 0.937255, 0.972549, 0.313726, 1 )
+color = Color( 0.972549, 0.623529, 0.313726, 1 )
 
 [node name="HealthContent3" type="ColorRect" parent="Health/HealthGroup"]
 margin_left = 26.0
 margin_right = 36.0
 margin_bottom = 4.0
-color = Color( 0.937255, 0.972549, 0.313726, 1 )
+color = Color( 0.972549, 0.623529, 0.313726, 1 )
 
 [node name="HealthContent4" type="ColorRect" parent="Health/HealthGroup"]
 margin_left = 39.0
 margin_right = 49.0
 margin_bottom = 4.0
-color = Color( 0.572549, 0.572549, 0.572549, 1 )
+color = Color( 0.972549, 0.623529, 0.313726, 1 )
 
 [node name="HealthContent5" type="ColorRect" parent="Health/HealthGroup"]
 margin_left = 52.0
@@ -281,7 +326,7 @@ margin_left = 129.0
 margin_top = 125.0
 margin_right = 191.0
 margin_bottom = 147.0
-custom_fonts/normal_font = SubResource( 30 )
+custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
 bbcode_text = "[center]Damage:[/center]"
 text = "Damage:"
@@ -295,25 +340,25 @@ margin_bottom = 53.0
 [node name="DamageContent" type="ColorRect" parent="Damage/DamageGroup"]
 margin_right = 10.0
 margin_bottom = 4.0
-color = Color( 0.443137, 0.972549, 0.313726, 1 )
+color = Color( 0.972549, 0.623529, 0.313726, 1 )
 
 [node name="DamageContent2" type="ColorRect" parent="Damage/DamageGroup"]
 margin_left = 13.0
 margin_right = 23.0
 margin_bottom = 4.0
-color = Color( 0.443137, 0.972549, 0.313726, 1 )
+color = Color( 0.972549, 0.623529, 0.313726, 1 )
 
 [node name="DamageContent3" type="ColorRect" parent="Damage/DamageGroup"]
 margin_left = 26.0
 margin_right = 36.0
 margin_bottom = 4.0
-color = Color( 0.572549, 0.572549, 0.572549, 1 )
+color = Color( 0.972549, 0.623529, 0.313726, 1 )
 
 [node name="DamageContent4" type="ColorRect" parent="Damage/DamageGroup"]
 margin_left = 39.0
 margin_right = 49.0
 margin_bottom = 4.0
-color = Color( 0.572549, 0.572549, 0.572549, 1 )
+color = Color( 0.972549, 0.623529, 0.313726, 1 )
 
 [node name="DamageContent5" type="ColorRect" parent="Damage/DamageGroup"]
 margin_left = 52.0
@@ -322,16 +367,16 @@ margin_bottom = 4.0
 color = Color( 0.572549, 0.572549, 0.572549, 1 )
 
 [node name="SkipText" type="RichTextLabel" parent="."]
-margin_left = 222.0
+margin_left = 221.0
 margin_top = 168.0
 margin_right = 320.0
 margin_bottom = 179.0
 custom_colors/default_color = Color( 0.705882, 0.705882, 0.705882, 1 )
-custom_fonts/normal_font = SubResource( 34 )
+custom_fonts/normal_font = SubResource( 26 )
 bbcode_text = "Press [ space ] to close."
 text = "Press [ space ] to close."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
-anims/SkipButton = SubResource( 36 )
+anims/SkipButton = SubResource( 28 )

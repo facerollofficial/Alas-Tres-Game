@@ -115,12 +115,29 @@ text = "Yes."
 
 [node name="CatalogueUI" parent="." instance=ExtResource( 8 )]
 
+[node name="TiyanakWalk" parent="CatalogueUI/Tiyanak" index="1"]
+frame = 1
+
+[node name="TikbalangWalk" parent="CatalogueUI/Tikbalang" index="1"]
+frame = 1
+
+[node name="Manananggal" parent="CatalogueUI/Manananggal" index="1"]
+frame = 3
+
+[node name="Bungisngis" parent="CatalogueUI/Bungisngis" index="1"]
+frame = 2
+
+[node name="Mangkukulam" parent="CatalogueUI/Mangkukulam" index="1"]
+frame = 3
+
 [connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/VBoxContainer/H_Divider/Interactables/Buttons/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="QuitConfirm/No" to="." method="_on_No_pressed"]
 [connection signal="pressed" from="QuitConfirm/Yes" to="." method="_on_Yes_pressed"]
+[connection signal="pressed" from="CatalogueUI/Tiyanak/TiyanakButton" to="." method="_on_TiyanakButton_pressed"]
 
 [editable path="Pause"]
 [editable path="Options"]
+[editable path="CatalogueUI"]
