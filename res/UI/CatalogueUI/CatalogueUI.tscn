@@ -128,30 +128,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[sub_resource type="AtlasTexture" id=54]
-atlas = ExtResource( 4 )
-region = Rect2( 84, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=56]
-atlas = ExtResource( 4 )
-region = Rect2( 168, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=57]
-atlas = ExtResource( 4 )
-region = Rect2( 252, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=58]
-atlas = ExtResource( 4 )
-region = Rect2( 336, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=59]
-atlas = ExtResource( 4 )
-region = Rect2( 420, 0, 84, 64 )
-
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 64, 64 )
@@ -196,13 +172,32 @@ region = Rect2( 0, 640, 64, 64 )
 atlas = ExtResource( 8 )
 region = Rect2( 0, 704, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 4 )
+region = Rect2( 84, 0, 84, 64 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 84, 64 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 4 )
+region = Rect2( 168, 0, 84, 64 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 4 )
+region = Rect2( 252, 0, 84, 64 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 4 )
+region = Rect2( 336, 0, 84, 64 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 4 )
+region = Rect2( 420, 0, 84, 64 )
+
 [sub_resource type="SpriteFrames" id=60]
 animations = [ {
-"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
-"loop": true,
-"name": "bungisngis",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
 "loop": true,
 "name": "default",
@@ -211,6 +206,11 @@ animations = [ {
 "frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": true,
 "name": "mangkuku",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
+"loop": true,
+"name": "bungisngis",
 "speed": 5.0
 } ]
 
@@ -274,6 +274,7 @@ bbcode_text = "[center][/center]"
 position = Vector2( 29, 18 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 43 )
+frame = 5
 playing = true
 
 [node name="TiyanakButton" type="Button" parent="Tiyanak"]
@@ -315,7 +316,7 @@ bbcode_text = "[center][/center]"
 position = Vector2( 17, 32 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ManananggalButton" type="Button" parent="Manananggal"]
@@ -337,6 +338,7 @@ position = Vector2( 16, 51 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
 animation = "bungisngis"
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -378,7 +380,7 @@ position = Vector2( 71, 42 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 60 )
 animation = "mangkuku"
-frame = 1
+frame = 4
 speed_scale = 0.3
 playing = true
 
