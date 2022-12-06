@@ -7,6 +7,7 @@ onready var gameOverScreen = $GameOver
 onready var kitUI = $KitUI
 onready var quitConfirm = $QuitConfirm
 onready var catalogUI = $CatalogueUI
+onready var artLabel = $CatalogueUI/ArtLabel
 
 func _ready():
 	optionsScreen.visible = false
@@ -20,8 +21,10 @@ func _unhandled_input(event):
 			#MusicController.end_sound()
 			self.is_paused = !is_paused
 		if is_paused != true:
-			if event.is_action_pressed("Catalog"):
-				catalogUI.visible = true
+			if catalogUI.visible!=true:
+				if event.is_action_pressed("Catalog"):
+					catalogUI.visible = true
+					artLabel.visible = true
 
 func set_is_paused(value):
 	if quitConfirm.visible == true:
