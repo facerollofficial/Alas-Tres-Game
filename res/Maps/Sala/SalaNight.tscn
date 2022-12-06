@@ -221,6 +221,21 @@ visible = false
 [node name="Label" parent="GUI/QuitConfirm" index="1"]
 custom_fonts/font = SubResource( 12 )
 
+[node name="TiyanakWalk" parent="GUI/CatalogueUI/Tiyanak" index="1"]
+frame = 2
+
+[node name="TikbalangWalk" parent="GUI/CatalogueUI/Tikbalang" index="1"]
+frame = 1
+
+[node name="Manananggal" parent="GUI/CatalogueUI/Manananggal" index="1"]
+frame = 1
+
+[node name="Bungisngis" parent="GUI/CatalogueUI/Bungisngis" index="1"]
+frame = 1
+
+[node name="Mangkukulam" parent="GUI/CatalogueUI/Mangkukulam" index="1"]
+frame = 2
+
 [editable path="Camera2D"]
 [editable path="FallenBook/YSort/Player"]
 [editable path="FallenBook/YSort/Player/HitboxPivot/PagiHitbox"]
@@ -229,3 +244,4 @@ custom_fonts/font = SubResource( 12 )
 [editable path="GUI"]
 [editable path="GUI/Pause"]
 [editable path="GUI/Options"]
+[editable path="GUI/CatalogueUI"]

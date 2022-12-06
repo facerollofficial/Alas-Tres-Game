@@ -9,6 +9,7 @@ onready var pickup_tutorial = $CanvasLayer/PickupsTutorial
 onready var pickup_oregano = $CanvasLayer/PickupOreganoTutorial
 onready var saving_tutorial = $CanvasLayer/SavingTutorial
 onready var pause_tutorial = $CanvasLayer/PauseTutorial
+onready var saved_notice = $CanvasLayer/SaveNotice
 
 func _ready():
 	#to avoid clash with options
@@ -26,6 +27,7 @@ func _ready():
 	pickup_oregano.visible = false
 	saving_tutorial.visible = false
 	pause_tutorial.visible = false
+	saved_notice.visible = false
 	
 	#loading and saving
 	var file: File = File.new()
@@ -150,3 +152,6 @@ func _input(event):
 		pickup_oregano.visible = false
 		saving_tutorial.visible = false
 		pause_tutorial.visible = false
+		saved_notice.visible = true
+		yield(get_tree().create_timer(2), "timeout")
+		saved_notice.visible = false

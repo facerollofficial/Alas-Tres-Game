@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://UI/CatalogueUI/Art/aghoy.png" type="Texture" id=1]
 [ext_resource path="res://UI/CatalogueUI/Art/Tiyanak.png" type="Texture" id=2]
@@ -21,7 +21,7 @@ font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=40]
 outline_size = 1
-outline_color = Color( 0.666667, 0.419608, 0.172549, 1 )
+outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 font_data = SubResource( 39 )
 
 [sub_resource type="StyleBoxFlat" id=42]
@@ -30,7 +30,7 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[sub_resource type="StyleBoxFlat" id=61]
+[sub_resource type="StyleBoxFlat" id=72]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -38,7 +38,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.694118, 0.235294, 0.235294, 1 )
 
-[sub_resource type="StyleBoxFlat" id=64]
+[sub_resource type="StyleBoxFlat" id=73]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -46,16 +46,16 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.694118, 0.235294, 0.235294, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=62]
+[sub_resource type="StyleBoxEmpty" id=74]
 
-[sub_resource type="StyleBoxFlat" id=65]
+[sub_resource type="StyleBoxFlat" id=75]
 bg_color = Color( 0.694118, 0.235294, 0.235294, 1 )
 
 [sub_resource type="Theme" id=63]
-Button/styles/focus = SubResource( 61 )
-Button/styles/hover = SubResource( 64 )
-Button/styles/normal = SubResource( 62 )
-Button/styles/pressed = SubResource( 65 )
+Button/styles/focus = SubResource( 72 )
+Button/styles/hover = SubResource( 73 )
+Button/styles/normal = SubResource( 74 )
+Button/styles/pressed = SubResource( 75 )
 
 [sub_resource type="StyleBoxFlat" id=49]
 border_width_left = 2
@@ -69,13 +69,27 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[sub_resource type="DynamicFont" id=66]
-resource_local_to_scene = true
-size = 18
-outline_color = Color( 0.454902, 0.380392, 0.156863, 1 )
+[sub_resource type="DynamicFont" id=76]
+size = 13
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=67]
+[sub_resource type="DynamicFont" id=77]
+size = 13
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=78]
+size = 13
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=79]
+size = 13
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=80]
+size = 13
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=81]
 size = 13
 font_data = ExtResource( 15 )
 
@@ -264,34 +278,34 @@ margin_left = 86.0
 margin_top = 37.0
 margin_right = 129.0
 margin_bottom = 62.0
-custom_fonts/font = SubResource( 66 )
+custom_fonts/font = SubResource( 76 )
 text = "Aghoy"
 
 [node name="TiyanakLabel" type="Label" parent="ArtLabel"]
 modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
 margin_left = 85.0
-margin_top = 78.0
+margin_top = 82.0
 margin_right = 139.0
-margin_bottom = 103.0
-custom_fonts/font = SubResource( 66 )
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 77 )
 text = "Tiyanak"
 
 [node name="TikbalangLabel" type="Label" parent="ArtLabel"]
 modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
 margin_left = 85.0
-margin_top = 119.0
+margin_top = 121.0
 margin_right = 148.0
-margin_bottom = 144.0
-custom_fonts/font = SubResource( 66 )
+margin_bottom = 146.0
+custom_fonts/font = SubResource( 78 )
 text = "Tikbalang"
 
 [node name="BungisngisLAbel" type="Label" parent="ArtLabel"]
 modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
 margin_left = 209.0
-margin_top = 77.0
+margin_top = 79.0
 margin_right = 280.0
-margin_bottom = 102.0
-custom_fonts/font = SubResource( 66 )
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 79 )
 text = "Bungisngis"
 
 [node name="ManananggalLabel" type="Label" parent="ArtLabel"]
@@ -300,7 +314,7 @@ margin_left = 208.0
 margin_top = 40.0
 margin_right = 296.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 67 )
+custom_fonts/font = SubResource( 80 )
 text = "Manananggal"
 
 [node name="ManananggalLabel2" type="Label" parent="ArtLabel"]
@@ -309,7 +323,7 @@ margin_left = 209.0
 margin_top = 124.0
 margin_right = 297.0
 margin_bottom = 149.0
-custom_fonts/font = SubResource( 67 )
+custom_fonts/font = SubResource( 81 )
 text = "Mangkukulam"
 
 [connection signal="pressed" from="Tiyanak/TiyanakButton" to="." method="_on_TiyanakButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=2]
+[gd_scene load_steps=134 format=2]
 
 [ext_resource path="res://Extras/Tilemaps/GrassBackground2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Maps/All_Levels/Level 1/Level1.gd" type="Script" id=13]
 [ext_resource path="res://Pickups/Oregano/OreganoHeal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Stats/Stats.gd" type="Script" id=15]
+[ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=16]
 [ext_resource path="res://NPC/Aghoy/Aghoy.tscn" type="PackedScene" id=17]
 [ext_resource path="res://NPC/Stranger/StrangerAttack.tscn" type="PackedScene" id=18]
 [ext_resource path="res://NPC/Stranger/Stranger.tscn" type="PackedScene" id=19]
@@ -44,6 +45,7 @@
 [ext_resource path="res://UI/EnemyIntro/EnemyTikbalang/EnemyTikbalangInfo.tscn" type="PackedScene" id=43]
 [ext_resource path="res://UI/EnemyIntro/EnemyTiyanak/EnemyTiyanak.tscn" type="PackedScene" id=44]
 [ext_resource path="res://Enemies/Enemy Scripts/BossPlayerDetection.gd" type="Script" id=45]
+[ext_resource path="res://UI/Fonts/pixelplay.ttf" type="DynamicFontData" id=46]
 [ext_resource path="res://UI/Credits/Credits.tscn" type="PackedScene" id=51]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -54,6 +56,12 @@ resource_local_to_scene = true
 size = 14
 outline_color = Color( 0.117647, 0.117647, 0.117647, 1 )
 font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=95]
+resource_local_to_scene = true
+size = 18
+outline_color = Color( 0.454902, 0.380392, 0.156863, 1 )
+font_data = ExtResource( 46 )
 
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 67.5, 6.5 )
@@ -1185,6 +1193,9 @@ tracks/3/keys = {
 "values": [ Color( 0, 0, 0, 1 ) ]
 }
 
+[sub_resource type="Animation" id=91]
+resource_name = "SaveNotice"
+
 [sub_resource type="Animation" id=79]
 length = 0.7
 tracks/0/type = "value"
@@ -1287,6 +1298,19 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="DynamicFont" id=92]
+size = 8
+outline_size = 1
+outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFontData" id=93]
+font_path = "res://UI/Fonts/pixelplay.ttf"
+
+[sub_resource type="DynamicFont" id=94]
+size = 10
+font_data = SubResource( 93 )
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 13 )
 
@@ -1301,17 +1325,20 @@ visible = false
 [node name="Label" parent="GUI/QuitConfirm" index="1"]
 custom_fonts/font = SubResource( 86 )
 
-[node name="TiyanakWalk" parent="GUI/CatalogueUI/Tiyanak" index="1"]
-frame = 1
+[node name="CatalogueUI" parent="GUI" index="6"]
+visible = false
 
-[node name="TikbalangWalk" parent="GUI/CatalogueUI/Tikbalang" index="1"]
-frame = 1
+[node name="AghoyLabel" parent="GUI/CatalogueUI/ArtLabel" index="0"]
+custom_fonts/font = SubResource( 95 )
 
-[node name="Bungisngis" parent="GUI/CatalogueUI/Bungisngis" index="1"]
-frame = 2
+[node name="TiyanakLabel" parent="GUI/CatalogueUI/ArtLabel" index="1"]
+custom_fonts/font = SubResource( 95 )
 
-[node name="Mangkukulam" parent="GUI/CatalogueUI/Mangkukulam" index="1"]
-frame = 3
+[node name="TikbalangLabel" parent="GUI/CatalogueUI/ArtLabel" index="2"]
+custom_fonts/font = SubResource( 95 )
+
+[node name="BungisngisLAbel" parent="GUI/CatalogueUI/ArtLabel" index="3"]
+custom_fonts/font = SubResource( 95 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -1569,8 +1596,10 @@ mode = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="YSort/Combat Field/Boss/BossTikbalang"]
 
 [node name="Credits" parent="YSort/Combat Field/Boss/BossTikbalang/CanvasLayer" instance=ExtResource( 51 )]
+visible = false
 
 [node name="DemoEnd" parent="YSort/Combat Field/Boss/BossTikbalang/CanvasLayer" instance=ExtResource( 29 )]
+visible = false
 
 [node name="Hitbox" parent="YSort/Combat Field/Boss/BossTikbalang" instance=ExtResource( 30 )]
 position = Vector2( 0, 7 )
@@ -1746,6 +1775,7 @@ color = Color( 0, 0, 0, 1 )
 pause_mode = 2
 root_node = NodePath("../..")
 anims/RESET = SubResource( 78 )
+anims/SaveNotice = SubResource( 91 )
 anims/attack = SubResource( 79 )
 anims/black_to_fade = SubResource( 85 )
 anims/flash = SubResource( 80 )
@@ -1762,16 +1792,38 @@ stream = ExtResource( 22 )
 
 [node name="AttackTutorial" parent="CanvasLayer" instance=ExtResource( 20 )]
 pause_mode = 2
+visible = false
 
 [node name="SavingTutorial" parent="CanvasLayer" instance=ExtResource( 21 )]
+visible = false
 
 [node name="DodgeTutorial" parent="CanvasLayer" instance=ExtResource( 41 )]
+visible = false
 
 [node name="PauseTutorial" parent="CanvasLayer" instance=ExtResource( 42 )]
+visible = false
 
 [node name="PickupOreganoTutorial" parent="CanvasLayer" instance=ExtResource( 39 )]
+visible = false
 
 [node name="PickupsTutorial" parent="CanvasLayer" instance=ExtResource( 40 )]
+visible = false
+
+[node name="SaveNotice" type="RichTextLabel" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -31.5
+margin_right = 31.5
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.709804, 0.709804, 0.709804, 1 )
+custom_fonts/bold_font = SubResource( 92 )
+custom_fonts/normal_font = SubResource( 94 )
+bbcode_enabled = true
+bbcode_text = "[center]Progress Saved...[center]"
+text = "Progress Saved..."
+scroll_active = false
 
 [connection signal="body_entered" from="TiyanakCutscene" to="TiyanakCutscene" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="TikbalangCutscene" to="TikbalangCutscene" method="_on_Area2D_body_entered"]

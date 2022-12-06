@@ -63,12 +63,12 @@ font_data = ExtResource( 3 )
 size = 7
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFontData" id=16]
+[sub_resource type="DynamicFontData" id=52]
 font_path = "res://UI/Fonts/pixelplay.ttf"
 
 [sub_resource type="DynamicFont" id=33]
 size = 7
-font_data = SubResource( 16 )
+font_data = SubResource( 52 )
 
 [sub_resource type="DynamicFontData" id=25]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
@@ -155,6 +155,7 @@ bbcode_text = "[center][/center]"
 position = Vector2( 33, 63 )
 scale = Vector2( 2.39844, 2.39844 )
 frames = SubResource( 29 )
+frame = 2
 playing = true
 
 [node name="Description" type="RichTextLabel" parent="."]
