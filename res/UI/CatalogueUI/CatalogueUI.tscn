@@ -1,69 +1,34 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://UI/Tutorials/Fonts/TutorialTitleFont.tres" type="DynamicFontData" id=1]
-[ext_resource path="res://Enemies/1_Tiyanak/tiyanak_walk.png" type="Texture" id=2]
-[ext_resource path="res://Enemies/2_Manananggal/manananggal.png" type="Texture" id=3]
-[ext_resource path="res://Enemies/4_Bungisngis/Bungisngis.png" type="Texture" id=4]
-[ext_resource path="res://Enemies/3_Tikbalang/Tikbalang.png" type="Texture" id=5]
-[ext_resource path="res://NPC/Aghoy/Aghoy.png" type="Texture" id=6]
+[ext_resource path="res://UI/CatalogueUI/Art/aghoy.png" type="Texture" id=1]
+[ext_resource path="res://UI/CatalogueUI/Art/Tiyanak.png" type="Texture" id=2]
+[ext_resource path="res://UI/CatalogueUI/Art/Bungisngis.png" type="Texture" id=3]
+[ext_resource path="res://UI/CatalogueUI/Art/Mangkukulam.png" type="Texture" id=4]
+[ext_resource path="res://UI/CatalogueUI/Art/Tikbalang.png" type="Texture" id=5]
+[ext_resource path="res://UI/CatalogueUI/Alas Tres.png" type="Texture" id=6]
 [ext_resource path="res://UI/CatalogueUI/CatalogueUI.gd" type="Script" id=7]
-[ext_resource path="res://Enemies/5_Mangkukulam/MANGKUKULAM.png" type="Texture" id=8]
+[ext_resource path="res://UI/CatalogueUI/Art/Manananggal.png" type="Texture" id=8]
 [ext_resource path="res://UI/AllyInfo/AllyAghoy/AllyAghoyInfo.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/EnemyIntro/EnemyTikbalang/EnemyTikbalangInfo.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI/EnemyIntro/EnemyBungisngis/EnemyBungisngis.tscn" type="PackedScene" id=11]
 [ext_resource path="res://UI/EnemyIntro/EnemyManananggal/EnemyManananggalInfo.tscn" type="PackedScene" id=12]
 [ext_resource path="res://UI/EnemyIntro/EnemyMangkukulam/EnemyMangkukulam.tscn" type="PackedScene" id=13]
 [ext_resource path="res://UI/EnemyIntro/EnemyTiyanak/EnemyTiyanak.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/Fonts/pixelplay.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="DynamicFontData" id=39]
 font_path = "res://UI/Fonts/ChiKareGo2.ttf"
 
 [sub_resource type="DynamicFont" id=40]
 outline_size = 1
-outline_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+outline_color = Color( 0.666667, 0.419608, 0.172549, 1 )
 font_data = SubResource( 39 )
-
-[sub_resource type="DynamicFont" id=41]
-size = 10
-font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=42]
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 2 )
-region = Rect2( 96, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 2 )
-region = Rect2( 160, 64, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=43]
-animations = [ {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="StyleBoxFlat" id=61]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -98,121 +63,21 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 5 )
-region = Rect2( 128, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 5 )
-region = Rect2( 192, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=51]
-atlas = ExtResource( 5 )
-region = Rect2( 256, 64, 64, 64 )
-
-[sub_resource type="SpriteFrames" id=52]
-animations = [ {
-"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 50 ), SubResource( 51 ) ],
-"loop": true,
-"name": "default",
-"speed": 2.0
-} ]
-
 [sub_resource type="StyleBoxFlat" id=53]
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 64, 64 )
+[sub_resource type="DynamicFont" id=66]
+resource_local_to_scene = true
+size = 18
+outline_color = Color( 0.454902, 0.380392, 0.156863, 1 )
+font_data = ExtResource( 15 )
 
-[sub_resource type="AtlasTexture" id=45]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=46]
-atlas = ExtResource( 3 )
-region = Rect2( 128, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 3 )
-region = Rect2( 192, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 3 )
-region = Rect2( 256, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=66]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 384, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=67]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 448, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 512, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 576, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 640, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 704, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=54]
-atlas = ExtResource( 4 )
-region = Rect2( 84, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=56]
-atlas = ExtResource( 4 )
-region = Rect2( 168, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=57]
-atlas = ExtResource( 4 )
-region = Rect2( 252, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=58]
-atlas = ExtResource( 4 )
-region = Rect2( 336, 0, 84, 64 )
-
-[sub_resource type="AtlasTexture" id=59]
-atlas = ExtResource( 4 )
-region = Rect2( 420, 0, 84, 64 )
-
-[sub_resource type="SpriteFrames" id=60]
-animations = [ {
-"frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
-"loop": true,
-"name": "default",
-"speed": 2.0
-}, {
-"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
-"loop": true,
-"name": "mangkuku",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
-"loop": true,
-"name": "bungisngis",
-"speed": 5.0
-} ]
+[sub_resource type="DynamicFont" id=67]
+size = 13
+font_data = ExtResource( 15 )
 
 [node name="CatalogueUI" type="Control"]
 margin_right = 320.0
@@ -226,9 +91,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 
+[node name="AlasTres" type="Sprite" parent="."]
+position = Vector2( 161, 96 )
+scale = Vector2( 0.65, 0.5 )
+texture = ExtResource( 6 )
+
 [node name="Body" type="VBoxContainer" parent="."]
-margin_right = 320.0
-margin_bottom = 180.0
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 322.0
+margin_bottom = 181.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -241,7 +113,7 @@ size_flags_stretch_ratio = 0.0
 [node name="Title" type="VBoxContainer" parent="Body"]
 margin_top = 4.0
 margin_right = 320.0
-margin_bottom = 37.0
+margin_bottom = 19.0
 size_flags_vertical = 0
 alignment = 1
 
@@ -252,141 +124,118 @@ custom_fonts/font = SubResource( 40 )
 text = "Archive"
 align = 1
 
-[node name="Subtitle" type="Label" parent="Body/Title"]
-margin_top = 19.0
-margin_right = 320.0
-margin_bottom = 33.0
-custom_colors/font_color = Color( 0.392157, 0.392157, 0.392157, 1 )
-custom_fonts/font = SubResource( 41 )
-text = "Philippine Folklore Creatures"
-align = 1
-
 [node name="Tiyanak" type="RichTextLabel" parent="."]
-margin_left = 98.0
-margin_top = 46.0
-margin_right = 152.0
-margin_bottom = 98.0
+margin_left = 49.0
+margin_top = 77.0
+margin_right = 76.0
+margin_bottom = 104.0
 custom_styles/normal = SubResource( 42 )
 bbcode_enabled = true
 bbcode_text = "[center][/center]"
 
-[node name="TiyanakWalk" type="AnimatedSprite" parent="Tiyanak"]
-position = Vector2( 29, 18 )
-scale = Vector2( 2.39844, 2.39844 )
-frames = SubResource( 43 )
-frame = 5
-playing = true
-
 [node name="TiyanakButton" type="Button" parent="Tiyanak"]
-margin_right = 54.0
-margin_bottom = 52.0
+margin_right = 27.0
+margin_bottom = 27.0
 theme = SubResource( 63 )
 
+[node name="Sprite" type="Sprite" parent="Tiyanak"]
+position = Vector2( 24, 14 )
+scale = Vector2( 0.0916955, 0.0900383 )
+texture = ExtResource( 2 )
+
 [node name="Tikbalang" type="RichTextLabel" parent="."]
-margin_left = 168.0
-margin_top = 46.0
-margin_right = 222.0
-margin_bottom = 98.0
+margin_left = 49.0
+margin_top = 119.0
+margin_right = 76.0
+margin_bottom = 146.0
 custom_styles/normal = SubResource( 49 )
 bbcode_enabled = true
 bbcode_text = "[center][/center]"
 
-[node name="TikbalangWalk" type="AnimatedSprite" parent="Tikbalang"]
-position = Vector2( 33, 63 )
-scale = Vector2( 2.39844, 2.39844 )
-frames = SubResource( 52 )
-frame = 3
-playing = true
+[node name="Sprite2" type="Sprite" parent="Tikbalang"]
+position = Vector2( 16, 14 )
+scale = Vector2( 0.0799602, 0.0680562 )
+texture = ExtResource( 5 )
 
 [node name="TikbalangButton" type="Button" parent="Tikbalang"]
-margin_right = 54.0
-margin_bottom = 52.0
+margin_right = 27.0
+margin_bottom = 27.0
 theme = SubResource( 63 )
 
 [node name="Manananggal" type="RichTextLabel" parent="."]
-margin_left = 98.0
-margin_top = 113.0
-margin_right = 152.0
-margin_bottom = 165.0
+margin_left = 177.0
+margin_top = 35.0
+margin_right = 204.0
+margin_bottom = 62.0
 custom_styles/normal = SubResource( 53 )
 bbcode_enabled = true
 bbcode_text = "[center][/center]"
 
-[node name="Manananggal" type="AnimatedSprite" parent="Manananggal"]
-position = Vector2( 17, 32 )
-scale = Vector2( 2.39844, 2.39844 )
-frames = SubResource( 60 )
-frame = 3
-playing = true
+[node name="Sprite3" type="Sprite" parent="Manananggal"]
+position = Vector2( 19.8858, 16.4283 )
+scale = Vector2( 0.212384, 0.180574 )
+texture = ExtResource( 8 )
 
 [node name="ManananggalButton" type="Button" parent="Manananggal"]
-margin_right = 54.0
-margin_bottom = 52.0
+margin_right = 27.0
+margin_bottom = 27.0
 theme = SubResource( 63 )
 
 [node name="Bungisngis" type="RichTextLabel" parent="."]
-margin_left = 168.0
-margin_top = 113.0
-margin_right = 222.0
-margin_bottom = 165.0
+margin_left = 177.0
+margin_top = 76.0
+margin_right = 204.0
+margin_bottom = 103.0
 custom_styles/normal = SubResource( 53 )
 bbcode_enabled = true
 bbcode_text = "[center][/center]"
 
-[node name="Bungisngis" type="AnimatedSprite" parent="Bungisngis"]
-position = Vector2( 16, 51 )
-scale = Vector2( 2.39844, 2.39844 )
-frames = SubResource( 60 )
-animation = "bungisngis"
-frame = 3
-speed_scale = 0.3
-playing = true
+[node name="Sprite4" type="Sprite" parent="Bungisngis"]
+position = Vector2( 18, 19 )
+scale = Vector2( 0.0509005, 0.0502945 )
+texture = ExtResource( 3 )
 
 [node name="BungisngisButton" type="Button" parent="Bungisngis"]
-margin_right = 54.0
-margin_bottom = 52.0
+margin_right = 27.0
+margin_bottom = 27.0
 theme = SubResource( 63 )
 
 [node name="Aghoy" type="RichTextLabel" parent="."]
-margin_left = 28.0
-margin_top = 79.0
-margin_right = 82.0
-margin_bottom = 131.0
+margin_left = 49.0
+margin_top = 36.0
+margin_right = 76.0
+margin_bottom = 63.0
 custom_styles/normal = SubResource( 53 )
 bbcode_enabled = true
 bbcode_text = "[center][/center]"
 
 [node name="Aghoy" type="Sprite" parent="Aghoy"]
-position = Vector2( 27, 27 )
-scale = Vector2( 1.37438, 1.37438 )
-texture = ExtResource( 6 )
+position = Vector2( 17, 26 )
+scale = Vector2( 0.118803, 0.105105 )
+texture = ExtResource( 1 )
 
 [node name="AghoyButton" type="Button" parent="Aghoy"]
-margin_right = 54.0
-margin_bottom = 52.0
+margin_right = 27.0
+margin_bottom = 27.0
 theme = SubResource( 63 )
 
 [node name="Mangkukulam" type="RichTextLabel" parent="."]
-margin_left = 238.0
-margin_top = 79.0
-margin_right = 292.0
-margin_bottom = 131.0
+margin_left = 177.0
+margin_top = 119.0
+margin_right = 204.0
+margin_bottom = 146.0
 custom_styles/normal = SubResource( 53 )
 bbcode_enabled = true
 bbcode_text = "[center][/center]"
 
-[node name="Mangkukulam" type="AnimatedSprite" parent="Mangkukulam"]
-position = Vector2( 71, 42 )
-scale = Vector2( 2.39844, 2.39844 )
-frames = SubResource( 60 )
-animation = "mangkuku"
-frame = 4
-speed_scale = 0.3
-playing = true
+[node name="Mang" type="Sprite" parent="Mangkukulam"]
+position = Vector2( 15.0001, 20 )
+scale = Vector2( 0.182209, 0.166683 )
+texture = ExtResource( 4 )
 
 [node name="MangkukulamButton" type="Button" parent="Mangkukulam"]
-margin_right = 54.0
-margin_bottom = 52.0
+margin_right = 27.0
+margin_bottom = 27.0
 theme = SubResource( 63 )
 
 [node name="EnemyTiyanakInfo" parent="." instance=ExtResource( 14 )]
@@ -406,6 +255,60 @@ visible = false
 
 [node name="EnemyMangkukulam" parent="." instance=ExtResource( 13 )]
 visible = false
+
+[node name="AghoyLabel" type="Label" parent="."]
+modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
+margin_left = 86.0
+margin_top = 37.0
+margin_right = 129.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 66 )
+text = "Aghoy"
+
+[node name="TiyanakLabel" type="Label" parent="."]
+modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
+margin_left = 85.0
+margin_top = 78.0
+margin_right = 139.0
+margin_bottom = 103.0
+custom_fonts/font = SubResource( 66 )
+text = "Tiyanak"
+
+[node name="TikbalangLabel" type="Label" parent="."]
+modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
+margin_left = 85.0
+margin_top = 119.0
+margin_right = 148.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 66 )
+text = "Tikbalang"
+
+[node name="BungisngisLAbel" type="Label" parent="."]
+modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
+margin_left = 209.0
+margin_top = 77.0
+margin_right = 280.0
+margin_bottom = 102.0
+custom_fonts/font = SubResource( 66 )
+text = "Bungisngis"
+
+[node name="ManananggalLabel" type="Label" parent="."]
+modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
+margin_left = 208.0
+margin_top = 40.0
+margin_right = 296.0
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 67 )
+text = "Manananggal"
+
+[node name="ManananggalLabel2" type="Label" parent="."]
+modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
+margin_left = 209.0
+margin_top = 124.0
+margin_right = 297.0
+margin_bottom = 149.0
+custom_fonts/font = SubResource( 67 )
+text = "Mangkukulam"
 
 [connection signal="pressed" from="Tiyanak/TiyanakButton" to="." method="_on_TiyanakButton_pressed"]
 [connection signal="pressed" from="Tikbalang/TikbalangButton" to="." method="_on_TikbalangButton_pressed"]
