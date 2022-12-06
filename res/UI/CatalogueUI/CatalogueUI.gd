@@ -6,6 +6,7 @@ onready var enemyMangkukulam = $EnemyMangkukulam
 onready var enemyManananggal = $EnemyManananggalInfo
 onready var enemyBungisngis = $EnemyBungisngis
 onready var allyAghoy = $AllyAghoy
+onready var artLabel = $ArtLabel
 
 func _ready():
 	self.visible = false
@@ -19,27 +20,33 @@ func _ready():
 func _on_AghoyButton_pressed():
 	print("Aghoy displayed.")
 	allyAghoy.visible = true
+	artLabel.visible = false
 	
 func _on_MangkukulamButton_pressed():
 	print("Mangkukulam displayed.")
 	enemyMangkukulam.visible = true
+	artLabel.visible = false
 
 func _on_TiyanakButton_pressed():
 	print("Tiyanak displayed.")
 	enemyTiyanak.visible = true
+	artLabel.visible = false
 
 func _on_TikbalangButton_pressed():
 	print("Tikbalang displayed.")
 	enemyTikbalang.visible = true
+	artLabel.visible = false
 
 
 func _on_ManananggalButton_pressed():
 	print("Manananggal displayed.")
 	enemyManananggal.visible = true
+	artLabel.visible = false
 
 func _on_BungisngisButton_pressed():
 	print("Bungisngis displayed.")
 	enemyBungisngis.visible = true
+	artLabel.visible = false
 
 func _unhandled_input(event):
 	if event.is_action_pressed("CloseInfo"):

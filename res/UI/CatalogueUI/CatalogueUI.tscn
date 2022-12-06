@@ -133,15 +133,15 @@ custom_styles/normal = SubResource( 42 )
 bbcode_enabled = true
 bbcode_text = "[center][/center]"
 
-[node name="TiyanakButton" type="Button" parent="Tiyanak"]
-margin_right = 27.0
-margin_bottom = 27.0
-theme = SubResource( 63 )
-
 [node name="Sprite" type="Sprite" parent="Tiyanak"]
 position = Vector2( 24, 14 )
 scale = Vector2( 0.0916955, 0.0900383 )
 texture = ExtResource( 2 )
+
+[node name="TiyanakButton" type="Button" parent="Tiyanak"]
+margin_right = 27.0
+margin_bottom = 27.0
+theme = SubResource( 63 )
 
 [node name="Tikbalang" type="RichTextLabel" parent="."]
 margin_left = 49.0
@@ -256,7 +256,9 @@ visible = false
 [node name="EnemyMangkukulam" parent="." instance=ExtResource( 13 )]
 visible = false
 
-[node name="AghoyLabel" type="Label" parent="."]
+[node name="ArtLabel" type="Control" parent="."]
+
+[node name="AghoyLabel" type="Label" parent="ArtLabel"]
 modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
 margin_left = 86.0
 margin_top = 37.0
@@ -265,7 +267,7 @@ margin_bottom = 62.0
 custom_fonts/font = SubResource( 66 )
 text = "Aghoy"
 
-[node name="TiyanakLabel" type="Label" parent="."]
+[node name="TiyanakLabel" type="Label" parent="ArtLabel"]
 modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
 margin_left = 85.0
 margin_top = 78.0
@@ -274,7 +276,7 @@ margin_bottom = 103.0
 custom_fonts/font = SubResource( 66 )
 text = "Tiyanak"
 
-[node name="TikbalangLabel" type="Label" parent="."]
+[node name="TikbalangLabel" type="Label" parent="ArtLabel"]
 modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
 margin_left = 85.0
 margin_top = 119.0
@@ -283,7 +285,7 @@ margin_bottom = 144.0
 custom_fonts/font = SubResource( 66 )
 text = "Tikbalang"
 
-[node name="BungisngisLAbel" type="Label" parent="."]
+[node name="BungisngisLAbel" type="Label" parent="ArtLabel"]
 modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
 margin_left = 209.0
 margin_top = 77.0
@@ -292,7 +294,7 @@ margin_bottom = 102.0
 custom_fonts/font = SubResource( 66 )
 text = "Bungisngis"
 
-[node name="ManananggalLabel" type="Label" parent="."]
+[node name="ManananggalLabel" type="Label" parent="ArtLabel"]
 modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
 margin_left = 208.0
 margin_top = 40.0
@@ -301,7 +303,7 @@ margin_bottom = 65.0
 custom_fonts/font = SubResource( 67 )
 text = "Manananggal"
 
-[node name="ManananggalLabel2" type="Label" parent="."]
+[node name="ManananggalLabel2" type="Label" parent="ArtLabel"]
 modulate = Color( 0.513726, 0.443137, 0.286275, 1 )
 margin_left = 209.0
 margin_top = 124.0
