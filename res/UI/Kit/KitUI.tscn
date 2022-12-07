@@ -1,11 +1,47 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/PlayerGUI/Kit.gd" type="Script" id=1]
 [ext_resource path="res://UI/PlayerGUI/Sprite/heal_ui.png" type="Texture" id=2]
 [ext_resource path="res://UI/PlayerGUI/Sprite/asin_ui.png" type="Texture" id=3]
 [ext_resource path="res://UI/PlayerGUI/Sprite/bawang_ui.png" type="Texture" id=4]
 [ext_resource path="res://UI/Kit/KitFont.tres" type="DynamicFont" id=5]
-[ext_resource path="res://world assets/home scene/CatalogueUI.png" type="Texture" id=6]
+[ext_resource path="res://world assets/home scene/Catalog1.png" type="Texture" id=6]
+[ext_resource path="res://world assets/home scene/Catalog2.png" type="Texture" id=7]
+[ext_resource path="res://world assets/home scene/Catalog3.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://UI/Fonts/pixelplay.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 9
+font_data = SubResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.796078, 0.647059, 0.388235, 1 )
+border_color = Color( 0.796078, 0.647059, 0.388235, 1 )
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 6 )
+Button/fonts/font = SubResource( 6 )
+Button/styles/hover = SubResource( 7 )
+Button/styles/normal = SubResource( 8 )
+Button/styles/pressed = SubResource( 9 )
+TooltipLabel/fonts/font = SubResource( 6 )
+TooltipPanel/styles/panel = SubResource( 10 )
 
 [node name="KitUI" type="Control"]
 margin_right = 40.0
@@ -51,7 +87,14 @@ custom_fonts/font = ExtResource( 5 )
 text = "00"
 align = 2
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 300, 15 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 6 )
+[node name="Catalogue" type="Button" parent="."]
+visible = false
+margin_left = 281.0
+margin_top = 4.0
+margin_right = 312.0
+margin_bottom = 34.0
+hint_tooltip = "Creatures of Midnight Catalog"
+focus_mode = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = SubResource( 3 )

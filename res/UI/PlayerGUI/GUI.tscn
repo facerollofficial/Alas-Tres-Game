@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://UI/Game Over/Game Over.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Kit/KitUI.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://UI/Themes/TitleScreenTheme.tres" type="Theme" id=7]
 [ext_resource path="res://UI/CatalogueUI/CatalogueUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/Fonts/pixelplay.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://world assets/home scene/Catalog3.png" type="Texture" id=10]
+[ext_resource path="res://world assets/home scene/Catalog1.png" type="Texture" id=11]
+[ext_resource path="res://world assets/home scene/Catalog2.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://UI/Fonts/pixelplay.ttf"
@@ -38,6 +41,40 @@ resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.454902, 0.380392, 0.156863, 1 )
 font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://UI/Fonts/pixelplay.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 9
+font_data = SubResource( 9 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.796078, 0.647059, 0.388235, 1 )
+border_color = Color( 0.796078, 0.647059, 0.388235, 1 )
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="Theme" id=15]
+default_font = SubResource( 10 )
+Button/fonts/font = SubResource( 10 )
+Button/styles/hover = SubResource( 11 )
+Button/styles/normal = SubResource( 12 )
+Button/styles/pressed = SubResource( 13 )
+TooltipLabel/fonts/font = SubResource( 10 )
+TooltipPanel/styles/panel = SubResource( 14 )
 
 [node name="GUI" type="CanvasLayer"]
 pause_mode = 2
@@ -134,6 +171,18 @@ custom_fonts/font = SubResource( 8 )
 [node name="BungisngisLAbel" parent="CatalogueUI/ArtLabel" index="3"]
 custom_fonts/font = SubResource( 8 )
 
+[node name="CatalogueButton" type="Button" parent="."]
+margin_left = 281.0
+margin_top = 4.0
+margin_right = 312.0
+margin_bottom = 34.0
+hint_tooltip = "Creatures of Midnight Catalog"
+focus_mode = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = SubResource( 15 )
+action_mode = 0
+
 [connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Pause/VBoxContainer/VBoxContainer/HBoxContainer/Buttons/Quit" to="." method="_on_Quit_pressed"]
@@ -141,6 +190,7 @@ custom_fonts/font = SubResource( 8 )
 [connection signal="pressed" from="QuitConfirm/No" to="." method="_on_No_pressed"]
 [connection signal="pressed" from="QuitConfirm/Yes" to="." method="_on_Yes_pressed"]
 [connection signal="pressed" from="CatalogueUI/Tiyanak/TiyanakButton" to="." method="_on_TiyanakButton_pressed"]
+[connection signal="pressed" from="CatalogueButton" to="." method="_on_CatalogueButton_pressed"]
 
 [editable path="Pause"]
 [editable path="Options"]

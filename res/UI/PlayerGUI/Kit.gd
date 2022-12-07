@@ -1,5 +1,4 @@
 extends Control
-
 onready var asinCount = $Asin/AsinCount
 onready var bawangCount = $Bawang/BawangCount
 onready var healCount = $Heal/HealCount

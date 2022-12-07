@@ -8,6 +8,7 @@ onready var kitUI = $KitUI
 onready var quitConfirm = $QuitConfirm
 onready var catalogUI = $CatalogueUI
 onready var artLabel = $CatalogueUI/ArtLabel
+onready var catalogBtn = $CatalogueButton
 
 func _ready():
 	optionsScreen.visible = false
@@ -20,11 +21,9 @@ func _unhandled_input(event):
 		if event.is_action_pressed("Pause"):
 			#MusicController.end_sound()
 			self.is_paused = !is_paused
-		if is_paused != true:
-			if catalogUI.visible!=true:
-				if event.is_action_pressed("Catalog"):
-					catalogUI.visible = true
-					artLabel.visible = true
+	if catalogUI.visible != true:
+		if event.is_action_pressed("resume"):
+			catalogBtn.visible = true
 
 func set_is_paused(value):
 	if quitConfirm.visible == true:
@@ -61,3 +60,10 @@ func _on_Resume_pressed():
 	MusicController.play_level1_bgm()
 	MusicController.play_dark_ambience()
 	self.is_paused = false
+
+func _on_CatalogueButton_pressed():
+	if is_paused != true:
+		if catalogUI.visible!=true:
+			catalogUI.visible = true
+			artLabel.visible = true
+			catalogBtn.visible = false
